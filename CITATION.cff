@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "연구·교육·소개 자료에 활용할 때 원본 프로젝트를 함께 인용해 주세요. 별도의 홍보 의무를 추가하는 조건은 아닙니다."
+type: software
+title: "watermark_ai: 시험지 워터마크 실험 도구"
+authors:
+  - family-names: "JM-KIMM"
+    website: "https://github.com/JM-KIMM"
+repository-code: "https://github.com/JM-KIMM/watermark_ai"
+url: "https://github.com/JM-KIMM/watermark_ai"
+license: GPL-3.0-only
+keywords:
+  - PDF
+  - watermark
+  - education
+  - multimodal
+  - experimental
