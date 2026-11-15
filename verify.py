@@ -15,6 +15,10 @@ def main():
     checks = 0
     for path in sorted((root / "outputs").glob("*.manifest.json")):
         meta = json.loads(path.read_text(encoding="utf-8"))
+        for key in ("source", "output"):
+            if not Path(meta[key]).exists():
+                base = root if key == "source" else root / "outputs"
+                meta[key] = str(base / Path(meta[key]).name)
         src = Path(meta["source"])
         assert hashlib.sha256(src.read_bytes()).hexdigest() == meta["source_sha256"]
         with fitz.open(src) as original, fitz.open(meta["output"]) as output:
@@ -36,7 +40,7 @@ def main():
                 # Exclude only the recorded, intentional question marks.
                 draw = ImageDraw.Draw(delta)
                 for mark in record.get("question_marks", []):
-                    for key in ("qr_bbox", "number_output_bbox"):
+                    for key in ("qr_bbox", "number_output_bbox", "label_bbox"):
                         if key in mark:
                             x0, y0, x1, y1 = mark[key]
                             draw.rectangle((int(x0-b)-1, int(y0-b)-1,

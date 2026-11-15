@@ -21,8 +21,6 @@ def detect_questions(page):
     found = []
     for block in page.get_text("rawdict")["blocks"]:
         for line in block.get("lines", []):
-            if tuple(line["dir"]) != (1.0, 0.0):
-                continue
             chars = [c for span in line["spans"] for c in span["chars"]]
             text = "".join(c["c"] for c in chars)
             match = QUESTION_RE.match(text)
@@ -129,8 +127,29 @@ def find_space(question, side, bounds, occupied, *, placement="fixed", rng=None)
     return None
 
 
+QR_LABEL = "QR에 접속하시오."
+
+
+def attach_qr_label(target, space, bounds, occupied, *, band, fontfile):
+    """Add a nearby caption only where it cannot cover source content or other marks."""
+    font=fitz.Font(fontfile=str(fontfile));size=5.
+    width=font.text_length(QR_LABEL,fontsize=size)+2;height=8.
+    candidates=[fitz.Rect(space.x1+2,space.y0,space.x1+2+width,space.y0+height),
+                fitz.Rect(space.x0,space.y1+2,space.x0+width,space.y1+2+height),
+                fitz.Rect(space.x0,space.y0-height-2,space.x0+width,space.y0-2),
+                fitz.Rect(space.x0-width-2,space.y0,space.x0-2,space.y0+height)]
+    for rect in candidates:
+        if bounds.contains(rect) and not any(rect.intersects(r) for r in occupied):
+            dst=rect+(band,band,band,band)
+            target.insert_font(fontname="qrlabel",fontfile=str(fontfile))
+            target.insert_text((dst.x0+1,dst.y1-2),QR_LABEL,fontname="qrlabel",fontsize=size,color=(0,0,0))
+            occupied.append(rect)
+            return dict(label_status="placed",label=QR_LABEL,label_bbox=list(dst),label_source_bbox=list(rect))
+    return dict(label_status="skipped-no-whitespace",label=QR_LABEL)
+
+
 def apply_question_marks(source, target, *, band, style, qr_size, payload, url_factory=None,
-                         placement="fixed", seed=42):
+                         placement="fixed", seed=42, label_font=None):
     questions = detect_questions(source)
     occupied = occupied_rects(source)
     qr_image, qr = make_qr(payload)
@@ -162,4 +181,8 @@ def apply_question_marks(source, target, *, band, style, qr_size, payload, url_f
             record.update(number_status="qr-texture-not-decodable", number_output_bbox=list(dst))
             record["number_shape"] = "original-source-glyph"
         records.append(record)
+    if label_font:
+        for record in records:
+            if record['qr_status']=='placed':
+                record.update(attach_qr_label(target,fitz.Rect(record['qr_source_bbox']),source.rect,occupied,band=band,fontfile=label_font))
     return records

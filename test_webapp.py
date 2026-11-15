@@ -59,6 +59,7 @@ class GenerationTests(unittest.TestCase):
                         diff=ImageChops.difference(Image.frombytes("RGB",(before.width,before.height),before.samples),Image.frombytes("RGB",(after.width,after.height),after.samples))
                         draw=ImageDraw.Draw(diff)
                         regions=[mark["qr_bbox"] for mark in record["question_marks"] if mark["qr_status"]=="placed"]
+                        regions += [mark["label_bbox"] for mark in record["question_marks"] if "label_bbox" in mark]
                         regions += [line["output_bbox"] for line in record["line_patterns"]]
                         for x0,y0,x1,y1 in regions:
                             draw.rectangle((int(x0-band)-2,int(y0-band)-2,int(x1-band)+2,int(y1-band)+2),fill=(0,0,0))

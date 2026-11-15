@@ -69,7 +69,8 @@ def generate_worker(source, output, options, events):
             qr=sum(m["qr_status"]=="placed" for m in marks),
             skipped=sum(m["qr_status"]=="skipped-no-whitespace" for m in marks),
             lines=sum(len(p["line_patterns"]) for p in report["pages"]),
-            intensity=report["intensity"],tracking=bool(report["tracking"]))))
+            intensity=report["intensity"],tracking=bool(report["tracking"]),math_watermark=report.get("math_watermark",False),
+            captions_skipped=sum(m.get("label_status")=="skipped-no-whitespace" for m in marks))))
     except Exception as exc:
         message = str(exc) if isinstance(exc,(ValueError,RuntimeError)) else "PDF를 처리하지 못했습니다. 파일과 설정을 확인하세요."
         events.put(dict(kind="error",message=message))
@@ -88,6 +89,14 @@ class Application:
         self.collector=None
         self.collector_thread=None
         self.job_timeout=job_timeout
+        # Only delete known artifacts inside this app's output directory.
+        cutoff=time.time()-7*86400
+        for folder in self.output.iterdir():
+            if folder.is_dir() and re.fullmatch(r"[a-f0-9]{32}",folder.name) and folder.stat().st_mtime<cutoff:
+                for name in ("source.pdf","result.pdf","result.preview.png","result.manifest.json"):
+                    (folder/name).unlink(missing_ok=True)
+                if not any(folder.iterdir()):
+                    folder.rmdir()
 
     def submit(self,payload):
         with self.lock:
@@ -99,6 +108,9 @@ class Application:
             if not isinstance(settings,dict):
                 raise ValueError("설정 형식이 올바르지 않습니다.")
             options=build_options(settings,self.data)
+            from watermark import is_math_exam
+            if is_math_exam(str(payload.get("filename",""))):
+                options["math_watermark"]=True
             data=base64.b64decode(payload.get("file",""),validate=True)
             if not 0<len(data)<=MAX_PDF or b"%PDF-" not in data[:1024]:
                 raise ValueError("25MB 이하의 PDF 파일을 선택하세요.")
@@ -159,6 +171,10 @@ class Application:
             if process.is_alive():
                 process.terminate();process.join(timeout=2)
             events.close()
+            try:
+                (job["folder"]/"source.pdf").unlink(missing_ok=True)
+            except OSError:
+                pass  # A locked file is retried by the seven-day cleanup.
             with self.lock:
                 if self.busy==job["id"]:
                     self.busy=None
@@ -234,7 +250,7 @@ def create_web_server(app,port=8766):
             if path=="/":
                 html=(ROOT/"web"/"index.html").read_text(encoding="utf-8").replace("__LOCAL_TOKEN__",app.token)
                 self.reply(200,html,"text/html; charset=utf-8");return
-            if path in ("/app.js","/style.css"):
+            if path in ("/app.js","/style.css","/mono.css"):
                 self.reply(200,(ROOT/"web"/path[1:]).read_bytes(),"text/javascript; charset=utf-8" if path.endswith("js") else "text/css; charset=utf-8");return
             if not self.authorized():
                 self.reply(403,dict(error="앱 화면에서 다시 시도하세요."));return

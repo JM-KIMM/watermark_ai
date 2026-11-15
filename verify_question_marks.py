@@ -16,6 +16,10 @@ def main():
     detected = placed = patterned = skipped = 0
     for path in sorted((root / "outputs").glob("*.manifest.json")):
         meta = json.loads(path.read_text(encoding="utf-8"))
+        for key in ("source", "output"):
+            if not Path(meta[key]).exists():
+                base = root if key == "source" else root / "outputs"
+                meta[key] = str(base / Path(meta[key]).name)
         if meta.get("question_style", "none") == "none":
             continue
         per_file = dict(file=Path(meta["output"]).name, detected=0, placed=0, skipped=0, decode={})

@@ -289,6 +289,17 @@ def create_server(store, host="127.0.0.1", port=8765, *, request_budget=120, wor
             if not self.slots.acquire(blocking=False):
                 try:
                     request.settimeout(.5)
+                    # Drain the small HTTP header before closing a rejected socket.
+                    # On Windows, closing with unread request bytes can reset the
+                    # connection and discard the 503 response sent to the client.
+                    header=b""
+                    try:
+                        while b"\r\n\r\n" not in header and len(header)<4096:
+                            chunk=request.recv(min(1024,4096-len(header)))
+                            if not chunk:break
+                            header+=chunk
+                    except OSError:
+                        pass
                     request.sendall(b"HTTP/1.0 503 Service Unavailable\r\nContent-Length: 0\r\nConnection: close\r\n\r\n")
                 except OSError:
                     pass

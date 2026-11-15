@@ -1,0 +1,35 @@
+{
+  "version": 5,
+  "model": {
+    "name": "qwen2.5vl:3b",
+    "model": "qwen2.5vl:3b",
+    "modified_at": "2026-11-16T00:39:17.9015274+09:00",
+    "size": 3200627168,
+    "digest": "fb90415cde1ef08aa669ae74b082d49b158729b6db1ab183c941417d507e71a1",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen25vl",
+      "families": [
+        "qwen25vl"
+      ],
+      "parameter_size": "3.8B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 128000,
+      "embedding_length": 2048,
+      "runner": "ggml"
+    },
+    "capabilities": [
+      "completion",
+      "vision"
+    ]
+  },
+  "dpi": 150,
+  "seed": 42,
+  "temperature": 0,
+  "num_ctx": 16384,
+  "input": "PDF images; Korean shared-passage context explicitly grouped; self-contained tax/math/English questions use current page",
+  "identical_image_policy": "Reuse level2 response for byte-identical level3 context; not an independent trial",
+  "font_mode": "source",
+  "exclude": "descriptive, math short-answer, English listening 1-17"
+}

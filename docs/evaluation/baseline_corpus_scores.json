@@ -1,0 +1,171 @@
+{
+  "exams": [
+    {
+      "exam": "2026년도 제63회 세무사 1차시험 1교시 시험지 원본.pdf",
+      "total": 80,
+      "identical_stage_pages": 32,
+      "original": {
+        "correct": 15,
+        "accuracy": 18.75,
+        "points": 15,
+        "max_points": 80
+      },
+      "level2": {
+        "correct": 14,
+        "accuracy": 17.5,
+        "points": 14,
+        "max_points": 80
+      },
+      "level3": {
+        "correct": 14,
+        "accuracy": 17.5,
+        "points": 14,
+        "max_points": 80
+      }
+    },
+    {
+      "exam": "2026년도 제63회 세무사 1차시험 2교시 시험지 원본(민법).pdf",
+      "total": 80,
+      "identical_stage_pages": 31,
+      "original": {
+        "correct": 10,
+        "accuracy": 12.5,
+        "points": 10,
+        "max_points": 80
+      },
+      "level2": {
+        "correct": 12,
+        "accuracy": 15.0,
+        "points": 12,
+        "max_points": 80
+      },
+      "level3": {
+        "correct": 12,
+        "accuracy": 15.0,
+        "points": 12,
+        "max_points": 80
+      }
+    },
+    {
+      "exam": "2026년도 제63회 세무사 1차시험 2교시 시험지 원본(상법).pdf",
+      "total": 80,
+      "identical_stage_pages": 32,
+      "original": {
+        "correct": 10,
+        "accuracy": 12.5,
+        "points": 10,
+        "max_points": 80
+      },
+      "level2": {
+        "correct": 16,
+        "accuracy": 20.0,
+        "points": 16,
+        "max_points": 80
+      },
+      "level3": {
+        "correct": 16,
+        "accuracy": 20.0,
+        "points": 16,
+        "max_points": 80
+      }
+    },
+    {
+      "exam": "2026년도 제63회 세무사 1차시험 2교시 시험지 원본(행정소송법).pdf",
+      "total": 80,
+      "identical_stage_pages": 30,
+      "original": {
+        "correct": 14,
+        "accuracy": 17.5,
+        "points": 14,
+        "max_points": 80
+      },
+      "level2": {
+        "correct": 14,
+        "accuracy": 17.5,
+        "points": 14,
+        "max_points": 80
+      },
+      "level3": {
+        "correct": 14,
+        "accuracy": 17.5,
+        "points": 14,
+        "max_points": 80
+      }
+    },
+    {
+      "exam": "국어영역_문제지.pdf",
+      "total": 112,
+      "identical_stage_pages": 40,
+      "original": {
+        "correct": 18,
+        "accuracy": 16.071428571428573,
+        "points": 40,
+        "max_points": 248
+      },
+      "level2": {
+        "correct": 21,
+        "accuracy": 18.75,
+        "points": 46,
+        "max_points": 248
+      },
+      "level3": {
+        "correct": 21,
+        "accuracy": 18.75,
+        "points": 46,
+        "max_points": 248
+      }
+    },
+    {
+      "exam": "수학영역_문제지.pdf",
+      "total": 66,
+      "identical_stage_pages": 34,
+      "original": {
+        "correct": 8,
+        "accuracy": 12.121212121212121,
+        "points": 24,
+        "max_points": 208
+      },
+      "level2": {
+        "correct": 12,
+        "accuracy": 18.181818181818183,
+        "points": 40,
+        "max_points": 208
+      },
+      "level3": {
+        "correct": 12,
+        "accuracy": 18.181818181818183,
+        "points": 40,
+        "max_points": 208
+      }
+    },
+    {
+      "exam": "영어영역_문제지.pdf",
+      "total": 56,
+      "identical_stage_pages": 12,
+      "original": {
+        "correct": 9,
+        "accuracy": 16.071428571428573,
+        "points": 9,
+        "max_points": 56
+      },
+      "level2": {
+        "correct": 9,
+        "accuracy": 16.071428571428573,
+        "points": 9,
+        "max_points": 56
+      },
+      "level3": {
+        "correct": 9,
+        "accuracy": 16.071428571428573,
+        "points": 9,
+        "max_points": 56
+      }
+    }
+  ],
+  "total_exposures": 554,
+  "totals": {
+    "original": 84,
+    "level2": 98,
+    "level3": 98
+  }
+}

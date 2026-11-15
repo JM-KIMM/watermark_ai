@@ -57,6 +57,8 @@
     for(const [value,label] of [[summary.pages,'쪽'],[summary.qr,'개 QR'],...(summary.intensity===3?[[summary.lines,'개 선 변경']]:[])]) { const span=document.createElement('span');span.className='stat';const b=document.createElement('b');b.textContent=value;span.append(b,' '+label);$('result-stats').append(span); }
     $('result-stats').hidden=false;blobLink(pdf,$('download-pdf'),job.name.replace(/\.pdf$/i,'')+'_워터마크.pdf');blobLink(manifest,$('download-manifest'),'워터마크_설정.json');$('result-actions').hidden=false;
     let message='완료! PDF를 내려받으세요.';
+    if(summary.math_watermark) message+=' 수학 전용 수식 워터마크를 적용했습니다.';
+    if(summary.captions_skipped) message+=' 본문과 겹치지 않는 공간이 없는 '+summary.captions_skipped+'개 QR의 안내 문구는 생략했습니다.';
     if(summary.skipped) message+=' 공간이 부족한 '+summary.skipped+'개 문제의 QR은 생략했습니다.';
     if(summary.intensity===3 && !summary.lines) message+=' 변경 가능한 구분선이 없어 선은 유지했습니다.';
     if(summary.tracking && !collectorRunning) message+=' IP 기록을 받으려면 접수 서버를 시작하세요.';
