@@ -5,11 +5,13 @@
   const token = document.querySelector('meta[name="local-token"]').content;
   let selectedFile = null, collectorRunning = false, busy = false;
   const blobs = [];
+  // The server still takes intensity 1/2/3; the screen offers one default (2) and two optional switches.
   const descriptions = {
     1: '문제 주변에 QR만 넣습니다. 원래 페이지 크기를 유지합니다.',
     2: '상단·우측은 문구 A, 하단·좌측은 문구 B를 반복합니다.',
-    3: '2단계에 더해 구분선 후보를 QR 무늬로 바꿉니다. 결과 확인이 필요합니다.'
+    3: '기본 구성에 더해 구분선 후보를 QR 무늬로 바꿉니다. 결과 확인이 필요합니다.'
   };
+  const labels = {1: 'QR만', 2: '기본', 3: '기본 + 구분선'};
   function resetPreview() {
     $('result-preview').hidden=true;$('paper-demo').hidden=false;
     $('result-stats').hidden=true;$('result-actions').hidden=true;
@@ -26,9 +28,11 @@
   function localDate(value) { return new Date(value.getTime() + 9*3600000).toISOString().slice(0,16); }
   $('starts-at').value = localDate(new Date());
   $('ends-at').value = localDate(new Date(Date.now()+7*86400000));
-  function level() { return Number(document.querySelector('input[name="intensity"]:checked').value); }
-  function updateLevel() { if(busy)return;resetPreview();const value = level(); $('level-description').textContent = descriptions[value]; $('preview-tag').textContent = value+'단계'; $('paper-demo').className = 'paper level-'+value; }
-  document.querySelectorAll('input[name="intensity"]').forEach(input => input.addEventListener('change', updateLevel));
+  function level() { return $('qr-only').checked ? 1 : $('line-patterns').checked ? 3 : 2; }
+  function updateLevel() { if(busy)return;resetPreview();const value = level(); $('level-description').textContent = descriptions[value]; $('preview-tag').textContent = labels[value]; $('paper-demo').className = 'paper level-'+value; }
+  // The two switches exclude each other: line patterns need the border layout.
+  $('qr-only').addEventListener('change', () => { if ($('qr-only').checked) $('line-patterns').checked = false; updateLevel(); });
+  $('line-patterns').addEventListener('change', () => { if ($('line-patterns').checked) $('qr-only').checked = false; updateLevel(); });
   updateLevel();
   function choose(file) {
     if (!file || busy) return;
@@ -51,7 +55,7 @@
   async function renderResult(job) {
     const [preview,pdf,manifest] = await Promise.all([request('/api/jobs/'+job.id+'/preview',{},false),request('/api/jobs/'+job.id+'/pdf',{},false),request('/api/jobs/'+job.id+'/manifest',{},false)]);
     const url=URL.createObjectURL(preview);blobs.push(url);$('result-preview').src=url;$('result-preview').hidden=false;$('paper-demo').hidden=true;
-    $('preview-title').textContent='생성된 시험지';$('preview-tag').textContent=job.summary.intensity+'단계';$('preview-note').textContent='실제 PDF의 첫 페이지입니다. 내려받은 파일에서 전체 페이지를 확인하세요.';
+    $('preview-title').textContent='생성된 시험지';$('preview-tag').textContent=labels[job.summary.intensity]||'기본';$('preview-note').textContent='실제 PDF의 첫 페이지입니다. 내려받은 파일에서 전체 페이지를 확인하세요.';
     const summary=job.summary;
     $('result-stats').replaceChildren();
     for(const [value,label] of [[summary.pages,'쪽'],[summary.qr,'개 QR'],...(summary.intensity===3?[[summary.lines,'개 선 변경']]:[])]) { const span=document.createElement('span');span.className='stat';const b=document.createElement('b');b.textContent=value;span.append(b,' '+label);$('result-stats').append(span); }
