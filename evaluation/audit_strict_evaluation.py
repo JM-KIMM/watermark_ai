@@ -87,9 +87,10 @@ def audit(out):
     pilot={(v['exam'],v['section'],v['question']) for v in plan['pilot']}
     public={};allrows={}
     for backend in ('vision','ocr_llm'):
-        rows=[];responses=list((out/'responses'/backend).glob('seed-*/*/*/*.json'))
+        rows=[];responses=list((out/'responses'/backend).glob('seed-*/*/*/*.json'));usages=[]
         for path in responses:
             r=read(path)
+            usages += [a['usage'] for a in r['attempts'] if a.get('usage')]
             if r['identity']!=plan['identity'] or r['input_seal_sha256']!=sha(out/'input_seal.json'):raise ValueError('Response experiment changed')
             for p,digest in zip(r['context_pages'],r['image_sha256']):
                 relative=f"captures/{r['exam']}/{r['condition']}/page-{p:03}.png"
@@ -124,7 +125,12 @@ def audit(out):
             comparisons=[('original','current_choices'),('layout_control','current_choices')]
             if seed==42:comparisons += [('other_page','current_choices'),('command_only','current_choices')]
             pilot_comparisons[str(seed)]=[paired(subset,a,b) for a,b in comparisons]
-        public[backend]=dict(response_batches=len(responses),primary={c:metrics([r for r in primary if r['condition']==c]) for c in plan['primary']},
+        prompt_counts=[u['prompt_eval_count'] for u in usages if u.get('prompt_eval_count') is not None]
+        public[backend]=dict(response_batches=len(responses),
+             inference_checks=dict(max_observed_prompt_tokens=max(prompt_counts,default=0),
+                configured_context=plan['num_ctx'],near_context_limit=sum(v>=plan['num_ctx']-64 for v in prompt_counts),
+                done_reasons=dict(Counter(str(u.get('done_reason')) for u in usages))),
+             primary={c:metrics([r for r in primary if r['condition']==c]) for c in plan['primary']},
              primary_comparisons=[paired(primary,'original','current_choices'),paired(primary,'layout_control','current_choices')],
              exams={e:{c:metrics([r for r in primary if r['exam']==e and r['condition']==c]) for c in plan['primary']} for e in sorted({r['exam'] for r in primary})},
              pilot={str(seed):{c:metrics([r for r in rows if r['pilot'] and r['seed']==seed and r['condition']==c]) for c in plan['primary']+(plan['diagnostics'] if seed==42 else [])} for seed in plan['seeds']},
@@ -132,6 +138,9 @@ def audit(out):
         allrows[backend]=rows
     result=dict(identity=plan['identity'],independent_regrade=True,input_hashes_verified=True,capture_count=len(seal['captures']),backends=public,
                 commercial=plan['commercial'],warning='Previously seen corpus; low original accuracy or answer collapse limits interpretation. Capture evaluation is not a real camera or AI glasses test.')
+    from strict_score_units import score_units
+    result['supplementary_subject_scores']={backend:score_units(rows) for backend,rows in allrows.items()}
+    result['scoring_note']='Frozen weights for English/tax are question counts. Supplementary subject scores use English printed 2/3 points, Korean/math official points and tax 100-point conversion. See docs/SCORING_CLARIFICATION.md.'
     (out/'independent_audit.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf8')
     (out/'audited_questions.json').write_text(json.dumps(allrows,ensure_ascii=False,indent=2),encoding='utf8')
     print(json.dumps({k:v['primary'] for k,v in public.items()},ensure_ascii=False,indent=2))
