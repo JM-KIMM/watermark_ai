@@ -44,7 +44,7 @@ def build_options(settings, data_root):
                         starts_at=parse_time(settings.get("starts_at")),ends_at=parse_time(settings.get("ends_at")),
                         days=7,retention_days=int(settings.get("retention_days",7)),
                         max_events=int(settings.get("max_events",1000)))
-    placement = settings.get("qr_placement", "gutter" if level != 1 else "fixed")
+    placement = settings.get("qr_placement", "question-end" if level != 1 else "fixed")
     qr_size = float(settings.get("qr_size", 40))
     return dict(intensity=level,question_style="qr",qr_size=qr_size,
                 mode="cycle",font_mode=settings.get("font_mode","file"),

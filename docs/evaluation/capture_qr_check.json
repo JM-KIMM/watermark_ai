@@ -1,0 +1,89 @@
+{
+  "dpi": 300,
+  "checks": [
+    {
+      "exam": "exam01",
+      "page": 1,
+      "question": "1",
+      "decoded": true
+    },
+    {
+      "exam": "exam01",
+      "page": 32,
+      "question": "80",
+      "decoded": true
+    },
+    {
+      "exam": "exam02",
+      "page": 1,
+      "question": "1",
+      "decoded": true
+    },
+    {
+      "exam": "exam02",
+      "page": 31,
+      "question": "80",
+      "decoded": true
+    },
+    {
+      "exam": "exam03",
+      "page": 1,
+      "question": "1",
+      "decoded": true
+    },
+    {
+      "exam": "exam03",
+      "page": 32,
+      "question": "80",
+      "decoded": true
+    },
+    {
+      "exam": "exam04",
+      "page": 1,
+      "question": "1",
+      "decoded": true
+    },
+    {
+      "exam": "exam04",
+      "page": 30,
+      "question": "80",
+      "decoded": true
+    },
+    {
+      "exam": "exam05",
+      "page": 1,
+      "question": "1",
+      "decoded": true
+    },
+    {
+      "exam": "exam05",
+      "page": 40,
+      "question": "45",
+      "decoded": true
+    },
+    {
+      "exam": "exam08",
+      "page": 1,
+      "question": "1",
+      "decoded": true
+    },
+    {
+      "exam": "exam08",
+      "page": 40,
+      "question": "30",
+      "decoded": true
+    },
+    {
+      "exam": "exam09",
+      "page": 1,
+      "question": "1",
+      "decoded": true
+    },
+    {
+      "exam": "exam09",
+      "page": 16,
+      "question": "45",
+      "decoded": true
+    }
+  ]
+}

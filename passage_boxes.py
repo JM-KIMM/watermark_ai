@@ -36,12 +36,13 @@ def text_highlight(drawings, words):
     return len(sides)==4
 
 
-def passage_frames(page):
+def passage_frames(page, audit=None):
     segments = []
     drawings = page.get_drawings()
     for drawing in drawings:
         color = drawing.get('color')
-        if (not color or max(color) > .3 or drawing.get('fill') is not None
+        fill=drawing.get('fill')
+        if (not color or max(color) > .65 or (fill is not None and min(fill)<.98)
                 or float(drawing.get('width') or .5) > 1.5):
             continue
         for item in drawing['items']:
@@ -77,15 +78,16 @@ def passage_frames(page):
     segments = merged
     vertical = [r for r in segments if r.width < .25 and r.height >= 30]
     horizontal = [r for r in segments if r.height < .25]
-    words = [fitz.Rect(w[:4]) for w in page.get_text('words')]
+    raw_words=page.get_text('words')
+    words = [fitz.Rect(w[:4]) for w in raw_words]
     images = [fitz.Rect(i['bbox']) for i in page.get_image_info()]
     found = []
     for left in vertical:
         for right in vertical:
             width = right.x0-left.x0
-            if not 100 <= width <= page.rect.width*.7:
+            if not 80 <= width <= page.rect.width*.95:
                 continue
-            if abs(left.y0-right.y0) > 1 or abs(left.y1-right.y1) > 1:
+            if abs(left.y0-right.y0) > 1.5 or abs(left.y1-right.y1) > 1.5:
                 continue
             box = fitz.Rect(left.x0,left.y0,right.x0,left.y1)
             edges = [left, right]
@@ -93,19 +95,40 @@ def passage_frames(page):
                 parts = [r for r in horizontal if abs(r.y0-y) < 1
                          and r.x0 >= box.x0-1 and r.x1 <= box.x1+1]
                 coverage = sum(r.width for r in parts)
-                if coverage < width*.65 or coverage > width*1.05:
+                if coverage < width*.4 or coverage > width*1.05:
                     break
                 edges.extend(parts)
             else:
                 inner = box+(4,4,-4,-4)
-                if sum(inner.contains(w) for w in words) < 3 or any(inner.intersects(i) for i in images):
+                enclosed=[w for w in raw_words if inner.contains(fitz.Rect(w[:4]))]
+                entry=dict(bbox=list(box),status='candidate')
+                if audit is not None:audit.append(entry)
+                if len(enclosed)<3 or sum(len(w[4]) for w in enclosed)<12 or box.height>page.rect.height*.85:
+                    entry.update(status='preserved',reason='not-a-text-passage')
                     continue
-                # Tables, graphs and nested diagrams keep their original frames.
+                # A table's grid joins its outer boundary. A diagram wholly
+                # inside a text passage does not prevent replacing just the frame.
                 interior_drawings = [d for d in drawings if inner.intersects(d['rect']+(-.3,-.3,.3,.3))
                        if not any(max(abs(d['rect'][k]-e[k]) for k in range(4)) < 1 for e in edges)
                        and not (len(d['items']) == 1 and d['items'][0][0] == 're'
                                 and max(abs(d['rect'][k]-box[k]) for k in range(4)) < 1)]
-                if not text_highlight(interior_drawings,words):
+                grid=False
+                for d in interior_drawings:
+                    for item in d['items']:
+                        if item[0]=='l':
+                            a,b=item[1:3]
+                            if (abs(a.y-b.y)<.3 and box.y0+2<a.y<box.y1-2
+                                    and min(a.x,b.x)<=box.x0+2 and max(a.x,b.x)>=box.x1-2):grid=True
+                            if (abs(a.x-b.x)<.3 and box.x0+2<a.x<box.x1-2
+                                    and min(a.y,b.y)<=box.y0+2 and max(a.y,b.y)>=box.y1-2):grid=True
+                        elif item[0]=='re':
+                            r=fitz.Rect(item[1])
+                            if r.width>20 and r.height>10 and any(abs(r[k]-box[k])<1.5 for k in range(4)):
+                                grid=True
+                rich=len(enclosed)>=8 and sum(len(w[4]) for w in enclosed)>=70
+                if grid or (not rich and (not text_highlight(interior_drawings,words)
+                                          or any(inner.intersects(i) for i in images))):
+                    entry.update(status='preserved',reason='table-grid-or-standalone-figure')
                     continue
                 # A title such as <보기> interrupts the top rule. Leave enough
                 # clearance at those internal endpoints for its glyph bounds.
@@ -123,23 +146,28 @@ def passage_frames(page):
                         break
                     safe_edges.append(e)
                 if len(safe_edges) != len(edges):
+                    entry.update(status='preserved',reason='title-clearance')
                     continue
                 strips = [e+(-3.5,-3.5,3.5,3.5) for e in safe_edges]
                 if (not all(page.rect.contains(s) for s in strips)
                         or any(s.intersects(w) for s in strips for w in words)
                         or any(s.intersects(i) for s in strips for i in images)):
+                    entry.update(status='preserved',reason='border-touches-content')
                     continue
                 if not any(box.intersects(f['box']) for f in found):
                     found.append(dict(box=box,edges=safe_edges))
+                    entry.update(status='replaced')
+                else:
+                    entry.update(status='preserved',reason='nested-or-duplicate-frame')
     return found
 
 
-def apply_passage_boxes(source, target, *, band, payload, fontfile):
+def apply_passage_boxes(source, target, *, band, payload, fontfile, audit=None):
     from watermark import fill_line
     font = fitz.Font(fontfile=str(fontfile))
     target.insert_font(fontname='passagewm', fontfile=str(fontfile))
     records = []
-    for frame in passage_frames(source):
+    for frame in passage_frames(source,audit=audit):
         regions = []
         for edge in frame['edges']:
             dst = edge+(band,band,band,band)

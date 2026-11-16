@@ -28,7 +28,7 @@ class LayoutTests(unittest.TestCase):
             p.insert_text((340,200),'These words are inside a table.')
             p.draw_line((325,235),(575,235))
             doc.save(source); doc.close()
-            options = build_options({},root)
+            options = build_options({'qr_placement':'gutter'},root)
             self.assertEqual(options['opacity'],.9)
             report = build(source,root/'out.pdf',preview=False,**options)
             self.assertEqual(len(report['pages'][0]['passage_boxes']),1)

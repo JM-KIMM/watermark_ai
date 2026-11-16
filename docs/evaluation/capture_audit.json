@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "total_exposures": 554,
+  "responses": 627,
+  "unique_png_captures": 627,
+  "independently_regraded_correct": {
+    "original": 86,
+    "watermarked": 100,
+    "layout_control": 97
+  },
+  "inference_failures": {
+    "original": 0,
+    "watermarked": 0,
+    "layout_control": 0
+  },
+  "independently_regraded_points": {
+    "original": 124,
+    "watermarked": 141,
+    "layout_control": 148
+  },
+  "max_points": 832,
+  "checks": [
+    "official-key mapping unchanged",
+    "raw reply to parsed choices",
+    "image SHA256 matches actual PNG",
+    "all context pages present",
+    "null failures distinct from answered choices",
+    "independent score arithmetic"
+  ]
+}

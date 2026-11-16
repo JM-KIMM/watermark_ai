@@ -1,0 +1,51 @@
+{
+  "identity": "993265714526bbc322d1c38e130c2f8a3dfce48364a6e851bfa3e32df912c928",
+  "version": 7,
+  "model": {
+    "name": "qwen2.5vl:3b",
+    "model": "qwen2.5vl:3b",
+    "modified_at": "2026-11-16T00:39:17.9015274+09:00",
+    "size": 3200627168,
+    "digest": "fb90415cde1ef08aa669ae74b082d49b158729b6db1ab183c941417d507e71a1",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen25vl",
+      "families": [
+        "qwen25vl"
+      ],
+      "parameter_size": "3.8B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 128000,
+      "embedding_length": 2048,
+      "runner": "ggml"
+    },
+    "capabilities": [
+      "completion",
+      "vision"
+    ]
+  },
+  "dpi": 150,
+  "seed": 42,
+  "temperature": 0,
+  "num_ctx": 16384,
+  "num_predict": 1024,
+  "implementation_sha256": {
+    "watermark.py": "b71d24644a06bcb20dd0a00c4a3ffa474999ca6b5ee4540a24dfaae9b2259fac",
+    "question_layout.py": "cc906aaa74c5bfc3389c757d706c23189888f56eb8a86b206d6eb846bb9285e3",
+    "question_marks.py": "6e990e5955032ba21f100e5c9bcd6b0129f1839e7f3b56caa908885a3b30d8c1",
+    "passage_boxes.py": "801193d7b91f2c3dcf838715dfe3beed4e46a5fffb8cacd983a5e4c4ce4d9719"
+  },
+  "conditions": [
+    "original",
+    "watermarked",
+    "layout_control"
+  ],
+  "input": "Saved full-page PNG captures sent directly to the local vision model; no OCR, PDF text or answers in prompt",
+  "source": "Digital PDF page rendering, not a physical camera photograph or AI-glasses measurement",
+  "control": "Same question-end blank rows and outer canvas, without QR or watermark; separates layout/resizing effects",
+  "exclude": "descriptive, math short-answer, English listening 1-17",
+  "retries": "maximum 3; string schema only on third attempt; failures remain null",
+  "baseline": "Fresh inference; no previous-version responses reused",
+  "grading_fix": "English even-form question 44 is 3, verified against official answer-table image"
+}

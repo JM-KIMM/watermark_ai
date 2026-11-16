@@ -6,11 +6,11 @@ from zipfile import ZipFile, ZIP_DEFLATED
 
 ROOT=Path(__file__).resolve().parent
 FILES=[
-    "webapp.py","watermark.py","question_marks.py","source_glyphs.py","line_patterns.py","passage_boxes.py",
+    "webapp.py","watermark.py","question_marks.py","source_glyphs.py","line_patterns.py","passage_boxes.py","question_layout.py",
     "csv_store.py","tracking_db.py","tools/db_manager.py","tools/migrate_legacy.py",
     "prompts_ko.json","requirements.txt","웹실행.bat","tools/DB관리.bat","docs/WEB_README.md",
     "LICENSE","THIRD_PARTY_NOTICES.md","package_web.py",
-    "tests/__init__.py","tests/test_webapp.py","tests/test_csv_store.py","tests/test_layout.py",
+    "tests/__init__.py","tests/test_webapp.py","tests/test_csv_store.py","tests/test_layout.py","tests/test_question_end.py","tests/test_capture_evaluation.py",
     "web/index.html","web/app.js","web/style.css",
     "AUTHORS.md","CITATION.cff","docs/README_CSV.md","docs/RESEARCH.md","docs/experiment_plan.csv",
     "evaluation/benchmark_local.py","evaluation/prepare_benchmark.py","tests/test_regressions.py",
@@ -21,6 +21,12 @@ FILES=[
     "evaluation/export_corpus_report.py","docs/CORPUS_RESULTS_2026-11-16.md",
     "evaluation/enhance_corpus.py","tests/test_math_captions.py","docs/CORPUS_BASELINE_2026-11-16.md",
     "evaluation/ocr_llm_evaluation.py","evaluation/decoy_watermark.py",
+    "evaluation/capture_evaluation.py","evaluation/verify_capture_layout.py","evaluation/audit_capture_results.py","evaluation/export_capture_report.py",
+    "docs/CAPTURE_RESULTS_2026-11-16.md",
+    "docs/evaluation/capture_scores.json","docs/evaluation/capture_questions.json",
+    "docs/evaluation/capture_protocol.json","docs/evaluation/capture_verification.json",
+    "docs/evaluation/capture_audit.json","docs/evaluation/capture_qr_check.json","docs/evaluation/capture_qr_all.json",
+    "docs/evaluation/capture_inventory.json",
     "docs/OCR_LLM_RESULTS_2026-11-16.md","docs/evaluation/ocr_llm_scores.json",
     "docs/evaluation/corpus_scores.json","docs/evaluation/corpus_questions.json",
     "docs/evaluation/corpus_inventory.json","docs/evaluation/corpus_protocol.json",

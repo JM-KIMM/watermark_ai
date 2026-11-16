@@ -149,7 +149,10 @@ def attach_qr_label(target, space, bounds, occupied, *, band, fontfile):
 
 
 def apply_question_marks(source, target, *, band, style, qr_size, payload, url_factory=None,
-                         placement="fixed", seed=42, label_font=None):
+                         placement="fixed", seed=42, label_font=None, end_slots=None):
+    if placement == 'question-end':
+        return apply_end_marks(target,end_slots or [],band=band,qr_size=qr_size,
+                               payload=payload,url_factory=url_factory,label_font=label_font)
     questions = detect_questions(source)
     if placement == "gutter":
         return apply_gutter_marks(source, target, questions, band=band, style=style,
@@ -189,6 +192,33 @@ def apply_question_marks(source, target, *, band, style, qr_size, payload, url_f
         for record in records:
             if record['qr_status']=='placed':
                 record.update(attach_qr_label(target,fitz.Rect(record['qr_source_bbox']),source.rect,occupied,band=band,fontfile=label_font))
+    return records
+
+
+def apply_end_marks(target, slots, *, band, qr_size, payload, url_factory=None, label_font=None):
+    """Each row was reserved before rendering: every question receives its QR."""
+    records=[]
+    font=fitz.Font(fontfile=str(label_font)) if label_font else None
+    for slot in slots:
+        record=dict(slot['question'],qr_status='placed',number_status='disabled')
+        actual_payload=url_factory(record['number']) if url_factory else payload
+        image,qr=make_qr(actual_payload,'M' if url_factory else 'Q')
+        src=fitz.Rect(slot['qr_bbox']);dst=src+(band,band,band,band)
+        target.insert_image(dst,stream=png_bytes(image))
+        record.update(qr_bbox=list(dst),qr_source_bbox=list(src),qr_payload=actual_payload,
+                      qr_anchor='question-end',question_end_y=slot['slot_bbox'][1],
+                      qr_modules=qr.modules_count,qr_module_pt=qr_size/(qr.modules_count+8),
+                      qr_kind='access-url' if url_factory else 'command',
+                      qr_error_correction='M' if url_factory else 'Q')
+        if font:
+            label=f"{record['number']}번 · {QR_LABEL}"
+            size=min(4.5,(qr_size-2)/font.text_length(label,fontsize=1))
+            rect=fitz.Rect(dst.x0,dst.y1+2,dst.x1,dst.y1+10)
+            target.insert_font(fontname='qrlabel',fontfile=str(label_font))
+            target.insert_text((rect.x0+1,rect.y1-2),label,fontname='qrlabel',fontsize=size,color=(0,0,0))
+            record.update(label_status='placed',label=label,label_bbox=list(rect),
+                          label_source_bbox=list(rect+(-band,-band,-band,-band)))
+        records.append(record)
     return records
 
 

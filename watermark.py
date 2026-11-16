@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
+from contextlib import ExitStack
 import hashlib
 import json
 from pathlib import Path
@@ -180,8 +181,10 @@ def build(source, output, *, mode="cycle", font=None, size=6.0, opacity=.45,
         band = 0
     if not 0 <= size_jitter <= .5:
         raise ValueError("글자 크기 변동은 0~0.5(±50%) 범위입니다.")
-    if not 0 <= width_jitter <= .3 or qr_placement not in ("fixed", "local-random", "gutter"):
-        raise ValueError("가로 변동은 0~0.3, QR 위치는 fixed/local-random/gutter입니다.")
+    if not 0 <= width_jitter <= .3 or qr_placement not in ("fixed", "local-random", "gutter", "question-end"):
+        raise ValueError("지원하지 않는 QR 위치 또는 가로 변동입니다.")
+    if qr_placement == 'question-end' and question_style not in ('qr','none'):
+        raise ValueError("문제 끝 배치는 QR 전용입니다.")
     if font_mode not in ("file", "source"):
         raise ValueError("글꼴 모드는 file/source 중 하나입니다.")
     if tracking and question_style not in ("qr", "both"):
@@ -199,7 +202,7 @@ def build(source, output, *, mode="cycle", font=None, size=6.0, opacity=.45,
     if want_border and band < size * (1+size_jitter) + 8:
         raise ValueError("테두리 폭은 글자 크기보다 최소 8pt 커야 합니다.")
     fontfile = font_path(font)
-    with fitz.open(source) as doc:
+    with fitz.open(source) as doc, ExitStack() as extra_docs:
         if doc.needs_pass:
             raise ValueError("암호화된 PDF는 먼저 잠금을 해제하세요.")
         # Normalize rotation before reading coordinates; flatten visible annotations.
@@ -254,9 +257,8 @@ def build(source, output, *, mode="cycle", font=None, size=6.0, opacity=.45,
                     days=tracking.get("days", 7), retention_days=tracking.get("retention_days", 7),
                     max_events=tracking.get("max_events", 1000), issuance_ref=tracking.get("issuance_ref", ""),
                     starts_at=tracking.get("starts_at"),ends_at=tracking.get("ends_at"))
-        out = fitz.open()
-        records = []
-        for i, src in enumerate(doc):
+        payloads=[]
+        for i in range(count):
             other = (i + offset) % count
             prompt = prompts[i % len(prompts)]
             summary = summaries[other]
@@ -270,6 +272,35 @@ def build(source, output, *, mode="cycle", font=None, size=6.0, opacity=.45,
             if math_watermark:
                 payload = QR_DIRECTIVE + " | " + MATH_FORMULAS[i%2]
                 paired = QR_DIRECTIVE + " | " + MATH_FORMULAS[(i+1)%2]
+            payloads.append((payload,paired))
+        layouts = None
+        original_sizes = [list(p.rect.br) for p in doc]
+        pre_frames = [[] for _ in doc]
+        frame_audits = [[] for _ in doc]
+        if qr_placement == 'question-end':
+            from question_layout import plan_page,reserve_question_rows,map_rect,map_point
+            layouts = [plan_page(p,qr_size) for p in doc]
+            # Detect/replace frames before reflow; clipped PDF forms can expose
+            # duplicate vector/text objects to extraction tools after reflow.
+            if replace_passage_boxes:
+                from passage_boxes import apply_passage_boxes
+                for i,p in enumerate(doc):
+                    pre_frames[i] = apply_passage_boxes(p,p,band=0,payload=payloads[i][0],fontfile=fontfile,audit=frame_audits[i])
+                    for frame in pre_frames[i]:
+                        frame['output_regions']=[list(map_rect(r,layouts[i])+(band,band,band,band))
+                                                 for r in frame['output_regions']]
+            for i,links in enumerate(saved_links):
+                for link in links:
+                    link['from']=map_rect(link['from'],layouts[i])
+                    if link.get('kind')==fitz.LINK_GOTO and 0<=link.get('page',-1)<count:
+                        link['to']=map_point(link.get('to',(0,0)),layouts[link['page']])
+            reflowed,layouts = reserve_question_rows(doc,qr_size,layouts)
+            doc=extra_docs.enter_context(reflowed)
+        out = fitz.open()
+        records = []
+        for i, src in enumerate(doc):
+            other = (i + offset) % count
+            payload,paired = payloads[i]
             # Extend the canvas: source content remains at its original physical scale.
             p = out.new_page(width=src.rect.width + 2 * band,
                              height=src.rect.height + 2 * band)
@@ -292,22 +323,26 @@ def build(source, output, *, mode="cycle", font=None, size=6.0, opacity=.45,
                 from line_patterns import apply_line_patterns
                 lines = apply_line_patterns(src,p,band=band,payload=payload)
             marks = []
-            boxes = []
-            if replace_passage_boxes:
+            boxes = pre_frames[i]
+            if replace_passage_boxes and layouts is None:
                 from passage_boxes import apply_passage_boxes
-                boxes = apply_passage_boxes(src, p, band=band, payload=payload, fontfile=fontfile)
+                boxes = apply_passage_boxes(src, p, band=band, payload=payload, fontfile=fontfile,audit=frame_audits[i])
             if question_style != "none":
                 marks = apply_question_marks(src, p, band=band, style=question_style,
                                              qr_size=qr_size, payload=qr_prompt or QR_PROMPT,
                                              url_factory=(lambda question, idx=i: store.issue(campaign, idx+1, question)) if store else None,
-                                             placement=qr_placement, seed=seed+i,label_font=fontfile if qr_captions else None)
+                                             placement=qr_placement, seed=seed+i,label_font=fontfile if qr_captions else None,
+                                             end_slots=[s for c in layouts[i]['columns'] for s in c['slots']] if layouts else None)
             records.append({"page": i + 1, "mode": "math-formula" if math_watermark else modes[i],
                             "summary_source_page": other + 1 if modes[i] != "command" and not math_watermark else None,
                             "payload": payload,
                             "source_size_pt": [src.rect.width, src.rect.height],
+                            "original_source_size_pt": original_sizes[i],
+                            "question_layout": layouts[i] if layouts else None,
                             "typography": type_stats,
                             "line_patterns":lines,
                             "passage_boxes": boxes,
+                            "passage_box_audit": frame_audits[i],
                             "question_marks": marks})
             if progress:
                 progress(i+1,count)
@@ -335,7 +370,7 @@ def build(source, output, *, mode="cycle", font=None, size=6.0, opacity=.45,
               "intensity":intensity,
               "font_mode": "file" if math_watermark else font_mode, "size_jitter": size_jitter, "seed": seed,
               "math_watermark": bool(math_watermark),
-              "feature_version": "passage-box-gutter-qr-v2",
+              "feature_version": "question-end-qr-passage-v3",
               "replace_passage_boxes": bool(replace_passage_boxes),
               "qr_captions": bool(qr_captions),
               "width_jitter": width_jitter, "qr_placement": qr_placement,
@@ -373,7 +408,7 @@ def main():
     parser.add_argument("--qr-prompt")
     parser.add_argument("--size-jitter", type=float, default=0)
     parser.add_argument("--width-jitter", type=float, default=0)
-    parser.add_argument("--qr-placement", choices=["fixed", "local-random", "gutter"], default="fixed")
+    parser.add_argument("--qr-placement", choices=["fixed", "local-random", "gutter", "question-end"], default="fixed")
     parser.add_argument("--replace-passage-boxes", action="store_true")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--font-mode", choices=["file", "source"], default="file")
