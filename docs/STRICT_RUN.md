@@ -19,6 +19,7 @@ python evaluation/strict_evaluation.py --output outputs/strict_eval_v2 --stage a
 python evaluation/verify_strict_qr.py outputs/strict_eval_v2
 python evaluation/analyze_strict_ocr.py outputs/strict_eval_v2
 python evaluation/audit_strict_evaluation.py outputs/strict_eval_v2
+python evaluation/export_strict_report.py outputs/strict_eval_v2
 ```
 
 `all`은 PDF 준비, PNG 캡처, 실제 OCR, 비전 모델, OCR+LLM 순서로 실행합니다. OCR 작업은 비전 추론과 겹쳐 진행합니다. 추론 응답은 한 요청씩 원자적으로 저장합니다. 중단 후 같은 명령으로 재개하면 이미 완료된 추론을 재사용합니다. 코드를 수정하거나 모델·프롬프트·계획을 변경한 경우 기존 실험 디렉터리를 재사용할 수 없습니다. 새 출력 디렉터리를 지정하세요.
