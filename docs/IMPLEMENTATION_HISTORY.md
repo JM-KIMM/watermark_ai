@@ -2,9 +2,9 @@
 
 이 문서는 이전 버전의 기록입니다. 현재 사용법과 프로젝트 소개는 [프로젝트 README](../README.md)를 확인하세요.
 
-**간단한 브라우저 생성 화면은 `웹실행.bat`으로 시작합니다. [로컬 웹 사용법](../WEB_README.md)을 확인하세요.**
+**간단한 브라우저 생성 화면은 `웹실행.bat`으로 시작합니다. [로컬 웹 사용법](WEB_README.md)을 확인하세요.**
 
-**현재 CSV 전용 버전의 사용법은 [README_CSV.md](../README_CSV.md), 논문 검토와 실험 계획은 [RESEARCH.md](../RESEARCH.md)를 확인하세요. SQLite 경로를 사용하는 예시는 현재 관리 화면에서 지원하지 않습니다.**
+**현재 CSV 전용 버전의 사용법은 [README_CSV.md](README_CSV.md), 논문 검토와 실험 계획은 [RESEARCH.md](RESEARCH.md)를 확인하세요. SQLite 경로를 사용하는 예시는 현재 관리 화면에서 지원하지 않습니다.**
 
 `실행.bat`을 더블클릭하면 PDF와 글꼴을 선택하는 로컬 창이 열립니다.
 설치가 필요한 경우 `python -m pip install -r requirements.txt`를 실행하세요.

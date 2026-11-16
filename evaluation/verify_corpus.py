@@ -1,4 +1,7 @@
 """Check the actual corpus inputs and independently regrade every saved response."""
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repository root
 import hashlib
 import json
 from pathlib import Path

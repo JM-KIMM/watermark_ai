@@ -1,4 +1,7 @@
 """Small desktop front end for the local PDF prototype."""
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repository root
 from pathlib import Path
 import threading
 import tkinter as tk
@@ -19,7 +22,7 @@ def main():
     tabs.add(box, text="시험지 생성")
     tabs.add(settings, text="글꼴·크기·QR CSV 설정")
     source, font = tk.StringVar(), tk.StringVar()
-    prompts_file = tk.StringVar(value=str(Path(__file__).resolve().parent / "prompts_ko.json"))
+    prompts_file = tk.StringVar(value=str(Path(__file__).resolve().parent.parent / "prompts_ko.json"))
     mode, size, opacity, band = (tk.StringVar(value=v) for v in ("cycle", "6", "0.45", "20"))
     question_style = tk.StringVar(value="both")
     qr_size = tk.StringVar(value="40")
@@ -29,7 +32,7 @@ def main():
     width_jitter = tk.StringVar(value="0")
     qr_placement = tk.StringVar(value="fixed")
     tracking_enabled = tk.BooleanVar(value=True)
-    db_path = tk.StringVar(value=str(Path(__file__).resolve().parent / "data" / "qr_csv"))
+    db_path = tk.StringVar(value=str(Path(__file__).resolve().parent.parent / "data" / "qr_csv"))
     base_url = tk.StringVar(value="http://127.0.0.1:8765")
     campaign_days, retention_days, max_events = (tk.StringVar(value=v) for v in ("7", "7", "1000"))
     issuance_ref = tk.StringVar()

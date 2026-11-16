@@ -1,6 +1,9 @@
 # SPDX-License-Identifier: GPL-3.0-only
 # Copyright (C) 2026 JM-KIMM and contributors.
 """Read-only migration of the earlier SQLite sample to CSV; original stays untouched."""
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repository root
 import argparse
 from pathlib import Path
 import sqlite3

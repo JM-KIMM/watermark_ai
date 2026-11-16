@@ -28,8 +28,8 @@ IP 수집은 기본으로 꺼져 있습니다. 켠 경우 `기록 시작`으로 
 
 PDF 처리는 한 번에 하나씩 별도 프로세스에서 수행하고 15분 후 중단합니다. 처리 중 다른 생성 요청은 받지 않습니다. 파일·결과는 `outputs/web`에 저장됩니다. 생성 파일과 접속 기록은 배포 ZIP에 포함하지 않습니다.
 
-현재 요약은 로컬 대표 문장 추출입니다. 로컬 LLM과 `skt/A.X-4.0-Light`는 연결하지 않았고, 시험지 풀이·답지 다운로드·모델 성능평가는 실행하지 않았습니다. 읽을 텍스트가 없는 스캔 PDF에는 별도 OCR이 필요합니다. 브라우저의 보관 기록은 세션 단위이며 이전 결과 파일은 `outputs/web`에서 찾을 수 있습니다.
+현재 요약은 로컬 대표 문장 추출입니다. 로컬 LLM과 `skt/A.X-4.0-Light`는 연결하지 않았습니다. 웹 생성기는 시험지 풀이·답지 다운로드·모델 성능평가를 실행하지 않으며, 별도 평가 도구로 수행한 로컬 모델 비교는 `docs/CORPUS_RESULTS_2026-11-16.md`에 있습니다. 읽을 텍스트가 없는 스캔 PDF에는 별도 OCR이 필요합니다. 브라우저의 보관 기록은 세션 단위이며 이전 결과 파일은 `outputs/web`에서 찾을 수 있습니다.
 
-개발 실행: `python webapp.py --no-browser`. 기능 검증: `python -m unittest test_webapp -v`.
+개발 실행: `python webapp.py --no-browser`. 기능 검증: `python -m unittest discover -s tests -t . -v`.
 
 자체 소스 코드의 GPLv3 전문은 `LICENSE`, 의존 라이브러리 고지는 `THIRD_PARTY_NOTICES.md`에 있습니다. 이 ZIP에는 시험지 샘플·접속 기록·모델 파일을 포함하지 않습니다.

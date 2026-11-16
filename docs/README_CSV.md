@@ -1,15 +1,15 @@
 # 현재 버전: CSV 관리와 워터마크 비교
 
-브라우저 사용자는 [프로젝트 소개](README.md)와 [로컬 웹 사용법](WEB_README.md)을 먼저 확인하세요. 아래 `outputs/` 샘플 경로와 과거 측정값은 로컬 개발 기록이며, 실제 시험지와 생성 결과는 공개 저장소·배포 ZIP에 포함하지 않습니다.
+브라우저 사용자는 [프로젝트 소개](../README.md)와 [로컬 웹 사용법](WEB_README.md)을 먼저 확인하세요. 아래 `outputs/` 샘플 경로와 과거 측정값은 로컬 개발 기록이며, 실제 시험지와 생성 결과는 공개 저장소·배포 ZIP에 포함하지 않습니다.
 
 ## 실행
 
 ```powershell
 python -m pip install -r requirements.txt
-python app.py
+python tools/app.py
 ```
 
-`실행.bat`은 생성 창, `DB관리.bat`은 현재 CSV 관리 창을 엽니다. 화면의 QR 접속 기록 여부를 끄면 서버 없이 PDF 생성·로컬 파일 관리만 사용합니다. 기본값은 본문 모양 재사용, 크기 ±25%, 가로 비율 고정, 문제별 QR, CSV 연결입니다. ±25%는 검증된 최적값이 아닙니다.
+`tools/실행.bat`은 생성 창, `tools/DB관리.bat`은 현재 CSV 관리 창을 엽니다. 화면의 QR 접속 기록 여부를 끄면 서버 없이 PDF 생성·로컬 파일 관리만 사용합니다. 기본값은 본문 모양 재사용, 크기 ±25%, 가로 비율 고정, 문제별 QR, CSV 연결입니다. ±25%는 검증된 최적값이 아닙니다.
 
 ## 파일 저장
 
@@ -32,7 +32,7 @@ Excel에서 관리할 수 있도록 CSV 내보내기를 제공합니다. 내보�
 이전 SQLite를 옮기는 명령은 다음과 같습니다. 원본은 읽기 전용으로 열고 삭제하지 않습니다. 대상 CSV 폴더가 비어 있어야 합니다.
 
 ```powershell
-python migrate_legacy.py data/qr_access.sqlite3 data/qr_csv
+python tools/migrate_legacy.py data/qr_access.sqlite3 data/qr_csv
 ```
 
 ## QR와 서버
@@ -78,9 +78,9 @@ python watermark.py "세법학1부.pdf" -o outputs/custom_csv.pdf --question-sty
 
 ```powershell
 python -m pip install -r requirements-dev.txt
-python -m unittest test_csv_store test_typography -v
-python verify.py
-python verify_question_marks.py
+python -m unittest discover -s tests -t . -v
+python tools/verify.py
+python tools/verify_question_marks.py
 ```
 
 CSV 기록·동시 쓰기·보관 기한·수식 이스케이프·읽기 전용 이관·요청 제한·장애 후 복구, 글자 변동 범위·시드 재현·QR 겹침을 검증합니다. QR 복원률은 실제 PDF에서 QR만 잘라낸 디지털 이미지 기준이며 휴대전화 촬영이나 AI 방해 성능을 뜻하지 않습니다. 기존 샘플과 새 샘플의 측정은 `outputs/qr_metrics.json`에 있습니다.

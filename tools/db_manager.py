@@ -1,6 +1,9 @@
 # SPDX-License-Identifier: GPL-3.0-only
 # Copyright (C) 2026 JM-KIMM and contributors.
 """Local desktop management; no network-accessible administrative API."""
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repository root
 from pathlib import Path
 import threading
 import tkinter as tk
@@ -170,7 +173,7 @@ def open_manager(parent, db_path):
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="로컬 QR 접속 IP·사건 DB 관리")
-    parser.add_argument("--db", default=str(Path(__file__).resolve().parent/"data"/"qr_csv"))
+    parser.add_argument("--db", default=str(Path(__file__).resolve().parent.parent/"data"/"qr_csv"))
     args = parser.parse_args()
     root = tk.Tk()
     root.withdraw()

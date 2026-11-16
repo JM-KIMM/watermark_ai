@@ -45,7 +45,7 @@ Qwen2.5-VL 3B Q4_K_M, 동일 모델 digest, temperature 0, seed 42, 문맥 16384
 `enhance_corpus.py`는 완료된 v5 평가의 PDF 본문을 보존한 채 수학 시험의 테두리를 수식 문구로 바꾸고 배치된 QR 가까이에 안내를 추가한다. 수정 입력은 새로 추론하고, 같은 원본 이미지·프롬프트·설정의 원본 응답은 재사용한다. 최신 결과는 `outputs/corpus_evaluation_v6`, 입력은 `outputs/corpus_inputs_v6`에 보존한다. 변경 전 v5 결과는 별도 기준선 보고서로 보존한다. 과거·현재 조건을 섞어 점수를 만들지 않는다.
 
 ```powershell
-.venv/Scripts/python.exe enhance_corpus.py
+.venv/Scripts/python.exe evaluation/enhance_corpus.py
 ```
 
 수학 수식은 지수·적분·삼각함수 항등식 등 일반 수식의 Unicode 문자와 상하첨자로 표시한다. 임의의 LaTeX 전체를 렌더링하는 엔진은 아니며, 수학 시험에만 적용한다. QR 안내는 읽을 수 있는 TTF로 별도 배치하고 원본 본문·다른 QR과 겹치는 위치는 제외한다.
@@ -53,8 +53,8 @@ Qwen2.5-VL 3B Q4_K_M, 동일 모델 digest, temperature 0, seed 42, 문맥 16384
 ### 변경 전 기준선 실행
 
 ```powershell
-.venv/Scripts/python.exe corpus_evaluation.py --prepare
-.venv/Scripts/python.exe corpus_evaluation.py
+.venv/Scripts/python.exe evaluation/corpus_evaluation.py --prepare
+.venv/Scripts/python.exe evaluation/corpus_evaluation.py
 ```
 
 기존 생성물을 준비하는 프로세스와 추론을 겹쳐 실행할 때는 추론 측에 `--pipeline`을 사용한다. 생성 PDF는 `outputs/corpus_evaluation_v4`, 최종 평가 응답·설정·정답표·집계는 `outputs/corpus_evaluation_v5`에 보존한다. v3/v4의 중단된 예비 응답을 v5 결과에 섞지 않는다. 중단 시 기존 응답 파일을 그대로 읽어 이어서 진행한다.

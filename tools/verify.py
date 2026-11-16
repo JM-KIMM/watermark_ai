@@ -1,4 +1,7 @@
 """Integration checks against the generated sample artifacts."""
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repository root
 import hashlib
 import json
 from pathlib import Path
@@ -11,7 +14,7 @@ from watermark import build
 
 
 def main():
-    root = Path(__file__).resolve().parent
+    root = Path(__file__).resolve().parent.parent
     checks = 0
     for path in sorted((root / "outputs").glob("*.manifest.json")):
         meta = json.loads(path.read_text(encoding="utf-8"))

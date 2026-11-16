@@ -1,4 +1,7 @@
 """Independent, per-question audit plus local diagnostic inference."""
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repository root
 import base64
 import csv
 import hashlib
@@ -8,7 +11,7 @@ import time
 import pymupdf as fitz
 from benchmark_local import request
 
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parent.parent
 OUT=ROOT/'outputs'/'grading_audit'
 
 

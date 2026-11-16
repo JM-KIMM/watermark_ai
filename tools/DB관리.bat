@@ -1,10 +1,10 @@
 @echo off
 chcp 65001 >nul
-cd /d "%~dp0"
+cd /d "%~dp0.."
 if exist ".venv\Scripts\python.exe" (
-  ".venv\Scripts\python.exe" db_manager.py
+  ".venv\Scripts\python.exe" tools\db_manager.py
   if errorlevel 1 pause
   exit /b
 )
-python db_manager.py
+python tools\db_manager.py
 if errorlevel 1 pause

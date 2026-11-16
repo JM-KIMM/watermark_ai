@@ -1,4 +1,7 @@
 """Export verified numerical evidence, without exams or private access records."""
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repository root
 import json
 from pathlib import Path
 import shutil

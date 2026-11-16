@@ -11,9 +11,9 @@
 ```powershell
 outputs/runtime/ollama/ollama.exe serve
 outputs/runtime/ollama/ollama.exe pull qwen2.5vl:3b
-.venv/Scripts/python.exe prepare_benchmark.py
+.venv/Scripts/python.exe evaluation/prepare_benchmark.py
 $examSource = Get-Content -Encoding UTF8 outputs/benchmark_input/source_path.txt
-.venv/Scripts/python.exe benchmark_local.py --source "$examSource" --marked outputs/benchmark_input/level2.pdf --key outputs/benchmark_input/key.json --model qwen2.5vl:3b --output outputs/eval_level2
+.venv/Scripts/python.exe evaluation/benchmark_local.py --source "$examSource" --marked outputs/benchmark_input/level2.pdf --key outputs/benchmark_input/key.json --model qwen2.5vl:3b --output outputs/eval_level2
 ```
 
 3단계는 `--marked outputs/benchmark_input/level3.pdf --output outputs/eval_level3`으로 별도 실행한다. `--limit 2`는 앞 2쪽 예비 실험이며 전체 시험 점수와 구분한다.

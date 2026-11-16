@@ -1,4 +1,7 @@
 """Measure actual rasterized QR decode rates. Requires opencv-python (verification only)."""
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repository root
 from pathlib import Path
 import json
 
@@ -10,7 +13,7 @@ from question_marks import detect_questions, occupied_rects
 
 
 def main():
-    root = Path(__file__).resolve().parent
+    root = Path(__file__).resolve().parent.parent
     detector = cv2.QRCodeDetector()
     metrics = {"ai_answer_accuracy": None, "qr_decode": {}, "files": []}
     detected = placed = patterned = skipped = 0

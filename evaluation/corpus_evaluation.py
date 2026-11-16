@@ -1,4 +1,7 @@
 """Evaluate every local objective exam, preserving formulas and passage context."""
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repository root
 import argparse
 import base64
 import csv
@@ -14,7 +17,7 @@ from benchmark_local import request
 from question_marks import detect_questions
 from watermark import build
 
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parent.parent
 OUT=ROOT/'outputs/corpus_evaluation_v5'
 ASSETS=ROOT/'outputs/corpus_evaluation_v4'
 KEYS=ROOT/'outputs/corpus_keys'

@@ -1,4 +1,7 @@
 """Prepare the 2026 tax-accountant first-session A-form paired experiment."""
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repository root
 import hashlib
 import json
 from pathlib import Path
@@ -6,7 +9,7 @@ import pymupdf as fitz
 from question_marks import detect_questions
 from watermark import build
 
-ROOT=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parent.parent
 
 
 def main():
