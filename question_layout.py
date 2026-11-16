@@ -74,8 +74,50 @@ def map_rect(rect, plan):
     return fitz.Rect(map_point(r.tl,plan),map_point(r.br,plan))
 
 
+def plan_document(doc,qr_size):
+    """Move an end row to the next page when the five choices continue there."""
+    from watermark_payloads import choices_for
+    plans=[plan_page(p,qr_size) for p in doc]
+    for i,plan in enumerate(plans):
+        for col in plan['columns']:
+            for slot in list(col['slots']):
+                slot['question'].setdefault('origin_page',i+1)
+                extracted=choices_for(doc[i],slot['question'],col,slot['cut'])
+                slot['source_choices']=extracted
+                if extracted['complete'] or i+1>=len(doc):continue
+                # A continued question occupies the first column before its
+                # first heading; it must not receive a QR before its choices.
+                following=plans[i+1]['columns'][0]
+                first=min((s['question']['number_bbox'][1] for s in following['slots']),default=plans[i+1]['footer'])
+                prefix=dict(slot['question'],number_bbox=[following['x0'],0,following['x0']+10,10])
+                continued=choices_for(doc[i+1],prefix,following,first-2)
+                if not continued['complete']:continue
+                bottom=max(fitz.Rect(c['source_bbox']).y1 for c in continued['choices'])
+                cut=min(first-2,bottom+1)
+                marker=fitz.Rect(continued['choices'][0]['source_bbox'])
+                q=dict(slot['question'],original_number_bbox=slot['question']['number_bbox'],
+                       number_bbox=[marker.x0,marker.y0,marker.x0+10,marker.y0+10],
+                       line_bbox=list(marker),continuation=True)
+                moved=dict(question=q,cut=cut,source_choices=continued,
+                           continued_from=dict(page=i+1,question_bbox=[col['x0'],slot['question']['number_bbox'][1],col['x1'],slot['cut']]))
+                following['slots'].append(moved);col['slots'].remove(slot)
+    for plan in plans:
+        for col in plan['columns']:
+            col['slots'].sort(key=lambda s:s['cut'])
+            previous=None
+            for j,slot in enumerate(col['slots']):
+                if previous is not None and slot['cut']<previous:raise ValueError('문제 끝 순서가 올바르지 않습니다.')
+                previous=slot['cut']
+                x=slot.get('qr_bbox',[col['x1']-qr_size-16])[0]
+                y=slot['cut']+j*plan['gap']+4
+                slot['qr_bbox']=[x,y,x+qr_size,y+qr_size]
+                slot['slot_bbox']=[col['x0'],slot['cut']+j*plan['gap'],col['x1'],slot['cut']+(j+1)*plan['gap']]
+        plan['added_height']=max((len(c['slots']) for c in plan['columns']),default=0)*plan['gap']
+    return plans
+
+
 def reserve_question_rows(doc, qr_size, plans=None):
-    plans=plans if plans is not None else [plan_page(p,qr_size) for p in doc]
+    plans=plans if plans is not None else plan_document(doc,qr_size)
     out=fitz.open()
     try:
         for index,plan in enumerate(plans):

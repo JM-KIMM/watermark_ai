@@ -15,6 +15,8 @@ from pathlib import Path
 import queue
 import re
 import secrets
+import socket
+import sqlite3
 import threading
 import time
 from urllib.parse import urlsplit, quote
@@ -43,7 +45,8 @@ def build_options(settings, data_root):
         tracking = dict(db=str(data_root/"qr_csv"),base_url=str(settings.get("base_url","http://127.0.0.1:8765")),
                         starts_at=parse_time(settings.get("starts_at")),ends_at=parse_time(settings.get("ends_at")),
                         days=7,retention_days=int(settings.get("retention_days",7)),
-                        max_events=int(settings.get("max_events",1000)))
+                        max_events=int(settings.get("max_events",1000)),issuance_ref=str(settings.get('issuance_ref',''))[:200],
+                        archive=str(data_root/'qr_archive'))
     placement = settings.get("qr_placement", "question-end" if level != 1 else "fixed")
     qr_size = float(settings.get("qr_size", 40))
     return dict(intensity=level,question_style="qr",qr_size=qr_size,
@@ -53,6 +56,7 @@ def build_options(settings, data_root):
                 size_jitter=float(settings.get("size_jitter",0)),
                 width_jitter=float(settings.get("width_jitter",0)),seed=42,
                 qr_placement=placement,replace_passage_boxes=settings.get("replace_passage_boxes", level != 1),
+                payload_policy=settings.get('payload_policy','current-choices'),
                 prompts_file=str(ROOT/"prompts_ko.json"),tracking=tracking)
 
 
@@ -74,18 +78,33 @@ def generate_worker(source, output, options, events):
             lines=sum(len(p["line_patterns"]) for p in report["pages"]),
             boxes=sum(len(p.get("passage_boxes", [])) for p in report["pages"]),
             intensity=report["intensity"],tracking=bool(report["tracking"]),math_watermark=report.get("math_watermark",False),
+            campaign_id=report['tracking']['campaign_id'] if report['tracking'] else None,
             captions_skipped=sum(m.get("label_status")=="skipped-no-whitespace" for m in marks))))
     except Exception as exc:
         message = str(exc) if isinstance(exc,(ValueError,RuntimeError)) else "PDF를 처리하지 못했습니다. 파일과 설정을 확인하세요."
         events.put(dict(kind="error",message=message))
 
 
+def lan_address():
+    try:
+        with socket.socket(socket.AF_INET,socket.SOCK_DGRAM) as sock:
+            sock.connect(('192.0.2.1',80));return sock.getsockname()[0]
+    except OSError:return '127.0.0.1'
+
+
 class Application:
-    def __init__(self, root=ROOT, *, job_timeout=900):
+    def __init__(self, root=ROOT, *, job_timeout=900,collector_host=None,collector_port=None):
         self.root=Path(root).resolve()
         self.output=self.root/"outputs"/"web"
         self.output.mkdir(parents=True,exist_ok=True)
         self.data=self.root/"data"
+        from access_archive import AccessArchive
+        self.archive=AccessArchive(self.data/'qr_archive')
+        if (self.data/'qr_csv'/'scans.csv').exists():
+            from csv_store import CSVStore
+            self.archive.import_legacy(CSVStore(self.data/'qr_csv'))
+        self.collector_host=collector_host or (lan_address() if self.root==ROOT.resolve() else '127.0.0.1')
+        self.collector_port=(8765 if self.root==ROOT.resolve() else 0) if collector_port is None else collector_port
         self.token=secrets.token_urlsafe(32)
         self.jobs={}
         self.lock=threading.RLock()
@@ -111,6 +130,11 @@ class Application:
             settings=payload.get("settings",{})
             if not isinstance(settings,dict):
                 raise ValueError("설정 형식이 올바르지 않습니다.")
+            settings=dict(settings)
+            settings.setdefault('tracking',True)
+            if settings['tracking']:
+                self.start_collector()
+                settings.setdefault('base_url',self.collector_status()['base_url'])
             options=build_options(settings,self.data)
             from watermark import is_math_exam
             if is_math_exam(str(payload.get("filename",""))):
@@ -119,6 +143,15 @@ class Application:
             if not 0<len(data)<=MAX_PDF or b"%PDF-" not in data[:1024]:
                 raise ValueError("25MB 이하의 PDF 파일을 선택하세요.")
             filename=re.sub(r'[\x00-\x1f<>:"/\\|?*]','_',str(payload.get("filename","시험지.pdf")))[:120]
+            if options['tracking']:
+                # Keep the uploaded title: the private temporary file is always
+                # named source.pdf and must not become every dashboard title.
+                from tracking_db import open_store
+                t=options['tracking'];ledger=open_store(t['db'])
+                t['campaign_id']=ledger.create_campaign(Path(filename).stem,t['base_url'],
+                    days=t['days'],retention_days=t['retention_days'],max_events=t['max_events'],
+                    issuance_ref=t['issuance_ref'],starts_at=t['starts_at'],ends_at=t['ends_at'])
+                ledger.activate(t['campaign_id'])
             identifier=secrets.token_hex(16)
             folder=self.output/identifier
             folder.mkdir()
@@ -166,6 +199,18 @@ class Application:
                     if event["kind"]=="progress":
                         job.update(page=event["page"],total=event["total"],message="워터마크를 배치하고 있습니다.")
                     elif event["kind"]=="done":
+                        campaign=event['summary'].get('campaign_id')
+                        if campaign:
+                            try:
+                                from tracking_db import open_store
+                                self.archive.register(open_store(self.data/'qr_csv'),campaign)
+                                manifest=job['folder']/'result.manifest.json'
+                                record=json.loads(manifest.read_text(encoding='utf8'))
+                                record['tracking']['access_policy']='persistent LAN registry; until manually revoked'
+                                manifest.write_text(json.dumps(record,ensure_ascii=False,indent=2),encoding='utf8')
+                            except (OSError,ValueError,sqlite3.Error):
+                                job.update(state='error',message='QR 발급 등록을 저장하지 못했습니다. 저장 공간과 CSV 파일 잠금을 확인하세요.')
+                                finished=True;continue
                         job.update(state="done",summary=event["summary"],message="PDF 생성이 완료됐습니다.")
                         finished=True
                     else:
@@ -191,13 +236,15 @@ class Application:
             return {key:job[key] for key in ("id","name","state","page","total","message","summary") if key in job}
 
     def collector_status(self):
-        return dict(running=self.collector is not None,port=self.collector.server_port if self.collector else 8765)
+        port=self.collector.server_port if self.collector else self.collector_port
+        return dict(running=self.collector is not None,host=self.collector_host,port=port,
+                    base_url=f'http://{self.collector_host}:{port}',retention='직접 삭제하기 전까지 보관')
 
     def start_collector(self):
-        from tracking_db import open_store,create_server
+        from tracking_db import create_server
         with self.lock:
             if self.collector is None:
-                self.collector=create_server(open_store(self.data/"qr_csv"),port=8765)
+                self.collector=create_server(self.archive,host=self.collector_host,port=self.collector_port,request_budget=6000)
                 self.collector_thread=threading.Thread(target=self.collector.serve_forever,daemon=True)
                 self.collector_thread.start()
         return self.collector_status()
@@ -251,16 +298,24 @@ def create_web_server(app,port=8766):
             if not self.allowed_host():
                 self.reply(403,dict(error="허용되지 않은 호스트입니다."));return
             path=urlsplit(self.path).path
-            if path=="/":
-                html=(ROOT/"web"/"index.html").read_text(encoding="utf-8").replace("__LOCAL_TOKEN__",app.token)
+            if path in ('/','/dashboard'):
+                html=(ROOT/"web"/('dashboard.html' if path=='/dashboard' else 'index.html')).read_text(encoding="utf-8").replace("__LOCAL_TOKEN__",app.token)
                 self.reply(200,html,"text/html; charset=utf-8");return
-            if path in ("/app.js","/style.css"):
+            if path in ("/app.js","/style.css",'/dashboard.js','/dashboard.css'):
                 self.reply(200,(ROOT/"web"/path[1:]).read_bytes(),"text/javascript; charset=utf-8" if path.endswith("js") else "text/css; charset=utf-8");return
             if not self.authorized():
                 self.reply(403,dict(error="앱 화면에서 다시 시도하세요."));return
             try:
                 if path=="/api/collector":
                     self.reply(200,app.collector_status());return
+                if path=='/api/dashboard':
+                    from urllib.parse import parse_qs
+                    after=int(parse_qs(urlsplit(self.path).query).get('after',['0'])[0])
+                    self.reply(200,dict(**app.archive.snapshot(after=after),collector=app.collector_status()));return
+                if path in ('/api/archive/events.csv','/api/archive/visitors.csv'):
+                    name=path.rsplit('/',1)[-1]
+                    with app.archive.locked():data=(app.archive.path/name).read_bytes()
+                    self.reply(200,data,'text/csv; charset=utf-8',filename=name);return
                 if path in ("/api/scans","/api/scans.csv"):
                     from tracking_db import open_store,stamp
                     from csv_store import safe_cell
@@ -291,7 +346,7 @@ def create_web_server(app,port=8766):
                     download=Path(job["name"]).stem+"_워터마크.pdf" if kind=="pdf" else "설정기록.json" if kind=="manifest" else None
                     self.reply(200,file.read_bytes(),kind_type,filename=download);return
                 self.reply(404,dict(error="페이지가 없습니다."))
-            except (ValueError,OSError) as exc:
+            except (ValueError,OSError,sqlite3.Error) as exc:
                 self.reply(400,dict(error=str(exc)))
 
         def do_POST(self):
@@ -311,9 +366,13 @@ def create_web_server(app,port=8766):
                     self.reply(200,app.start_collector())
                 elif path=="/api/collector/stop":
                     self.reply(200,app.stop_collector())
+                elif path=='/api/campaign/active':
+                    if type(payload.get('active')) is not bool:raise ValueError('활성 상태를 확인하세요.')
+                    app.archive.set_active(str(payload.get('campaign_id','')),payload['active'])
+                    self.reply(200,dict(ok=True))
                 else:
                     self.reply(404,dict(error="페이지가 없습니다."))
-            except (ValueError,OSError,TypeError) as exc:
+            except (ValueError,OSError,TypeError,sqlite3.Error) as exc:
                 self.reply(400,dict(error=str(exc)))
 
     class Server(ThreadingHTTPServer):
@@ -327,10 +386,24 @@ def main():
     parser=argparse.ArgumentParser(description="시험지 워터마크 로컬 웹 앱")
     parser.add_argument("--port",type=int,default=8766)
     parser.add_argument("--no-browser",action="store_true")
+    parser.add_argument('--collector-host')
+    parser.add_argument('--collector-port',type=int,default=8765)
+    parser.add_argument('--legacy-port',type=int)
     args=parser.parse_args()
-    app=Application()
+    app=Application(collector_host=args.collector_host,collector_port=args.collector_port)
+    try:app.start_collector()
+    except OSError as exc:print(f'QR collector unavailable: {exc}',flush=True)
     server=create_web_server(app,args.port)
     url=f"http://127.0.0.1:{server.server_port}"
+    redirect=None
+    if args.legacy_port is not None:
+        class Redirect(BaseHTTPRequestHandler):
+            def log_message(self,*args):pass
+            def do_GET(self):
+                self.send_response(302);self.send_header('Location',url);self.send_header('Cache-Control','no-store');self.send_header('Content-Length','0');self.end_headers()
+            do_HEAD=do_GET
+        redirect=ThreadingHTTPServer(('127.0.0.1',args.legacy_port),Redirect)
+        threading.Thread(target=redirect.serve_forever,daemon=True).start()
     print(f"Watermark app: {url}\nClose this window or press Ctrl+C to stop.",flush=True)
     if not args.no_browser:
         threading.Timer(.5,lambda:webbrowser.open(url)).start()
@@ -340,6 +413,7 @@ def main():
         pass
     finally:
         server.server_close();app.close()
+        if redirect:redirect.shutdown();redirect.server_close()
 
 
 if __name__=="__main__":

@@ -48,7 +48,7 @@
     try {
       if (!completedJob) {
         let job = await request('/api/jobs', {method:'POST', headers:{'Content-Type':'application/json'},
-          body:JSON.stringify({filename:selectedFile.name, file:await fileBase64(selectedFile), settings:{}})});
+          body:JSON.stringify({filename:selectedFile.name, file:await fileBase64(selectedFile), settings:{issuance_ref:$('issuance-ref').value.trim()}})});
         const deadline = Date.now()+16*60*1000;
         while (job.state === 'working') {
           if (Date.now() > deadline) throw new Error('처리 시간이 초과됐습니다. 페이지 수를 줄여 다시 시도하세요.');

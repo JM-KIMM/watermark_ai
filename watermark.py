@@ -97,7 +97,7 @@ def border(page, text, fontfile, size, opacity, band, *, jitter=0, seed=0,
     rng = random.Random(seed)
     stats = {"matched_glyphs": 0, "fallback_glyphs": 0, "size_min": size, "size_max": size,
              "width_scale_min": 1., "width_scale_max": 1.,
-             "source_body_font": glyphs.preferred.get(page_index) if glyphs else None}
+             "source_body_font": glyphs.preferred.get(page_index) if glyphs else None,"unrenderable":[]}
     largest = size * (1+jitter)
     for edge_name, (rect, angle) in zip(edge_names,strips):
         if paired_text is not None:
@@ -134,6 +134,7 @@ def border(page, text, fontfile, size, opacity, band, *, jitter=0, seed=0,
                         else:
                             glyph = None
                     if not glyph:
+                        if not c.isspace() and not font.has_glyph(ord(c)) and c not in stats['unrenderable']:stats['unrenderable'].append(c)
                         shape.insert_text((x, baseline), c, fontname="wm", fontsize=fontsize,
                                           color=(0, 0, 0), fill_opacity=opacity,
                                           morph=(fitz.Point(x, baseline), fitz.Matrix(width_scale, 1)))
@@ -164,7 +165,7 @@ def build(source, output, *, mode="cycle", font=None, size=6.0, opacity=.45,
           question_style="none", qr_size=36.0, qr_prompt=None,
           size_jitter=0.0, seed=42, font_mode="file", tracking=None,
           width_jitter=0.0, qr_placement="fixed", intensity=None, progress=None, math_watermark=None, qr_captions=True,
-          replace_passage_boxes=False):
+          replace_passage_boxes=False,payload_policy=None):
     source, output = Path(source).resolve(), Path(output).resolve()
     if source == output:
         raise ValueError("출력 경로는 원본과 달라야 합니다.")
@@ -172,6 +173,9 @@ def build(source, output, *, mode="cycle", font=None, size=6.0, opacity=.45,
         raise ValueError(f"출력 파일이 이미 있습니다. 다른 경로를 지정하세요: {output}")
     if mode not in (*MODES, "cycle"):
         raise ValueError("지원하지 않는 모드입니다.")
+    if payload_policy is not None:
+        from watermark_payloads import POLICIES
+        if payload_policy not in POLICIES:raise ValueError('지원하지 않는 원문 워터마크 구성입니다.')
     if intensity is not None and intensity not in (1,2,3):
         raise ValueError("강도는 1·2·3 중 하나입니다.")
     want_border = intensity != 1
@@ -216,8 +220,10 @@ def build(source, output, *, mode="cycle", font=None, size=6.0, opacity=.45,
                 page.remove_rotation()
         count = len(doc)
         math_watermark = is_math_exam(source.name,doc[0].get_text()) if math_watermark is None and count else bool(math_watermark)
+        math_source_only=bool(math_watermark) and payload_policy is not None
+        if payload_policy is not None:math_watermark=False
         modes = [MODES[i % 3] if mode == "cycle" else mode for i in range(count)]
-        needs_summary = want_border and not math_watermark and any(m != "command" for m in modes)
+        needs_summary = payload_policy is None and want_border and not math_watermark and any(m != "command" for m in modes)
         if count < 1 or (needs_summary and (count < 2 or offset % count == 0)):
             raise ValueError("다른 페이지 요약을 위해 2쪽 이상과 자기 자신을 제외하는 offset이 필요합니다.")
         texts = [p.get_text(sort=True) for p in doc]
@@ -235,7 +241,7 @@ def build(source, output, *, mode="cycle", font=None, size=6.0, opacity=.45,
         if not isinstance(prompts, list) or not prompts or any(
                 not isinstance(s, str) or not s.strip() for s in prompts):
             raise ValueError("명령 JSON은 비어 있지 않은 문자열 배열이어야 합니다.")
-        missing = [i + 1 for i, m in enumerate(modes) if want_border and not math_watermark and m != "command"
+        missing = [i + 1 for i, m in enumerate(modes) if payload_policy is None and want_border and not math_watermark and m != "command"
                    and len(summaries[(i + offset) % count].strip()) < 16]
         if missing:
             raise ValueError(f"요약 원문이 부족한 대상 페이지: {missing}. OCR 후 PDF 또는 --summaries JSON을 사용하세요.")
@@ -273,19 +279,39 @@ def build(source, output, *, mode="cycle", font=None, size=6.0, opacity=.45,
                 payload = QR_DIRECTIVE + " | " + MATH_FORMULAS[i%2]
                 paired = QR_DIRECTIVE + " | " + MATH_FORMULAS[(i+1)%2]
             payloads.append((payload,paired))
+        source_items=None;source_fallback=None;source_layouts=None;payload_sources=None;foreign_pages=None
+        if payload_policy is not None:
+            from watermark_payloads import extract_source,make_payload,MissingGlyphs,foreign_source
+            from question_layout import plan_document
+            source_layouts=plan_document(doc,qr_size)
+            source_items=extract_source(doc,source_layouts)
+            foreign_pages=[];payload_sources=[]
+            for i in range(count):
+                idx,items=foreign_source(source_items,i,offset) if payload_policy=='other-page' else (i,source_items[i])
+                foreign_pages.append(idx);payload_sources.append(items)
+            payloads=[(make_payload(payload_policy,payload_sources[i]),)*2 for i in range(count)]
+            source_fallback=MissingGlyphs(doc,fontfile)
+            glyphs=source_fallback
+            method='source-verbatim-no-summary'
         layouts = None
         original_sizes = [list(p.rect.br) for p in doc]
         pre_frames = [[] for _ in doc]
         frame_audits = [[] for _ in doc]
         if qr_placement == 'question-end':
-            from question_layout import plan_page,reserve_question_rows,map_rect,map_point
-            layouts = [plan_page(p,qr_size) for p in doc]
+            from question_layout import plan_document,reserve_question_rows,map_rect,map_point
+            layouts = source_layouts or plan_document(doc,qr_size)
             # Detect/replace frames before reflow; clipped PDF forms can expose
             # duplicate vector/text objects to extraction tools after reflow.
-            if replace_passage_boxes:
+            if replace_passage_boxes and payload_policy!='qr-only':
                 from passage_boxes import apply_passage_boxes
                 for i,p in enumerate(doc):
-                    pre_frames[i] = apply_passage_boxes(p,p,band=0,payload=payloads[i][0],fontfile=fontfile,audit=frame_audits[i])
+                    factory=None
+                    if payload_policy=='current-choices':
+                        from watermark_payloads import frame_payload
+                        factory=lambda frame,idx=i:frame_payload(frame,source_items[idx],payload_policy)
+                    pre_frames[i] = apply_passage_boxes(p,p,band=0,payload=payloads[i][0],fontfile=fontfile,audit=frame_audits[i],
+                                                       payload_factory=factory,glyphs=source_fallback,
+                                                       page_index=foreign_pages[i] if payload_policy=='other-page' and foreign_pages[i] is not None else i)
                     for frame in pre_frames[i]:
                         frame['output_regions']=[list(map_rect(r,layouts[i])+(band,band,band,band))
                                                  for r in frame['output_regions']]
@@ -313,18 +339,19 @@ def build(source, output, *, mode="cycle", font=None, size=6.0, opacity=.45,
                 if copied.get("kind") == fitz.LINK_URI:
                     p.insert_link(copied)
             type_stats = {}
-            if want_border:
+            if want_border and payload_policy!='qr-only':
                 type_stats = border(p, payload, fontfile, size, opacity, band,
-                                    jitter=size_jitter, seed=seed+i, glyphs=glyphs, page_index=i,
+                                    jitter=size_jitter, seed=seed+i, glyphs=glyphs,
+                                    page_index=foreign_pages[i] if payload_policy=='other-page' and foreign_pages[i] is not None else i,
                                     width_jitter=width_jitter,
-                                    paired_text=paired if intensity in (2,3) else None)
+                                    paired_text=paired if intensity in (2,3) and payload_policy is None else None)
             lines = []
             if intensity == 3:
                 from line_patterns import apply_line_patterns
                 lines = apply_line_patterns(src,p,band=band,payload=payload)
             marks = []
             boxes = pre_frames[i]
-            if replace_passage_boxes and layouts is None:
+            if replace_passage_boxes and layouts is None and payload_policy!='qr-only':
                 from passage_boxes import apply_passage_boxes
                 boxes = apply_passage_boxes(src, p, band=band, payload=payload, fontfile=fontfile,audit=frame_audits[i])
             if question_style != "none":
@@ -333,8 +360,10 @@ def build(source, output, *, mode="cycle", font=None, size=6.0, opacity=.45,
                                              url_factory=(lambda question, idx=i: store.issue(campaign, idx+1, question)) if store else None,
                                              placement=qr_placement, seed=seed+i,label_font=fontfile if qr_captions else None,
                                              end_slots=[s for c in layouts[i]['columns'] for s in c['slots']] if layouts else None)
-            records.append({"page": i + 1, "mode": "math-formula" if math_watermark else modes[i],
-                            "summary_source_page": other + 1 if modes[i] != "command" and not math_watermark else None,
+            records.append({"page": i + 1, "mode": payload_policy or ("math-formula" if math_watermark else modes[i]),
+                            "summary_source_page": other + 1 if payload_policy is None and modes[i] != "command" and not math_watermark else None,
+                            "copied_source_page":foreign_pages[i]+1 if payload_policy in ('other-page','current-choices') and foreign_pages[i] is not None else None,
+                            "source_items":payload_sources[i] if payload_sources else [],
                             "payload": payload,
                             "source_size_pt": [src.rect.width, src.rect.height],
                             "original_source_size_pt": original_sizes[i],
@@ -370,7 +399,9 @@ def build(source, output, *, mode="cycle", font=None, size=6.0, opacity=.45,
               "intensity":intensity,
               "font_mode": "file" if math_watermark else font_mode, "size_jitter": size_jitter, "seed": seed,
               "math_watermark": bool(math_watermark),
-              "feature_version": "question-end-qr-passage-v3",
+              "math_source_only":math_source_only,
+              "payload_policy":payload_policy,
+              "feature_version": "source-choices-url-qr-v4" if payload_policy else "question-end-qr-passage-v3",
               "replace_passage_boxes": bool(replace_passage_boxes),
               "qr_captions": bool(qr_captions),
               "width_jitter": width_jitter, "qr_placement": qr_placement,
@@ -386,6 +417,10 @@ def build(source, output, *, mode="cycle", font=None, size=6.0, opacity=.45,
         store.activate(campaign)
         active = next(c for c in store.campaigns() if c["id"]==campaign)
         report["tracking"].update(starts_at=active["starts"],ends_at=active["expires"])
+        if tracking.get('archive'):
+            from access_archive import AccessArchive
+            AccessArchive(tracking['archive']).register(store,campaign)
+            report['tracking']['access_policy']='persistent LAN registry; until manually revoked'
         output.with_suffix(".manifest.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
     return report
 
@@ -403,6 +438,7 @@ def main():
     parser.add_argument("--offset", type=int, default=1)
     parser.add_argument("--summaries", type=Path)
     parser.add_argument("--prompts", type=Path)
+    parser.add_argument('--payload-policy',choices=['current-choices','other-page','command-only','helpful-legacy','qr-only'],default='current-choices')
     parser.add_argument("--question-style", choices=["none", "qr", "number", "both"], default="none")
     parser.add_argument("--qr-size", type=float, default=36)
     parser.add_argument("--qr-prompt")
@@ -413,6 +449,7 @@ def main():
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--font-mode", choices=["file", "source"], default="file")
     parser.add_argument("--db", type=Path)
+    parser.add_argument('--archive',type=Path)
     parser.add_argument("--base-url", default="http://127.0.0.1:8765")
     parser.add_argument("--campaign-days", type=int, default=7)
     parser.add_argument("--retention-days", type=int, default=7)
@@ -429,9 +466,10 @@ def main():
                        width_jitter=args.width_jitter, qr_placement=args.qr_placement,
                        intensity=args.intensity,
                        replace_passage_boxes=args.replace_passage_boxes,
+                       payload_policy=args.payload_policy,
                        tracking=dict(db=args.db, base_url=args.base_url, days=args.campaign_days,
                                      retention_days=args.retention_days, max_events=args.max_events,
-                                     issuance_ref=args.issuance_ref) if args.db else None)
+                                     issuance_ref=args.issuance_ref,archive=str(args.archive) if args.archive else None) if args.db else None)
     except (ValueError, OSError, RuntimeError) as exc:
         parser.exit(1, f"오류: {exc}\n")
     print(f"생성 완료: {report['output']} ({len(report['pages'])}쪽)")

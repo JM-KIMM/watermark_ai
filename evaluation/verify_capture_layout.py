@@ -17,7 +17,7 @@ def verify(out):
     reports=[]
     for exam in inventory:
         if exam['status']!='included':continue
-        meta=json.loads((out/'inputs'/exam['id']/'watermarked.manifest.json').read_text(encoding='utf8'))
+        meta=json.loads(Path(exam.get('marked_manifest',out/'inputs'/exam['id']/'watermarked.manifest.json')).read_text(encoding='utf8'))
         entries=[]
         with fitz.open(exam['capture_inputs']['watermarked']) as marked,fitz.open(exam['capture_inputs']['layout_control']) as control,fitz.open(exam['capture_inputs']['original']) as original:
             for i,page in enumerate(meta['pages']):
@@ -71,7 +71,7 @@ def verify(out):
         # Every scored question must have a corresponding QR on its source page.
         for section in exam['sections']:
             for p,batch in section['pages'].items():
-                actual={m['number'] for m in meta['pages'][int(p)-1]['question_marks']}
+                actual={m['number'] for idx,item in enumerate(meta['pages']) for m in item['question_marks'] if m.get('origin_page',idx+1)==int(p)}
                 if not set(batch['questions'])<=actual:raise ValueError('A scored question has no QR')
         reports.append(dict(exam=exam['source'],pages=entries))
         print(exam['id'],'qr',sum(p['qr'] for p in entries),'boxes',sum(p['boxes'] for p in entries),

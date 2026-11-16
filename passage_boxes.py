@@ -162,12 +162,15 @@ def passage_frames(page, audit=None):
     return found
 
 
-def apply_passage_boxes(source, target, *, band, payload, fontfile, audit=None):
+def apply_passage_boxes(source, target, *, band, payload, fontfile, audit=None,payload_factory=None,glyphs=None,page_index=0):
     from watermark import fill_line
     font = fitz.Font(fontfile=str(fontfile))
     target.insert_font(fontname='passagewm', fontfile=str(fontfile))
     records = []
     for frame in passage_frames(source,audit=audit):
+        chosen=payload_factory(frame) if payload_factory else None
+        actual=chosen['text'] if chosen else payload
+        cursor=0;render_stats=[]
         regions = []
         for edge in frame['edges']:
             dst = edge+(band,band,band,band)
@@ -175,14 +178,21 @@ def apply_passage_boxes(source, target, *, band, payload, fontfile, audit=None):
             target.draw_rect(strip,color=None,fill=(1,1,1))
             vertical = dst.height > dst.width
             length = max(dst.width,dst.height)-2
-            unit = payload+' | '
+            unit = actual+' | '
             text = fill_line(unit,font,5,length)
             if not text:
                 continue
-            point = (dst.x0+1.7,dst.y1-1) if vertical else (dst.x0+1,dst.y0+1.7)
-            target.insert_text(point,text,fontname='passagewm',fontsize=5,
-                               color=(0,0,0),rotate=90 if vertical else 0)
+            if payload_factory or glyphs:
+                from watermark_payloads import paint_strip
+                render=paint_strip(target,strip,actual,fontfile=fontfile,glyphs=glyphs,page_index=page_index,
+                                   vertical=vertical,cursor=cursor)
+                cursor=render['cursor'];render_stats.append(render)
+            else:
+                point = (dst.x0+1.7,dst.y1-1) if vertical else (dst.x0+1,dst.y0+1.7)
+                target.insert_text(point,text,fontname='passagewm',fontsize=5,
+                                   color=(0,0,0),rotate=90 if vertical else 0)
             regions.append(list(strip))
         records.append(dict(source_bbox=list(frame['box']),output_regions=regions,
-                            style='black-watermark-text-frame',payload=payload))
+                            style='black-watermark-text-frame',payload=actual,
+                            source_questions=chosen['source_questions'] if chosen else [],rendering=render_stats))
     return records

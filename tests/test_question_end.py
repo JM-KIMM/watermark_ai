@@ -9,6 +9,25 @@ from question_layout import reserve_question_rows
 
 
 class QuestionEndTests(unittest.TestCase):
+    def test_question_end_moves_after_choices_on_next_page(self):
+        from watermark_payloads import extract_source
+        from watermark import font_path
+        with TemporaryDirectory() as folder:
+            root=Path(folder);source=root/'continued.pdf';doc=fitz.open()
+            p=doc.new_page();p.insert_text((50,100),'1. The choices continue on the next page.')
+            p=doc.new_page();p.insert_font(fontname='ko',fontfile=str(font_path(None)))
+            for i in range(5):p.insert_text((50,80+i*30),f'{chr(0x2460+i)} choice {i+1}',fontname='ko')
+            p.insert_text((50,350),'2. Next question.')
+            for i in range(5):p.insert_text((50,410+i*30),f'{chr(0x2460+i)} next {i+1}',fontname='ko')
+            items=extract_source(doc);self.assertTrue(items[0][0]['complete'])
+            self.assertEqual(items[0][0]['choices'][0]['source_page'],2)
+            doc.save(source);doc.close()
+            r=build(source,root/'out.pdf',preview=False,**build_options({},root))
+            self.assertEqual(r['pages'][0]['question_marks'],[])
+            marks=r['pages'][1]['question_marks']
+            self.assertEqual([m['number'] for m in marks],['1','2'])
+            self.assertEqual(marks[0]['origin_page'],1)
+            self.assertTrue(marks[0]['continuation'])
     def test_every_question_has_row_and_content_keeps_scale(self):
         with TemporaryDirectory() as folder:
             root=Path(folder);source=root/'source.pdf'

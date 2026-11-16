@@ -246,6 +246,12 @@ def create_server(store, host="127.0.0.1", port=8765, *, request_budget=120, wor
                 request_path = urlsplit(self.path).path
             except ValueError:
                 request_path = ""
+            if request_path in ('/','/health'):
+                body=json.dumps(dict(service='watermark-qr',ready=True,notice='발급된 QR 주소로 접속하세요. 관리 화면은 이 포트에 없습니다.'),ensure_ascii=False).encode('utf8')
+                self.send_response(200);self.send_header('Content-Type','application/json; charset=utf-8')
+                self.send_header('Cache-Control','no-store');self.send_header('Content-Length',str(len(body)));self.end_headers()
+                if not head:self.wfile.write(body)
+                return
             match = re.fullmatch(r"/q/([A-Za-z0-9_-]{16})", request_path)
             token = match[1] if match else None
             if not budget.allow(self.client_address[0], token):
@@ -255,7 +261,10 @@ def create_server(store, host="127.0.0.1", port=8765, *, request_budget=120, wor
             else:
                 # Ignore X-Forwarded-For: untrusted clients cannot forge the saved IP.
                 try:
-                    code = store.access(match[1], self.client_address[0], record=not head)
+                    kwargs=dict(record=not head)
+                    if getattr(store,'supports_user_agent',False):
+                        kwargs.update(user_agent=self.headers.get('User-Agent','')[:512],method='HEAD' if head else 'GET',record=True)
+                    code = store.access(match[1], self.client_address[0], **kwargs)
                 except (OSError, ValueError, sqlite3.Error):
                     code = 503
             body = json.dumps({"status": {200: "access recorded" if not head else "active", 403: "access window not started", 404: "not found", 410: "expired or revoked", 429: "request budget exceeded", 503: "storage unavailable"}[code],

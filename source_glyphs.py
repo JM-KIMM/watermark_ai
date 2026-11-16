@@ -3,6 +3,7 @@
 """Reuse visible source glyphs when subset/Type3 fonts cannot be embedded by name."""
 from collections import Counter
 from io import BytesIO
+import unicodedata
 
 from PIL import Image
 
@@ -10,7 +11,7 @@ import pymupdf as fitz
 
 
 class SourceGlyphs:
-    def __init__(self, document):
+    def __init__(self, document, *, all_fonts=False):
         self.document = document
         self.entries = {}
         self.preferred = {}
@@ -26,11 +27,12 @@ class SourceGlyphs:
             primary = counts.most_common(1)[0][0] if counts else None
             self.preferred[index] = primary
             for span in spans:
-                if span["font"] != primary or span["size"] <= 0:
+                if (not all_fonts and span["font"] != primary) or span["size"] <= 0:
                     continue
                 for char in span["chars"]:
                     c = char["c"]
-                    if c.isspace() or len(c) != 1 or not c.isprintable():
+                    printable=c.isprintable() or (all_fonts and unicodedata.category(c)=='Co')
+                    if c.isspace() or len(c) != 1 or not printable:
                         continue
                     box = fitz.Rect(char["bbox"])
                     if box.is_empty or not page.rect.contains(box):
