@@ -76,7 +76,7 @@ def initialize(out):
         primary=list(PRIMARY),diagnostics=list(ABLATIONS),pilot=select_pilot(inventory),
         prompt=PROMPT,system_prompt=SYSTEM_PROMPT,models=wanted,ollama=request('http://127.0.0.1:11434/api/version'),
         tesseract=dict(version=subprocess.check_output([str(TESSERACT),'--version'],text=True,encoding='utf8',errors='replace').splitlines()[0],
-                       executable_sha256=sha(TESSERACT),languages=['kor+eng','eng'],psm=3,oem=1,
+                       executable_sha256=sha(TESSERACT),languages=['kor+eng'],psm=3,oem=1,
                        traineddata={lang:sha(TESSERACT.parent/'tessdata'/(lang+'.traineddata')) for lang in ('kor','eng')}),
         implementation={n:sha(ROOT/n) for n in IMPLEMENTATION},plan_document_sha256=sha(ROOT/'docs/STRICT_EXPERIMENT_PLAN.md'),
         commercial=dict(status='not_run',reason='Separate API connection selected by user; no configured credentials/model'),
@@ -189,7 +189,8 @@ def ocr_one(out,e,c,page,plan):
         if record['text_sha256']!=hashlib.sha256(record['text'].encode()).hexdigest():raise ValueError('OCR text changed')
         return cache
     cache.parent.mkdir(parents=True,exist_ok=True);prefix=cache.with_suffix('')
-    lang='eng' if e['id']=='exam09' else 'kor+eng'
+    # English exam task instructions are Korean as well.
+    lang='kor+eng'
     env=dict(os.environ,OMP_THREAD_LIMIT='2')
     command=[str(TESSERACT),str(image),str(prefix),'-l',lang,'--oem','1','--psm','3','txt','tsv']
     begin=time.monotonic();done=subprocess.run(command,env=env,capture_output=True,timeout=300)

@@ -46,16 +46,21 @@ def metrics(rows):
     return dict(total=len(rows),resolved=len(valid),correct=correct,
                 percent=100*correct/len(valid) if valid else None,
                 answered=len(answered),conditional_accuracy=100*correct/len(answered) if answered else None,
+                quality_valid=len(rows)-len(valid)<=len(rows)*.01,
+                all_scheduled_accuracy_bounds_percent=[100*correct/len(rows),100*(correct+len(rows)-len(valid))/len(rows)] if rows else None,
                 statuses=dict(Counter(r['status'] for r in rows)),answers=dict(Counter(str(r['answer']) for r in valid)),
                 unique_clusters=len(bycluster),cluster_mean_percent=100*np.mean([np.mean(v) for v in bycluster.values()]) if bycluster else None,
-                points=sum(r['weight']*r['correct'] for r in valid),max_points=sum(r['weight'] for r in valid))
+                points_using_frozen_weights=sum(r['weight']*r['correct'] for r in valid),max_frozen_weight=sum(r['weight'] for r in valid),
+                uniform_random_expected_percent=100*sum(len(set(r['accepted']))/5 for r in rows)/len(rows) if rows else None,
+                constant_choice_correct={str(c):sum(c in r['accepted'] for r in rows) for c in range(1,6)})
 
 
 def paired(rows,a,b,iterations=10000):
     keyed=defaultdict(dict)
     for r in rows:
         if r['condition'] in (a,b):keyed[(r['exam'],r['section'],r['question'])][r['condition']]=r
-    pairs=[(v[a],v[b]) for v in keyed.values() if a in v and b in v and v[a]['status'] in ('ok','refused') and v[b]['status'] in ('ok','refused')]
+    allpairs=[(v[a],v[b]) for v in keyed.values() if a in v and b in v]
+    pairs=[(x,y) for x,y in allpairs if x['status'] in ('ok','refused') and y['status'] in ('ok','refused')]
     if not pairs:return dict(conditions=[a,b],pairs=0)
     clusters=defaultdict(list)
     for x,y in pairs:clusters[x['cluster']].append(y['correct']-x['correct'])
@@ -63,7 +68,13 @@ def paired(rows,a,b,iterations=10000):
     rng=np.random.default_rng(20261116);indices=rng.integers(len(arrays),size=(iterations,len(arrays)))
     exposure=100*sums[indices].sum(axis=1)/sizes[indices].sum(axis=1)
     macro=100*means[indices].mean(axis=1)
+    lower=upper=0
+    for x,y in allpairs:
+        xknown=x['status'] in ('ok','refused');yknown=y['status'] in ('ok','refused')
+        lower+=(y['correct'] if yknown else 0)-(x['correct'] if xknown else 1)
+        upper+=(y['correct'] if yknown else 1)-(x['correct'] if xknown else 0)
     return dict(conditions=[a,b],direction='second minus first; negative means lower accuracy',pairs=len(pairs),clusters=len(arrays),
+                all_scheduled_pairs=len(allpairs),all_scheduled_delta_bounds_percentage_points=[100*lower/len(allpairs),100*upper/len(allpairs)],
                 correct_to_wrong=sum(x['correct'] and not y['correct'] for x,y in pairs),
                 wrong_to_correct=sum(not x['correct'] and y['correct'] for x,y in pairs),
                 delta_percentage_points=100*sum(sums)/sum(sizes),cluster_bootstrap_95=np.quantile(exposure,[.025,.975]).tolist(),
@@ -72,6 +83,9 @@ def paired(rows,a,b,iterations=10000):
 
 def audit(out):
     plan=read(out/'plan.json');inventory=read(out/'inventory.json');seal=read(out/'input_seal.json')
+    frozen_plan={k:v for k,v in plan.items() if k!='identity'}
+    identity=hashlib.sha256(json.dumps(dict(plan=frozen_plan,keys=[e['sections'] for e in inventory if e['status']=='included']),sort_keys=True).encode()).hexdigest()
+    if identity!=plan['identity'] or seal['identity']!=identity:raise ValueError('Frozen plan or answer mapping changed')
     root=Path(__file__).resolve().parent.parent
     for name,digest in plan['implementation'].items():
         if sha(root/name)!=digest:raise ValueError('Frozen implementation changed: '+name)
@@ -132,6 +146,7 @@ def audit(out):
                 done_reasons=dict(Counter(str(u.get('done_reason')) for u in usages))),
              primary={c:metrics([r for r in primary if r['condition']==c]) for c in plan['primary']},
              primary_comparisons=[paired(primary,'original','current_choices'),paired(primary,'layout_control','current_choices')],
+             excluding_all_choices_accepted={c:metrics([r for r in primary if r['condition']==c and len(set(r['accepted']))<5]) for c in plan['primary']},
              exams={e:{c:metrics([r for r in primary if r['exam']==e and r['condition']==c]) for c in plan['primary']} for e in sorted({r['exam'] for r in primary})},
              pilot={str(seed):{c:metrics([r for r in rows if r['pilot'] and r['seed']==seed and r['condition']==c]) for c in plan['primary']+(plan['diagnostics'] if seed==42 else [])} for seed in plan['seeds']},
              pilot_comparisons=pilot_comparisons)
