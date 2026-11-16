@@ -6,14 +6,13 @@ from zipfile import ZipFile, ZIP_DEFLATED
 
 ROOT=Path(__file__).resolve().parent
 FILES=[
-    "webapp.py","watermark.py","question_marks.py","source_glyphs.py","line_patterns.py",
+    "webapp.py","watermark.py","question_marks.py","source_glyphs.py","line_patterns.py","passage_boxes.py",
     "csv_store.py","tracking_db.py","tools/db_manager.py","tools/migrate_legacy.py",
     "prompts_ko.json","requirements.txt","웹실행.bat","tools/DB관리.bat","docs/WEB_README.md",
     "LICENSE","THIRD_PARTY_NOTICES.md","package_web.py",
-    "tests/__init__.py","tests/test_webapp.py","tests/test_csv_store.py",
-    "web/index.html","web/app.js","web/style.css","web/mono.css",
+    "tests/__init__.py","tests/test_webapp.py","tests/test_csv_store.py","tests/test_layout.py",
+    "web/index.html","web/app.js","web/style.css",
     "AUTHORS.md","CITATION.cff","docs/README_CSV.md","docs/RESEARCH.md","docs/experiment_plan.csv",
-    "docs/images/generator.png",
     "evaluation/benchmark_local.py","evaluation/prepare_benchmark.py","tests/test_regressions.py",
     "docs/LOCAL_EVALUATION.md","docs/EVALUATION_RESULTS_2026-11-16.md",
     "evaluation/audit_evaluation.py","docs/GRADING_AUDIT_2026-11-16.md",

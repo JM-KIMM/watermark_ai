@@ -151,6 +151,10 @@ def attach_qr_label(target, space, bounds, occupied, *, band, fontfile):
 def apply_question_marks(source, target, *, band, style, qr_size, payload, url_factory=None,
                          placement="fixed", seed=42, label_font=None):
     questions = detect_questions(source)
+    if placement == "gutter":
+        return apply_gutter_marks(source, target, questions, band=band, style=style,
+                                  qr_size=qr_size, payload=payload, url_factory=url_factory,
+                                  label_font=label_font)
     occupied = occupied_rects(source)
     qr_image, qr = make_qr(payload)
     records = []
@@ -185,4 +189,60 @@ def apply_question_marks(source, target, *, band, style, qr_size, payload, url_f
         for record in records:
             if record['qr_status']=='placed':
                 record.update(attach_qr_label(target,fitz.Rect(record['qr_source_bbox']),source.rect,occupied,band=band,fontfile=label_font))
+    return records
+
+
+def apply_gutter_marks(source, target, questions, *, band, style, qr_size, payload,
+                       url_factory=None, label_font=None):
+    """Use two fixed outer rails; never move a QR into the exam body."""
+    if band < qr_size + 16:
+        raise ValueError("고정 QR 여백은 QR 크기보다 16pt 이상 넓어야 합니다.")
+    if style not in ("qr", "none"):
+        raise ValueError("바깥 여백 배치는 QR 전용입니다.")
+    font = fitz.Font(fontfile=str(label_font)) if label_font else None
+    two_columns = any(q['number_bbox'][0] > source.rect.width * .5 for q in questions)
+    occupied = []
+    records = []
+    for question in questions:
+        record = dict(question, qr_status="disabled", number_status="disabled")
+        if style == "none":
+            records.append(record)
+            continue
+        right = two_columns and question['number_bbox'][0] > source.rect.width * .5
+        x = band + source.rect.width + 5 if right else band - qr_size - 5
+        y = band + question['number_bbox'][1]
+        space = fitz.Rect(x, y, x + qr_size, y + qr_size)
+        label = f"{question['number']}번 · {QR_LABEL}"
+        label_size = 4.5
+        if font:
+            label_size = min(label_size, (qr_size-2)/font.text_length(label, fontsize=1))
+        label_width = font.text_length(label, fontsize=label_size) + 2 if font else qr_size
+        caption = fitz.Rect(x, space.y1 + 2, x + max(qr_size, label_width), space.y1 + 10)
+        clearance = space | caption if font else space
+        padded = clearance + (-1, -1, 1, 1)
+        if (not target.rect.contains(padded) or
+                any(padded.intersects(r) for r in occupied)):
+            record['qr_status'] = 'skipped-no-whitespace'
+            record['skip_reason'] = 'fixed-gutter-collision'
+        else:
+            actual_payload = url_factory(question['number']) if url_factory else payload
+            image, qr = make_qr(actual_payload, "M" if url_factory else "Q")
+            # Clear only the added margin's decorative text underneath the QR.
+            target.draw_rect(padded, color=None, fill=(1, 1, 1))
+            target.insert_image(space, stream=png_bytes(image))
+            occupied.append(padded)
+            record.update(qr_status='placed', qr_bbox=list(space),
+                          qr_source_bbox=list(space + (-band, -band, -band, -band)),
+                          qr_payload=actual_payload, qr_modules=qr.modules_count,
+                          qr_kind='access-url' if url_factory else 'command',
+                          qr_error_correction='M' if url_factory else 'Q',
+                          qr_module_pt=qr_size/(qr.modules_count+8),
+                          qr_anchor='outer-right' if right else 'outer-left')
+            if font:
+                target.insert_font(fontname='qrlabel', fontfile=str(label_font))
+                target.insert_text((caption.x0+1, caption.y1-2), label,
+                                   fontname='qrlabel', fontsize=label_size, color=(0, 0, 0))
+                record.update(label_status='placed', label=label, label_bbox=list(caption),
+                              label_source_bbox=list(caption+(-band,-band,-band,-band)))
+        records.append(record)
     return records

@@ -1,66 +1,21 @@
 <!doctype html>
 <!-- SPDX-License-Identifier: GPL-3.0-only; Copyright (C) 2026 JM-KIMM and contributors. -->
-<html lang="ko">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="local-token" content="__LOCAL_TOKEN__">
-  <title>시험지 워터마크</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/mono.css"><script src="/app.js" defer></script>
-</head>
-<body>
-<header class="topbar"><a class="brand" href="/"><span class="brand-icon" aria-hidden="true">▧</span> 시험지 워터마크</a><span class="local-badge"><i></i> 내 컴퓨터에서 실행 중</span></header>
-<main>
-  <div class="intro"><p class="eyebrow">PDF WATERMARK</p><h1>시험지 워터마크 생성</h1><p>PDF를 선택하세요. 생성 결과를 확인한 뒤 내려받을 수 있습니다.</p></div>
-  <div class="workspace">
-    <section class="controls" aria-label="생성 설정">
-      <form id="generate-form">
-        <div class="section-title"><span>01</span><h2>시험지 선택</h2></div>
-        <label class="dropzone" id="dropzone" tabindex="0"><input id="pdf-file" type="file" accept="application/pdf,.pdf"><span class="upload-icon" aria-hidden="true">↥</span><strong id="file-title">PDF 파일을 선택하거나 여기에 놓으세요</strong><small id="file-detail">최대 25MB · 100쪽</small></label>
-        <div class="section-title second"><span>02</span><h2>워터마크 구성</h2></div>
-        <div class="base-mode"><strong>테두리 문구 + 문제별 QR</strong><small>페이지 사방에 문구를 반복하고 문제 옆에 QR을 넣습니다.</small></div>
-        <p class="level-description" id="level-description">상단·우측은 문구 A, 하단·좌측은 문구 B를 반복합니다.</p>
-        <details class="options"><summary>선택 사항 <span>구분선 · 크기 · 위치 · 접근 시간</span></summary>
-          <label class="check-row"><input id="line-patterns" type="checkbox"><span><strong>구분선 무늬 추가</strong><small>고립된 긴 구분선을 QR에서 유래한 무늬로 바꿉니다. 결과 확인이 필요합니다.</small></span></label>
-          <label class="check-row"><input id="qr-only" type="checkbox"><span><strong>테두리 없이 QR만</strong><small>용지 크기를 유지합니다. 측정에서는 답을 흔드는 효과가 없었습니다.</small></span></label>
-          <div class="option-grid">
-            <label>글자 크기 <select id="font-size"><option value="5">작게 · 5pt</option><option value="6" selected>기본 · 6pt</option><option value="7">크게 · 7pt</option></select></label>
-            <label>농도 <select id="opacity"><option value="0.3">연하게</option><option value="0.45" selected>기본</option><option value="0.65">진하게</option></select></label>
-            <label>크기 변화 <select id="size-jitter"><option value="0">고정</option><option value="0.1">±10%</option><option value="0.25" selected>±25%</option><option value="0.4">±40%</option></select></label>
-            <label>가로 비율 변화 <select id="width-jitter"><option value="0">고정</option><option value="0.1">±10%</option><option value="0.2">±20%</option></select></label>
-            <label>QR 위치 <select id="qr-placement"><option value="fixed">문제 주변 고정</option><option value="local-random">문제 주변 무작위</option></select></label>
-            <label>QR 크기 <select id="qr-size"><option value="36">작게 · 36pt</option><option value="40" selected>기본 · 40pt</option><option value="44">크게 · 44pt</option></select></label>
-          </div>
-          <label class="check-row"><input id="tracking" type="checkbox"><span><strong>QR 접속 기록 사용</strong><small>접속 IP와 시각을 내 컴퓨터의 CSV에 저장합니다.</small></span></label>
-          <div id="tracking-options" hidden>
-            <label>QR 접속 주소 <input id="base-url" type="url" value="http://127.0.0.1:8765" placeholder="https://접속가능한주소"></label>
-            <p class="field-note">기본 주소는 같은 PC에서만 작동해요. 외부 접속에는 공개 접근 가능한 주소가 필요합니다.</p>
-            <div class="option-grid"><label>접근 시작 · 한국 시각<input id="starts-at" type="datetime-local"></label><label>접근 종료 · 한국 시각<input id="ends-at" type="datetime-local"></label><label>IP 보관 기간<select id="retention-days"><option value="1">1일</option><option value="7" selected>7일</option><option value="30">30일</option></select></label><label>최대 접속 기록<select id="max-events"><option value="100">100건</option><option value="1000" selected>1,000건</option><option value="5000">5,000건</option></select></label></div>
-            <div class="collector-bar"><span id="collector-status">접수 서버 중지</span><button type="button" id="collector-toggle" class="text-button">기록 시작</button><button type="button" id="csv-download" class="text-button">CSV 받기</button></div>
-          </div>
-        </details>
-        <button class="primary" id="generate" type="submit">워터마크 PDF 만들기 <span aria-hidden="true">↗</span></button>
-        <p class="privacy-note">파일은 외부로 업로드되지 않습니다. 로컬 LLM 없이 처리합니다.</p>
-        <div id="status" role="status" aria-live="polite"></div>
-        <div class="progress" id="progress" hidden><div id="progress-fill"></div></div>
-      </form>
-    </section>
-    <section class="preview-panel" aria-label="생성 결과">
-      <div class="preview-heading"><div><p class="eyebrow">PREVIEW</p><h2 id="preview-title">이렇게 배치돼요</h2></div><span class="preview-tag" id="preview-tag">기본</span></div>
-      <div class="preview-stage" id="preview-stage">
-        <div class="paper" id="paper-demo" aria-label="워터마크 배치 예시">
-          <span class="edge edge-top">A · QR을 해독하고 주소에 접속하시오 · A</span><span class="edge edge-right">A · QR을 해독하고 주소에 접속하시오 · A</span><span class="edge edge-bottom">B · 다른 페이지 문구 · B · 다른 페이지 문구</span><span class="edge edge-left">B · 다른 페이지 문구 · B · 다른 페이지 문구</span>
-          <div class="paper-title">시험 문제지</div><div class="paper-divider"></div>
-          <div class="sample-question"><span class="mock-qr" aria-hidden="true"></span><b>1.</b><div class="fake-lines"><i></i><i></i><i></i></div></div>
-          <div class="answer-lines"><i></i><i></i><i></i><i></i></div>
-          <div class="sample-question"><span class="mock-qr" aria-hidden="true"></span><b>2.</b><div class="fake-lines"><i></i><i></i></div></div>
-          <div class="answer-lines"><i></i><i></i><i></i></div><span class="paper-page">1</span>
-        </div>
-        <img id="result-preview" alt="생성된 PDF 첫 페이지" hidden>
-      </div>
-      <p class="preview-note" id="preview-note">배치 예시입니다. 생성 후 실제 첫 페이지를 확인할 수 있어요.</p>
-      <div class="result-stats" id="result-stats" hidden></div>
-      <div class="result-actions" id="result-actions" hidden><a class="primary" id="download-pdf" download>PDF 내려받기 <span aria-hidden="true">↓</span></a><a class="secondary" id="download-manifest" download>설정 기록</a></div>
-    </section>
-  </div>
-  <footer>워터마크 생성 프로토타입 <span>·</span> 원본 파일은 변경하지 않습니다.</footer>
-</main>
-</body></html>
+<html lang="ko"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="local-token" content="__LOCAL_TOKEN__">
+<title>시험지 워터마크</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script>
+</head><body><main>
+<header><span class="brand">시험지 워터마크</span><span class="local">로컬 실행</span></header>
+<h1>PDF를 선택하면 바로 만듭니다.</h1>
+<p class="description">고정 QR · 진한 워터마크 · 지문 박스 테두리 교체</p>
+<label class="dropzone" id="dropzone" tabindex="0"><input id="pdf-file" type="file" accept="application/pdf,.pdf">
+<span class="plus" aria-hidden="true">+</span><strong id="file-title">PDF 선택</strong><span id="file-detail">또는 여기에 파일 놓기 · 최대 25MB / 100쪽</span></label>
+<div id="status" role="status" aria-live="polite">파일은 이 컴퓨터에서 처리됩니다.</div>
+<progress id="progress" max="100" value="0" aria-label="생성 진행률" hidden></progress>
+<button id="retry" class="secondary" hidden>다시 시도</button>
+<section id="result" hidden aria-label="생성 결과"><div class="result-heading"><h2>생성 완료</h2><span id="result-stats"></span></div>
+<a class="primary" id="download-pdf" download>PDF 내려받기 ↓</a>
+<details><summary>첫 페이지 확인</summary><img id="result-preview" alt="생성한 PDF의 첫 페이지"></details>
+<a class="record" id="download-manifest" download>처리 기록 JSON</a></section>
+<footer>원본은 보존합니다. 인쇄 전 전체 페이지와 용지 배율을 확인하세요.</footer>
+</main></body></html>

@@ -44,12 +44,15 @@ def build_options(settings, data_root):
                         starts_at=parse_time(settings.get("starts_at")),ends_at=parse_time(settings.get("ends_at")),
                         days=7,retention_days=int(settings.get("retention_days",7)),
                         max_events=int(settings.get("max_events",1000)))
-    return dict(intensity=level,question_style="qr",qr_size=float(settings.get("qr_size",40)),
-                mode="cycle",font_mode=settings.get("font_mode","source"),
-                size=float(settings.get("font_size",6)),opacity=float(settings.get("opacity",.45)),
-                band=20,size_jitter=float(settings.get("size_jitter",.25)),
+    placement = settings.get("qr_placement", "gutter" if level != 1 else "fixed")
+    qr_size = float(settings.get("qr_size", 40))
+    return dict(intensity=level,question_style="qr",qr_size=qr_size,
+                mode="cycle",font_mode=settings.get("font_mode","file"),
+                size=float(settings.get("font_size",6)),opacity=float(settings.get("opacity",.9)),
+                band=max(20, qr_size+16) if placement == "gutter" else 20,
+                size_jitter=float(settings.get("size_jitter",0)),
                 width_jitter=float(settings.get("width_jitter",0)),seed=42,
-                qr_placement=settings.get("qr_placement","fixed"),
+                qr_placement=placement,replace_passage_boxes=settings.get("replace_passage_boxes", level != 1),
                 prompts_file=str(ROOT/"prompts_ko.json"),tracking=tracking)
 
 
@@ -69,6 +72,7 @@ def generate_worker(source, output, options, events):
             qr=sum(m["qr_status"]=="placed" for m in marks),
             skipped=sum(m["qr_status"]=="skipped-no-whitespace" for m in marks),
             lines=sum(len(p["line_patterns"]) for p in report["pages"]),
+            boxes=sum(len(p.get("passage_boxes", [])) for p in report["pages"]),
             intensity=report["intensity"],tracking=bool(report["tracking"]),math_watermark=report.get("math_watermark",False),
             captions_skipped=sum(m.get("label_status")=="skipped-no-whitespace" for m in marks))))
     except Exception as exc:
@@ -250,7 +254,7 @@ def create_web_server(app,port=8766):
             if path=="/":
                 html=(ROOT/"web"/"index.html").read_text(encoding="utf-8").replace("__LOCAL_TOKEN__",app.token)
                 self.reply(200,html,"text/html; charset=utf-8");return
-            if path in ("/app.js","/style.css","/mono.css"):
+            if path in ("/app.js","/style.css"):
                 self.reply(200,(ROOT/"web"/path[1:]).read_bytes(),"text/javascript; charset=utf-8" if path.endswith("js") else "text/css; charset=utf-8");return
             if not self.authorized():
                 self.reply(403,dict(error="앱 화면에서 다시 시도하세요."));return

@@ -55,8 +55,8 @@ def summarize(text: str, budget: int = 360) -> str:
 
 def font_path(value: str | None) -> Path:
     choices = [Path(value)] if value else [
-        Path("C:/Windows/Fonts/malgunsl.ttf"),
         Path("C:/Windows/Fonts/malgun.ttf"),
+        Path("C:/Windows/Fonts/malgunsl.ttf"),
         Path("/usr/share/fonts/truetype/nanum/NanumGothic.ttf"),
     ]
     for p in choices:
@@ -134,7 +134,7 @@ def border(page, text, fontfile, size, opacity, band, *, jitter=0, seed=0,
                             glyph = None
                     if not glyph:
                         shape.insert_text((x, baseline), c, fontname="wm", fontsize=fontsize,
-                                          color=(.25, .25, .25), fill_opacity=opacity,
+                                          color=(0, 0, 0), fill_opacity=opacity,
                                           morph=(fitz.Point(x, baseline), fitz.Matrix(width_scale, 1)))
                         if not c.isspace():
                             stats["fallback_glyphs"] += 1
@@ -150,7 +150,7 @@ def border(page, text, fontfile, size, opacity, band, *, jitter=0, seed=0,
             line = fill_line(stream, font, size, length - 8)
             cursor = (cursor + len(line)) % len(unit)
             sp.insert_text((4, 3 + size + row * size * 1.4), line,
-                           fontname="wm", fontsize=size, color=(0.25, .25, .25),
+                           fontname="wm", fontsize=size, color=(0, 0, 0),
                            fill_opacity=opacity)
         page.show_pdf_page(rect, strip, 0, rotate=angle)
         strip.close()
@@ -162,7 +162,8 @@ def build(source, output, *, mode="cycle", font=None, size=6.0, opacity=.45,
           band=20.0, offset=1, summaries_file=None, prompts_file=None, preview=True,
           question_style="none", qr_size=36.0, qr_prompt=None,
           size_jitter=0.0, seed=42, font_mode="file", tracking=None,
-          width_jitter=0.0, qr_placement="fixed", intensity=None, progress=None, math_watermark=None, qr_captions=True):
+          width_jitter=0.0, qr_placement="fixed", intensity=None, progress=None, math_watermark=None, qr_captions=True,
+          replace_passage_boxes=False):
     source, output = Path(source).resolve(), Path(output).resolve()
     if source == output:
         raise ValueError("출력 경로는 원본과 달라야 합니다.")
@@ -179,8 +180,8 @@ def build(source, output, *, mode="cycle", font=None, size=6.0, opacity=.45,
         band = 0
     if not 0 <= size_jitter <= .5:
         raise ValueError("글자 크기 변동은 0~0.5(±50%) 범위입니다.")
-    if not 0 <= width_jitter <= .3 or qr_placement not in ("fixed", "local-random"):
-        raise ValueError("가로 변동은 0~0.3, QR 위치는 fixed/local-random입니다.")
+    if not 0 <= width_jitter <= .3 or qr_placement not in ("fixed", "local-random", "gutter"):
+        raise ValueError("가로 변동은 0~0.3, QR 위치는 fixed/local-random/gutter입니다.")
     if font_mode not in ("file", "source"):
         raise ValueError("글꼴 모드는 file/source 중 하나입니다.")
     if tracking and question_style not in ("qr", "both"):
@@ -291,6 +292,10 @@ def build(source, output, *, mode="cycle", font=None, size=6.0, opacity=.45,
                 from line_patterns import apply_line_patterns
                 lines = apply_line_patterns(src,p,band=band,payload=payload)
             marks = []
+            boxes = []
+            if replace_passage_boxes:
+                from passage_boxes import apply_passage_boxes
+                boxes = apply_passage_boxes(src, p, band=band, payload=payload, fontfile=fontfile)
             if question_style != "none":
                 marks = apply_question_marks(src, p, band=band, style=question_style,
                                              qr_size=qr_size, payload=qr_prompt or QR_PROMPT,
@@ -302,6 +307,7 @@ def build(source, output, *, mode="cycle", font=None, size=6.0, opacity=.45,
                             "source_size_pt": [src.rect.width, src.rect.height],
                             "typography": type_stats,
                             "line_patterns":lines,
+                            "passage_boxes": boxes,
                             "question_marks": marks})
             if progress:
                 progress(i+1,count)
@@ -329,7 +335,8 @@ def build(source, output, *, mode="cycle", font=None, size=6.0, opacity=.45,
               "intensity":intensity,
               "font_mode": "file" if math_watermark else font_mode, "size_jitter": size_jitter, "seed": seed,
               "math_watermark": bool(math_watermark),
-              "feature_version": "math-formulas-qr-caption-v1",
+              "feature_version": "passage-box-gutter-qr-v2",
+              "replace_passage_boxes": bool(replace_passage_boxes),
               "qr_captions": bool(qr_captions),
               "width_jitter": width_jitter, "qr_placement": qr_placement,
               "qr_directive": QR_DIRECTIVE,
@@ -366,7 +373,8 @@ def main():
     parser.add_argument("--qr-prompt")
     parser.add_argument("--size-jitter", type=float, default=0)
     parser.add_argument("--width-jitter", type=float, default=0)
-    parser.add_argument("--qr-placement", choices=["fixed", "local-random"], default="fixed")
+    parser.add_argument("--qr-placement", choices=["fixed", "local-random", "gutter"], default="fixed")
+    parser.add_argument("--replace-passage-boxes", action="store_true")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--font-mode", choices=["file", "source"], default="file")
     parser.add_argument("--db", type=Path)
@@ -385,6 +393,7 @@ def main():
                        seed=args.seed, font_mode=args.font_mode,
                        width_jitter=args.width_jitter, qr_placement=args.qr_placement,
                        intensity=args.intensity,
+                       replace_passage_boxes=args.replace_passage_boxes,
                        tracking=dict(db=args.db, base_url=args.base_url, days=args.campaign_days,
                                      retention_days=args.retention_days, max_events=args.max_events,
                                      issuance_ref=args.issuance_ref) if args.db else None)
