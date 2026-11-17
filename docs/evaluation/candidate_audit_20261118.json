@@ -1,0 +1,7 @@
+{
+  "synthetic_raw_reparsed": 640,
+  "real_batches_reparsed": 126,
+  "real_answers_regraded": 504,
+  "real_body_pages_identical": 21,
+  "frozen_code_and_protocol_hashes_match": true
+}
