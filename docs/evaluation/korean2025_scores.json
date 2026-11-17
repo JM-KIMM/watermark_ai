@@ -1,0 +1,2982 @@
+{
+ "stats": {
+  "textlayer": {
+   "overflow": 0,
+   "truncated": 0,
+   "total": 56,
+   "answered": 52,
+   "correct": 24,
+   "equals_bait": 5
+  },
+  "original": {
+   "overflow": 0,
+   "truncated": 0,
+   "total": 56,
+   "answered": 56,
+   "correct": 17,
+   "equals_bait": 12
+  },
+  "border": {
+   "overflow": 0,
+   "truncated": 0,
+   "total": 56,
+   "answered": 56,
+   "correct": 8,
+   "equals_bait": 13
+  },
+  "frames": {
+   "overflow": 0,
+   "truncated": 0,
+   "total": 56,
+   "answered": 55,
+   "correct": 6,
+   "equals_bait": 33
+  },
+  "frames_labelled": {
+   "overflow": 0,
+   "truncated": 0,
+   "total": 56,
+   "answered": 56,
+   "correct": 9,
+   "equals_bait": 37
+  },
+  "lines": {
+   "overflow": 0,
+   "truncated": 0,
+   "total": 56,
+   "answered": 56,
+   "correct": 9,
+   "equals_bait": 54
+  },
+  "frames6": {
+   "overflow": 0,
+   "truncated": 0,
+   "total": 56,
+   "answered": 29,
+   "correct": 6,
+   "equals_bait": 7
+  },
+  "flip": {
+   "overflow": 0,
+   "truncated": 0,
+   "total": 56,
+   "answered": 46,
+   "correct": 8,
+   "equals_bait": 16
+  }
+ },
+ "questions": [
+  {
+   "section": "common",
+   "question": "1",
+   "textlayer": {
+    "answer": 3,
+    "correct": true,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 3,
+    "correct": true,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 3,
+    "correct": true,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 3,
+    "correct": true,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 3,
+    "correct": true,
+    "bait": 1,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "2",
+   "textlayer": {
+    "answer": 4,
+    "correct": true,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 4,
+    "correct": true,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 2,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 3,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 2,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "3",
+   "textlayer": {
+    "answer": 2,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 2,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 4,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 2,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 3,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 2,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 2,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 4,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "4",
+   "textlayer": {
+    "answer": 4,
+    "correct": true,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 3,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 3,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "5",
+   "textlayer": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 2,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 4,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "6",
+   "textlayer": {
+    "answer": null,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 3,
+    "correct": true,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 2,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 2,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 2,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 2,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 2,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "7",
+   "textlayer": {
+    "answer": null,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 3,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "8",
+   "textlayer": {
+    "answer": null,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 3,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 1,
+    "correct": true,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 1,
+    "correct": true,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 1,
+    "correct": true,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 1,
+    "correct": true,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 1,
+    "correct": true,
+    "bait": 4,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "9",
+   "textlayer": {
+    "answer": null,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 2,
+    "correct": true,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 3,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 5,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 5,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 5,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 3,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 3,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "10",
+   "textlayer": {
+    "answer": 3,
+    "correct": true,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 4,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 3,
+    "correct": true,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 3,
+    "correct": true,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": null,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "11",
+   "textlayer": {
+    "answer": 4,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 4,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 4,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 2,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 3,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 1,
+    "correct": true,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 4,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": null,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "12",
+   "textlayer": {
+    "answer": 5,
+    "correct": true,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 2,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 4,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 4,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 2,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 4,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "13",
+   "textlayer": {
+    "answer": 1,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": true
+   },
+   "original": {
+    "answer": 3,
+    "correct": true,
+    "bait": 3,
+    "bait_correct": true
+   },
+   "border": {
+    "answer": 2,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": true
+   },
+   "frames": {
+    "answer": 3,
+    "correct": true,
+    "bait": 3,
+    "bait_correct": true
+   },
+   "frames_labelled": {
+    "answer": 3,
+    "correct": true,
+    "bait": 3,
+    "bait_correct": true
+   },
+   "lines": {
+    "answer": 3,
+    "correct": true,
+    "bait": 3,
+    "bait_correct": true
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": true
+   },
+   "flip": {
+    "answer": null,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": true
+   }
+  },
+  {
+   "section": "common",
+   "question": "14",
+   "textlayer": {
+    "answer": 4,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 1,
+    "correct": true,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 1,
+    "correct": true,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 1,
+    "correct": true,
+    "bait": 3,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "15",
+   "textlayer": {
+    "answer": 2,
+    "correct": true,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 4,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 3,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 3,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 4,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 5,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 3,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "16",
+   "textlayer": {
+    "answer": 3,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 3,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 3,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 4,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 3,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 3,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "17",
+   "textlayer": {
+    "answer": 3,
+    "correct": true,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 2,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 2,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 2,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "18",
+   "textlayer": {
+    "answer": 3,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": true
+   },
+   "original": {
+    "answer": 3,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": true
+   },
+   "border": {
+    "answer": 3,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": true
+   },
+   "frames": {
+    "answer": 2,
+    "correct": true,
+    "bait": 2,
+    "bait_correct": true
+   },
+   "frames_labelled": {
+    "answer": 2,
+    "correct": true,
+    "bait": 2,
+    "bait_correct": true
+   },
+   "lines": {
+    "answer": 2,
+    "correct": true,
+    "bait": 2,
+    "bait_correct": true
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": true
+   },
+   "flip": {
+    "answer": null,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": true
+   }
+  },
+  {
+   "section": "common",
+   "question": "19",
+   "textlayer": {
+    "answer": 4,
+    "correct": true,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 4,
+    "correct": true,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 2,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "20",
+   "textlayer": {
+    "answer": 2,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 2,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "21",
+   "textlayer": {
+    "answer": 2,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 5,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 1,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": null,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "22",
+   "textlayer": {
+    "answer": 4,
+    "correct": true,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 3,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 3,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 1,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "23",
+   "textlayer": {
+    "answer": 3,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 3,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 3,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 3,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 3,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 3,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "24",
+   "textlayer": {
+    "answer": 2,
+    "correct": true,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 2,
+    "correct": true,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 4,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 4,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 4,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 5,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 2,
+    "correct": true,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 4,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "25",
+   "textlayer": {
+    "answer": 4,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": true
+   },
+   "original": {
+    "answer": 4,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": true
+   },
+   "border": {
+    "answer": 2,
+    "correct": true,
+    "bait": 2,
+    "bait_correct": true
+   },
+   "frames": {
+    "answer": 1,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": true
+   },
+   "frames_labelled": {
+    "answer": 2,
+    "correct": true,
+    "bait": 2,
+    "bait_correct": true
+   },
+   "lines": {
+    "answer": 2,
+    "correct": true,
+    "bait": 2,
+    "bait_correct": true
+   },
+   "frames6": {
+    "answer": 4,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": true
+   },
+   "flip": {
+    "answer": null,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": true
+   }
+  },
+  {
+   "section": "common",
+   "question": "26",
+   "textlayer": {
+    "answer": 5,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": true
+   },
+   "original": {
+    "answer": 3,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": true
+   },
+   "border": {
+    "answer": 4,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": true
+   },
+   "frames": {
+    "answer": 2,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": true
+   },
+   "frames_labelled": {
+    "answer": 3,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": true
+   },
+   "lines": {
+    "answer": 1,
+    "correct": true,
+    "bait": 1,
+    "bait_correct": true
+   },
+   "frames6": {
+    "answer": 1,
+    "correct": true,
+    "bait": 1,
+    "bait_correct": true
+   },
+   "flip": {
+    "answer": 2,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": true
+   }
+  },
+  {
+   "section": "common",
+   "question": "27",
+   "textlayer": {
+    "answer": 1,
+    "correct": true,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 2,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 1,
+    "correct": true,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 5,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 5,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 5,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 5,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": null,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "28",
+   "textlayer": {
+    "answer": 2,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 2,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "29",
+   "textlayer": {
+    "answer": 3,
+    "correct": true,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 3,
+    "correct": true,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 2,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 2,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 2,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 3,
+    "correct": true,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 3,
+    "correct": true,
+    "bait": 1,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "30",
+   "textlayer": {
+    "answer": 5,
+    "correct": true,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 4,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 4,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 4,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 4,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 4,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 4,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "31",
+   "textlayer": {
+    "answer": 4,
+    "correct": true,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 5,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 5,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 1,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 1,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "32",
+   "textlayer": {
+    "answer": 3,
+    "correct": true,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 3,
+    "correct": true,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 3,
+    "correct": true,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": null,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "common",
+   "question": "33",
+   "textlayer": {
+    "answer": 4,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": true
+   },
+   "original": {
+    "answer": 4,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": true
+   },
+   "border": {
+    "answer": 2,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": true
+   },
+   "frames": {
+    "answer": 4,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": true
+   },
+   "frames_labelled": {
+    "answer": 2,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": true
+   },
+   "lines": {
+    "answer": 5,
+    "correct": true,
+    "bait": 5,
+    "bait_correct": true
+   },
+   "frames6": {
+    "answer": 4,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": true
+   },
+   "flip": {
+    "answer": 4,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": true
+   }
+  },
+  {
+   "section": "common",
+   "question": "34",
+   "textlayer": {
+    "answer": 2,
+    "correct": true,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 2,
+    "correct": true,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 4,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": null,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "speech",
+   "question": "35",
+   "textlayer": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 3,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 3,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 4,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 3,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "speech",
+   "question": "36",
+   "textlayer": {
+    "answer": 4,
+    "correct": true,
+    "bait": 4,
+    "bait_correct": true
+   },
+   "original": {
+    "answer": 4,
+    "correct": true,
+    "bait": 4,
+    "bait_correct": true
+   },
+   "border": {
+    "answer": 2,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": true
+   },
+   "frames": {
+    "answer": 4,
+    "correct": true,
+    "bait": 4,
+    "bait_correct": true
+   },
+   "frames_labelled": {
+    "answer": 4,
+    "correct": true,
+    "bait": 4,
+    "bait_correct": true
+   },
+   "lines": {
+    "answer": 4,
+    "correct": true,
+    "bait": 4,
+    "bait_correct": true
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 4,
+    "bait_correct": true
+   },
+   "flip": {
+    "answer": 4,
+    "correct": true,
+    "bait": 4,
+    "bait_correct": true
+   }
+  },
+  {
+   "section": "speech",
+   "question": "37",
+   "textlayer": {
+    "answer": 3,
+    "correct": true,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 4,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "speech",
+   "question": "38",
+   "textlayer": {
+    "answer": 4,
+    "correct": true,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "speech",
+   "question": "39",
+   "textlayer": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 4,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "speech",
+   "question": "40",
+   "textlayer": {
+    "answer": 4,
+    "correct": true,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 4,
+    "correct": true,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 2,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 2,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 4,
+    "correct": true,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 5,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 3,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 2,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "speech",
+   "question": "41",
+   "textlayer": {
+    "answer": 3,
+    "correct": true,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 2,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 4,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 2,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 2,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 4,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 4,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "speech",
+   "question": "42",
+   "textlayer": {
+    "answer": 1,
+    "correct": true,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 1,
+    "correct": true,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 1,
+    "correct": true,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "speech",
+   "question": "43",
+   "textlayer": {
+    "answer": 1,
+    "correct": true,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 1,
+    "correct": true,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 5,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "speech",
+   "question": "44",
+   "textlayer": {
+    "answer": 3,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 3,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 3,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "speech",
+   "question": "45",
+   "textlayer": {
+    "answer": 4,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 2,
+    "correct": true,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 4,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 5,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 5,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 5,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": null,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "language",
+   "question": "35",
+   "textlayer": {
+    "answer": 1,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": true
+   },
+   "original": {
+    "answer": 3,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": true
+   },
+   "border": {
+    "answer": 3,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": true
+   },
+   "frames": {
+    "answer": 3,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": true
+   },
+   "frames_labelled": {
+    "answer": 2,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": true
+   },
+   "lines": {
+    "answer": 5,
+    "correct": true,
+    "bait": 5,
+    "bait_correct": true
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": true
+   },
+   "flip": {
+    "answer": 4,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": true
+   }
+  },
+  {
+   "section": "language",
+   "question": "36",
+   "textlayer": {
+    "answer": 3,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 4,
+    "correct": true,
+    "bait": 2,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "language",
+   "question": "37",
+   "textlayer": {
+    "answer": 4,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": true
+   },
+   "original": {
+    "answer": 4,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": true
+   },
+   "border": {
+    "answer": 4,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": true
+   },
+   "frames": {
+    "answer": 3,
+    "correct": true,
+    "bait": 3,
+    "bait_correct": true
+   },
+   "frames_labelled": {
+    "answer": 3,
+    "correct": true,
+    "bait": 3,
+    "bait_correct": true
+   },
+   "lines": {
+    "answer": 3,
+    "correct": true,
+    "bait": 3,
+    "bait_correct": true
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": true
+   },
+   "flip": {
+    "answer": 3,
+    "correct": true,
+    "bait": 3,
+    "bait_correct": true
+   }
+  },
+  {
+   "section": "language",
+   "question": "38",
+   "textlayer": {
+    "answer": 2,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 1,
+    "correct": true,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "language",
+   "question": "39",
+   "textlayer": {
+    "answer": 4,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 2,
+    "correct": true,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "language",
+   "question": "40",
+   "textlayer": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 3,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 3,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 2,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 1,
+    "correct": false,
+    "bait": 2,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "language",
+   "question": "41",
+   "textlayer": {
+    "answer": 3,
+    "correct": true,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 4,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 2,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 4,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 5,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 5,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 3,
+    "correct": true,
+    "bait": 5,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "language",
+   "question": "42",
+   "textlayer": {
+    "answer": 4,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 4,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 3,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 2,
+    "correct": false,
+    "bait": 3,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "language",
+   "question": "43",
+   "textlayer": {
+    "answer": 5,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 2,
+    "correct": true,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": null,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 1,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": null,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 4,
+    "correct": false,
+    "bait": 1,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "language",
+   "question": "44",
+   "textlayer": {
+    "answer": 3,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 3,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 2,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 3,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 2,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 5,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 2,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 3,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   }
+  },
+  {
+   "section": "language",
+   "question": "45",
+   "textlayer": {
+    "answer": 4,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "original": {
+    "answer": 2,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "border": {
+    "answer": 3,
+    "correct": true,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames": {
+    "answer": 5,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames_labelled": {
+    "answer": 5,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "lines": {
+    "answer": 5,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "frames6": {
+    "answer": 4,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   },
+   "flip": {
+    "answer": 2,
+    "correct": false,
+    "bait": 5,
+    "bait_correct": false
+   }
+  }
+ ]
+}

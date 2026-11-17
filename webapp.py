@@ -38,8 +38,8 @@ def parse_time(value):
 
 def build_options(settings, data_root):
     level = int(settings.get("intensity",2))
-    if level not in (1,2,3):
-        raise ValueError("강도 1·2·3 중 하나를 선택하세요.")
+    if level not in (1,2):
+        raise ValueError("강도 1·2 중 하나를 선택하세요.")
     tracking = None
     if settings.get("tracking") is True:
         tracking = dict(db=str(data_root/"qr_csv"),base_url=str(settings.get("base_url","http://127.0.0.1:8765")),
@@ -49,14 +49,23 @@ def build_options(settings, data_root):
                         archive=str(data_root/'qr_archive'))
     placement = settings.get("qr_placement", "question-end" if level != 1 else "fixed")
     qr_size = float(settings.get("qr_size", 40))
+    # Defaults follow the two treatments that lowered accuracy in the OCR+LLM measurement:
+    # the border in its measured form (6pt, 0.45, ±25% size, source glyphs, command +
+    # other-page excerpts) and per-question bait. The bait is printed on the border and on
+    # passage-box frames ('frames') rather than between body lines ('lines', the measured
+    # placement), because lines between the text confuse the people sitting the exam.
+    # The QR stays for access logging.
+    decoy = settings.get('decoy', 'frames')
+    decoy = 'lines' if decoy is True else (decoy or None)
     return dict(intensity=level,question_style="qr",qr_size=qr_size,
-                mode="cycle",font_mode=settings.get("font_mode","file"),
-                size=float(settings.get("font_size",6)),opacity=float(settings.get("opacity",.9)),
+                mode="cycle",font_mode=settings.get("font_mode","source"),
+                size=float(settings.get("font_size",6)),opacity=float(settings.get("opacity",.45)),
                 band=max(20, qr_size+16) if placement == "gutter" else 20,
-                size_jitter=float(settings.get("size_jitter",0)),
+                size_jitter=float(settings.get("size_jitter",.25)),
                 width_jitter=float(settings.get("width_jitter",0)),seed=42,
-                qr_placement=placement,replace_passage_boxes=settings.get("replace_passage_boxes", level != 1),
-                payload_policy=settings.get('payload_policy','current-choices'),
+                qr_placement=placement,replace_passage_boxes=bool(settings.get("replace_passage_boxes", False)),
+                payload_policy=settings.get('payload_policy'),
+                decoy=decoy,decoy_style=str(settings.get('decoy_style','labelled')),decoy_number=str(settings.get('decoy_number','absent')),
                 prompts_file=str(ROOT/"prompts_ko.json"),tracking=tracking)
 
 
@@ -75,9 +84,10 @@ def generate_worker(source, output, options, events):
         events.put(dict(kind="done",summary=dict(pages=len(report["pages"]),
             qr=sum(m["qr_status"]=="placed" for m in marks),
             skipped=sum(m["qr_status"]=="skipped-no-whitespace" for m in marks),
-            lines=sum(len(p["line_patterns"]) for p in report["pages"]),
             boxes=sum(len(p.get("passage_boxes", [])) for p in report["pages"]),
-            intensity=report["intensity"],tracking=bool(report["tracking"]),math_watermark=report.get("math_watermark",False),
+            decoys=sum(len(p.get("decoy_lines", [])) for p in report["pages"]),
+            baits=sum(len(p.get("decoy_baits", [])) for p in report["pages"]),
+            intensity=report["intensity"],tracking=bool(report["tracking"]),
             campaign_id=report['tracking']['campaign_id'] if report['tracking'] else None,
             captions_skipped=sum(m.get("label_status")=="skipped-no-whitespace" for m in marks))))
     except Exception as exc:
@@ -136,9 +146,6 @@ class Application:
                 self.start_collector()
                 settings.setdefault('base_url',self.collector_status()['base_url'])
             options=build_options(settings,self.data)
-            from watermark import is_math_exam
-            if is_math_exam(str(payload.get("filename",""))):
-                options["math_watermark"]=True
             data=base64.b64decode(payload.get("file",""),validate=True)
             if not 0<len(data)<=MAX_PDF or b"%PDF-" not in data[:1024]:
                 raise ValueError("25MB 이하의 PDF 파일을 선택하세요.")

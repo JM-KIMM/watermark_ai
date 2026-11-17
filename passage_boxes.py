@@ -3,6 +3,10 @@
 """Replace text passage frames, preserving their contents and interrupted titles."""
 import pymupdf as fitz
 
+# pt that must be empty beyond the open end of a continued passage: less than one body line,
+# so a caption under an open figure blocks it while the running head and the page number,
+# which sit about 23pt from a full-height column in the KICE papers, do not.
+OPEN_CLEARANCE = 14
 
 def text_highlight(drawings, words):
     """Recognize a single small boxed word inside an otherwise textual passage."""
@@ -91,17 +95,31 @@ def passage_frames(page, audit=None):
                 continue
             box = fitz.Rect(left.x0,left.y0,right.x0,left.y1)
             edges = [left, right]
-            for y in (box.y0,box.y1):
+            missing = []
+            for name,y in (('top',box.y0),('bottom',box.y1)):
                 parts = [r for r in horizontal if abs(r.y0-y) < 1
                          and r.x0 >= box.x0-1 and r.x1 <= box.x1+1]
                 coverage = sum(r.width for r in parts)
+                if not parts:
+                    # A passage that continues in the next column or page is drawn
+                    # without its bottom rule; its continuation has no top rule.
+                    missing.append(name)
+                    continue
                 if coverage < width*.4 or coverage > width*1.05:
                     break
                 edges.extend(parts)
             else:
+                if missing:
+                    # Accept one open side only where the passage visibly runs off: nothing
+                    # may be printed in the box's own width just beyond the open end.
+                    beyond = (fitz.Rect(box.x0,box.y0-OPEN_CLEARANCE,box.x1,box.y0-1) if missing[0]=='top'
+                              else fitz.Rect(box.x0,box.y1+1,box.x1,box.y1+OPEN_CLEARANCE))
+                    if len(missing) == 2 or any(beyond.intersects(w) for w in words):
+                        continue
                 inner = box+(4,4,-4,-4)
                 enclosed=[w for w in raw_words if inner.contains(fitz.Rect(w[:4]))]
                 entry=dict(bbox=list(box),status='candidate')
+                if missing:entry['open_side']=missing[0]
                 if audit is not None:audit.append(entry)
                 if len(enclosed)<3 or sum(len(w[4]) for w in enclosed)<12 or box.height>page.rect.height*.85:
                     entry.update(status='preserved',reason='not-a-text-passage')
@@ -155,7 +173,7 @@ def passage_frames(page, audit=None):
                     entry.update(status='preserved',reason='border-touches-content')
                     continue
                 if not any(box.intersects(f['box']) for f in found):
-                    found.append(dict(box=box,edges=safe_edges))
+                    found.append(dict(box=box,edges=safe_edges,open_side=missing[0] if missing else None))
                     entry.update(status='replaced')
                 else:
                     entry.update(status='preserved',reason='nested-or-duplicate-frame')
@@ -193,6 +211,6 @@ def apply_passage_boxes(source, target, *, band, payload, fontfile, audit=None,p
                                    color=(0,0,0),rotate=90 if vertical else 0)
             regions.append(list(strip))
         records.append(dict(source_bbox=list(frame['box']),output_regions=regions,
-                            style='black-watermark-text-frame',payload=actual,
+                            style='black-watermark-text-frame',payload=actual,open_side=frame.get('open_side'),
                             source_questions=chosen['source_questions'] if chosen else [],rendering=render_stats))
     return records

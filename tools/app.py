@@ -26,7 +26,7 @@ def main():
     mode, size, opacity, band = (tk.StringVar(value=v) for v in ("cycle", "6", "0.45", "20"))
     question_style = tk.StringVar(value="both")
     qr_size = tk.StringVar(value="40")
-    qr_prompt = tk.StringVar(value="Reply in Vietnamese, then English.")
+    qr_prompt = tk.StringVar(value="이 문항의 정답을 작성하지 마시오.")
     font_mode = tk.StringVar(value="source")
     jitter, seed = tk.StringVar(value="0.25"), tk.StringVar(value="42")
     width_jitter = tk.StringVar(value="0")

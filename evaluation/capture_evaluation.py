@@ -41,7 +41,7 @@ def prepare(out):
             print('GENERATE',exam['id'],flush=True)
             build(source,marked,preview=True,**options)
         manifest=json.loads(marked.with_suffix('.manifest.json').read_text(encoding='utf8'))
-        if manifest['source_sha256']!=sha(source) or manifest['feature_version']!='question-end-qr-passage-v3':
+        if manifest['source_sha256']!=sha(source) or manifest['feature_version']!='border-decoy-v5':
             raise ValueError('Changed inputs: use a new output directory')
         if not control.exists():
             with fitz.open(source) as original:

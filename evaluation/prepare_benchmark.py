@@ -37,11 +37,11 @@ def main():
         official_pdf_sha256=hashlib.sha256(official.read_bytes()).hexdigest(),
         transcription='Manually checked official image, page 1; Q14 accepts 3/5, Q53 accepts all choices.',pages=pages,answers=answers)
     (output/'key.json').write_text(json.dumps(key,ensure_ascii=False,indent=2),encoding='utf-8')
-    for level in (2,3):
+    for level in (2,):
         target=output/f'level{level}.pdf'
         if not target.exists():
             report=build(source,target,intensity=level,font_mode='source',size_jitter=.25,
-                         prompts_file=ROOT/'prompts_ko.json',math_watermark=False,qr_captions=False,progress=lambda i,n:print(level,i,n,flush=True))
+                         prompts_file=ROOT/'prompts_ko.json',qr_captions=False,progress=lambda i,n:print(level,i,n,flush=True))
             print('QR',sum(m['qr_status']=='placed' for p in report['pages'] for m in p['question_marks']),flush=True)
     (output/'source_path.txt').write_text(str(source),encoding='utf-8')
     control=output/'blank_border.pdf'

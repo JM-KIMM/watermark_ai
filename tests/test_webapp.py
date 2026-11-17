@@ -29,10 +29,12 @@ def sample_pdf(path,pages=2):
 
 
 class GenerationTests(unittest.TestCase):
-    def test_three_levels_pairs_and_graph_preservation(self):
+    def test_levels_pairs_and_graph_preservation(self):
         with TemporaryDirectory() as folder:
             root=Path(folder);source=root/"source.pdf";sample_pdf(source)
-            for level in (1,2,3):
+            with self.assertRaises(ValueError):
+                build(source,root/"level3.pdf",intensity=3,font_mode="file",preview=False)
+            for level in (1,2):
                 report=build(source,root/f"level{level}.pdf",intensity=level,font_mode="file",preview=False)
                 self.assertEqual(report["border_pt"],0 if level==1 else 20)
                 self.assertEqual(sum(m["qr_status"]=="placed" for p in report["pages"] for m in p["question_marks"]),2)
@@ -43,13 +45,9 @@ class GenerationTests(unittest.TestCase):
                         edges=page["typography"]["edge_payloads"]
                         self.assertEqual(edges["top"],edges["right"])
                         self.assertEqual(edges["bottom"],edges["left"])
-                        if page["mode"]=="command":
-                            self.assertNotEqual(edges["top"],edges["bottom"])
-                    if level==3:
-                        self.assertEqual(len(page["line_patterns"]),1)
-                        self.assertEqual(page["line_patterns"][0]["source_bbox"],[60.,320.,540.,320.])
-                    else:
-                        self.assertEqual(page["line_patterns"],[])
+                        self.assertNotIn("베트남",edges["top"]+edges["bottom"])
+                        self.assertNotIn("Vietnam",edges["top"]+edges["bottom"])
+                    self.assertNotIn("line_patterns",page)
                 with fitz.open(source) as original, fitz.open(report["output"]) as generated:
                     band=report["border_pt"]
                     for i,record in enumerate(report["pages"]):
@@ -60,7 +58,6 @@ class GenerationTests(unittest.TestCase):
                         draw=ImageDraw.Draw(diff)
                         regions=[mark["qr_bbox"] for mark in record["question_marks"] if mark["qr_status"]=="placed"]
                         regions += [mark["label_bbox"] for mark in record["question_marks"] if "label_bbox" in mark]
-                        regions += [line["output_bbox"] for line in record["line_patterns"]]
                         for x0,y0,x1,y1 in regions:
                             draw.rectangle((int(x0-band)-2,int(y0-band)-2,int(x1-band)+2,int(y1-band)+2),fill=(0,0,0))
                         self.assertLessEqual(max(hi for lo,hi in diff.getextrema()),2)

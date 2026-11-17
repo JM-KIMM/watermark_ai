@@ -16,7 +16,7 @@ $examSource = Get-Content -Encoding UTF8 outputs/benchmark_input/source_path.txt
 .venv/Scripts/python.exe evaluation/benchmark_local.py --source "$examSource" --marked outputs/benchmark_input/level2.pdf --key outputs/benchmark_input/key.json --model qwen2.5vl:3b --output outputs/eval_level2
 ```
 
-3단계는 `--marked outputs/benchmark_input/level3.pdf --output outputs/eval_level3`으로 별도 실행한다. `--limit 2`는 앞 2쪽 예비 실험이며 전체 시험 점수와 구분한다.
+3단계(구분선 무늬)는 2026-11-17에 삭제해 더 이상 생성하지 않는다. `--limit 2`는 앞 2쪽 예비 실험이며 전체 시험 점수와 구분한다.
 
 페이지별로 원본과 처리본을 각각 새 대화에 입력한다. 동일한 150dpi, temperature 0, seed 42, 문맥 길이 8192, 출력 상한 2048을 적용한다. 쪽마다 먼저 처리하는 조건을 교대한다. 각 응답·소요 시간·출력 토큰 수를 별도 JSON으로 저장해 중단 후 이어서 실행한다. 파일·정답·모델·옵션이 바뀌면 새 폴더를 사용해야 한다.
 

@@ -12,13 +12,13 @@ from corpus_evaluation import OUT,ASSETS,ROOT
 
 def main():
     inventory=json.loads((OUT/'inventory.json').read_text(encoding='utf-8'))
-    checks=0;questions=0;totals={c:0 for c in ('original','level2','level3')};failures={c:0 for c in totals};render_flags=[]
+    checks=0;questions=0;totals={c:0 for c in ('original','level2')};failures={c:0 for c in totals};render_flags=[]
     for exam in inventory:
         if exam['status']!='included':continue
         source=ROOT/exam['source']
         assert hashlib.sha256(source.read_bytes()).hexdigest()==exam['source_sha256']
         with fitz.open(source) as original:
-            for level in (2,3):
+            for level in (2,):
                 path=ASSETS/exam['id']/f'level{level}.pdf'
                 meta=json.loads(path.with_suffix('.manifest.json').read_text(encoding='utf-8'))
                 assert meta['source_sha256']==exam['source_sha256']
@@ -31,7 +31,7 @@ def main():
                         assert (before.width,before.height)==(after.width,after.height)
                         diff=ImageChops.difference(Image.frombytes('RGB',(before.width,before.height),before.samples),Image.frombytes('RGB',(after.width,after.height),after.samples))
                         draw=ImageDraw.Draw(diff)
-                        regions=[m['qr_bbox'] for m in record['question_marks'] if m['qr_status']=='placed']+[m['output_bbox'] for m in record['line_patterns']]
+                        regions=[m['qr_bbox'] for m in record['question_marks'] if m['qr_status']=='placed']
                         regions += [m['label_bbox'] for m in record['question_marks'] if 'label_bbox' in m]
                         for x0,y0,x1,y1 in regions:draw.rectangle((int(x0-band)-2,int(y0-band)-2,int(x1-band)+2,int(y1-band)+2),fill=0)
                         maximum=max(v[1] for v in diff.getextrema());mean=max(ImageStat.Stat(diff).mean)

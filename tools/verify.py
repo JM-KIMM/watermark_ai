@@ -48,9 +48,6 @@ def main():
                             x0, y0, x1, y1 = mark[key]
                             draw.rectangle((int(x0-b)-1, int(y0-b)-1,
                                             int(x1-b)+1, int(y1-b)+1), fill=(0, 0, 0))
-                for line in record.get("line_patterns",[]):
-                    x0,y0,x1,y1=line["output_bbox"]
-                    draw.rectangle((int(x0-b)-1,int(y0-b)-1,int(x1-b)+1,int(y1-b)+1),fill=(0,0,0))
                 assert max(high for low, high in delta.getextrema()) <= 2 and max(ImageStat.Stat(delta).mean) < .001, f"本文 rendering changed: {path.name} {i+1}"
                 bands = [fitz.Rect(0, 0, new.rect.width, b),
                          fitz.Rect(0, new.rect.height-b, new.rect.width, new.rect.height),

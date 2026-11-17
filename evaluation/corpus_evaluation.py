@@ -8,7 +8,6 @@ import csv
 import hashlib
 import json
 from pathlib import Path
-import re
 import time
 from urllib.error import HTTPError
 
@@ -109,16 +108,11 @@ def prepare(generate=True):
                             seen.update(qs)
                     if seen!=set(key):raise ValueError(f'Incomplete mapping: {source.name}/{section}: {set(key)-seen}')
                     item['sections'].append(dict(id=section,pages=pages,answers={q:v[0] for q,v in key.items()},weights={q:v[1] for q,v in key.items()}))
-            for level in ((2,3) if generate else ()):
+            for level in ((2,) if generate else ()):
                 target=folder/f'level{level}.pdf'
                 if not target.exists():
                     print('GENERATE',item['id'],source.name,level,flush=True)
-                    build(source,target,intensity=level,font_mode='source',size_jitter=.25,prompts_file=ROOT/'prompts_ko.json',math_watermark=False,qr_captions=False)
-            # Detect genuinely identical variants before treating them as separate evidence.
-            item['identical_stage_pages']=[]
-            if (folder/'level3.manifest.json').exists():
-                with fitz.open(folder/'level2.pdf') as a,fitz.open(folder/'level3.pdf') as b:
-                    item['identical_stage_pages']=[p+1 for p in range(len(a)) if a[p].get_pixmap(dpi=150).tobytes('png')==b[p].get_pixmap(dpi=150).tobytes('png')]
+                    build(source,target,intensity=level,font_mode='source',size_jitter=.25,prompts_file=ROOT/'prompts_ko.json',qr_captions=False)
         inventory.append(item)
     (OUT/'inventory.json').write_text(json.dumps(inventory,ensure_ascii=False,indent=2),encoding='utf-8')
     return inventory
@@ -128,27 +122,18 @@ def run(inventory):
     model=request('http://127.0.0.1:11434/api/tags')['models']
     model=next(m for m in model if m['name']=='qwen2.5vl:3b')
     (OUT/'protocol.json').write_text(json.dumps(dict(version=5,model=model,dpi=150,seed=42,temperature=0,num_ctx=16384,
-        input='PDF images; Korean shared-passage context explicitly grouped; self-contained tax/math/English questions use current page',identical_image_policy='Reuse level2 response for byte-identical level3 context; not an independent trial',font_mode='source',exclude='descriptive, math short-answer, English listening 1-17'),ensure_ascii=False,indent=2),encoding='utf-8')
+        input='PDF images; Korean shared-passage context explicitly grouped; self-contained tax/math/English questions use current page',font_mode='source',exclude='descriptive, math short-answer, English listening 1-17'),ensure_ascii=False,indent=2),encoding='utf-8')
     for exam in inventory:
         if exam['status']!='included':continue
         folder=OUT/exam['id'];folder.mkdir(exist_ok=True);source=ROOT/exam['source'];assets=ASSETS/exam['id']
-        docs={'original':fitz.open(source),'level2':fitz.open(assets/'level2.pdf'),'level3':fitz.open(assets/'level3.pdf')}
+        docs={'original':fitz.open(source),'level2':fitz.open(assets/'level2.pdf')}
         try:
             for section in exam['sections']:
                 dest=folder/section['id'];dest.mkdir(exist_ok=True)
                 for page,batch in section['pages'].items():
                     qs=batch['questions'];ctx=batch['context']
-                    for condition in ('original','level2','level3'):
+                    for condition in ('original','level2'):
                         cache=dest/f'{condition}-{page}.json'
-                        if condition=='level3' and all(p in exam['identical_stage_pages'] for p in ctx):
-                            # Avoid interpreting backend variability as an effect between identical inputs.
-                            record=json.loads((dest/f'level2-{page}.json').read_text(encoding='utf-8'))
-                            if cache.exists() and 'reused_from' not in json.loads(cache.read_text(encoding='utf-8')):
-                                backup=cache.with_suffix('.repeat.json')
-                                if not backup.exists():backup.write_bytes(cache.read_bytes())
-                            record.update(condition='level3',reused_from=f'level2-{page}.json',seconds=0,eval_count=0)
-                            cache.write_text(json.dumps(record,ensure_ascii=False,indent=2),encoding='utf-8')
-                            continue
                         if cache.exists():continue
                         imgs=[base64.b64encode(docs[condition][p-1].get_pixmap(dpi=150).tobytes('png')).decode() for p in ctx]
                         prompt=('Solve the multiple-choice exam. Images show consecutive relevant pages in ascending page order. '
@@ -195,7 +180,7 @@ def summarize(inventory):
     for exam in inventory:
         if exam['status']!='included':continue
         for section in exam['sections']:
-            answers={c:{} for c in ('original','level2','level3')}
+            answers={c:{} for c in ('original','level2')}
             for page in section['pages']:
                 for c in answers:
                     path=OUT/exam['id']/section['id']/f'{c}-{page}.json'
@@ -209,7 +194,7 @@ def summarize(inventory):
                     row[c+'_status']='inference_failure' if answers[c][q] is None else 'answered'
                 rows.append(row)
         subset=[r for r in rows if r['exam']==exam['source']]
-        result=dict(exam=exam['source'],total=len(subset),identical_stage_pages=len(exam['identical_stage_pages']))
+        result=dict(exam=exam['source'],total=len(subset))
         for c in answers:
             correct=sum(r[c+'_correct'] for r in subset);points=sum(r[c+'_correct']*r['weight'] for r in subset);maximum=sum(r['weight'] for r in subset)
             answered=sum(r[c] is not None for r in subset)
@@ -218,7 +203,7 @@ def summarize(inventory):
         summary.append(result)
     with (OUT/'questions.csv').open('w',encoding='utf-8-sig',newline='') as f:
         w=csv.DictWriter(f,fieldnames=list(rows[0]));w.writeheader();w.writerows(rows)
-    (OUT/'scores.json').write_text(json.dumps(dict(exams=summary,total_exposures=len(rows),totals={c:sum(r[c+'_correct'] for r in rows) for c in ('original','level2','level3')}),ensure_ascii=False,indent=2),encoding='utf-8')
+    (OUT/'scores.json').write_text(json.dumps(dict(exams=summary,total_exposures=len(rows),totals={c:sum(r[c+'_correct'] for r in rows) for c in ('original','level2')}),ensure_ascii=False,indent=2),encoding='utf-8')
     (OUT/'questions.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf-8')
     print('COMPLETE',len(rows),flush=True)
 
@@ -229,9 +214,7 @@ if __name__=='__main__':
     if args.pipeline:
         for exam in inventory:
             if exam['status']!='included':continue
-            while not (ASSETS/exam['id']/'level3.manifest.json').exists():time.sleep(5)
-            with fitz.open(ASSETS/exam['id']/'level2.pdf') as a,fitz.open(ASSETS/exam['id']/'level3.pdf') as b:
-                exam['identical_stage_pages']=[p+1 for p in range(len(a)) if a[p].get_pixmap(dpi=150).tobytes('png')==b[p].get_pixmap(dpi=150).tobytes('png')]
+            while not (ASSETS/exam['id']/'level2.manifest.json').exists():time.sleep(5)
             run([exam])
         (OUT/'inventory.json').write_text(json.dumps(inventory,ensure_ascii=False,indent=2),encoding='utf-8')
         summarize(inventory)

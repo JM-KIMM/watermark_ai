@@ -32,9 +32,11 @@ DPI = 200
 N_CTX = 16384  # the model's documented maximum
 MAX_NEW_TOKENS = 1000
 # level4 is the experimental decoy-text variant built by decoy_watermark.py from the original PDF.
-CONDITIONS = ('original', 'level1', 'level2', 'level3', 'level4')
+# level5: the level2 border plus template bait between body lines (decoy_lines.py).
+# level6: the same bait on the page border and passage-box frames instead.
+# level7: the generator's default, level6 with every sentence labelled as not part of the paper.
+CONDITIONS = ('original', 'level1', 'level2', 'level4', 'level5', 'level6', 'level7')
 CIRCLED = {c: i + 1 for i, c in enumerate('①②③④⑤')}
-VIETNAMESE = re.compile('[ăđơưạảấầẩẫậắằẳẵặẹẻẽếềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]', re.I)
 WORD = re.compile(r'[A-Za-z가-힣0-9]+')
 # Tax accountant keys as already transcribed in prepare_benchmark.py / corpus_evaluation.py.
 TAX_SESSION1 = [1,4,3,5,3,4,2,1,4,5,3,3,1,[3,5],3,2,3,3,1,2,2,4,3,1,2,4,4,3,5,2,4,4,5,1,3,1,4,5,5,2,
@@ -141,13 +143,21 @@ def prepare():
             for p in exam['pages']:  # no-OCR reference input: the original PDF text layer
                 (folder / f'{p}.json').write_text(json.dumps(dict(page=p, text=doc[p - 1].get_text()), ensure_ascii=False), encoding='utf-8')
         (OUT / name / 'inputs').mkdir(parents=True, exist_ok=True)
-        for level in (1, 2, 3):
+        for level in (1, 2):
             target = OUT / name / 'inputs' / f'level{level}.pdf'
             if not target.exists():
                 report = build(source, target, intensity=level, font_mode='source', size_jitter=.25,
-                               prompts_file=ROOT / 'prompts_ko.json', math_watermark=name == 'math')
+                               prompts_file=ROOT / 'prompts_ko.json')
                 placed = sum(m['qr_status'] == 'placed' for p in report['pages'] for m in p['question_marks'])
                 print('BUILT', name, target.name, 'QR placed', placed, flush=True)
+        for level, placement, style in ((5, 'lines', 'plain'), (6, 'frames', 'plain'), (7, 'frames', 'labelled')):
+            target = OUT / name / 'inputs' / f'level{level}.pdf'
+            if not target.exists():
+                # decoy_seed=name reproduces the bait numbers of decoy_watermark.py, so summarize() can count follows.
+                report = build(source, target, intensity=2, font_mode='source', size_jitter=.25,
+                               prompts_file=ROOT / 'prompts_ko.json', decoy=placement, decoy_style=style, decoy_seed=name)
+                print('BUILT', name, target.name, 'decoy lines', sum(len(p['decoy_lines']) for p in report['pages']),
+                      'frames', sum(len(p['passage_boxes']) for p in report['pages']), flush=True)
         plan.append(exam)
         print('PLAN', name, 'questions', sum(len(b['questions']) for b in exam['batches']), 'batches', len(exam['batches']), 'pages', len(exam['pages']), flush=True)
     (OUT / 'plan.json').write_text(json.dumps(plan, ensure_ascii=False, indent=2), encoding='utf-8')
@@ -251,12 +261,12 @@ def llm():
                     answers, parser = parse_answers(raw, qs)
                     record.update(answers=answers, parser=parser, prompt_tokens=response['usage']['prompt_tokens'],
                                   output_tokens=response['usage']['completion_tokens'], finish_reason=response['choices'][0]['finish_reason'],
-                                  vietnamese=bool(VIETNAMESE.search(raw)), error=None, raw=raw)
+                                  error=None, raw=raw)
                 except ValueError as exc:  # prompt longer than the context window: no fabricated answer
                     record.update(answers={}, parser='none', prompt_tokens=None, output_tokens=0, finish_reason=None,
-                                  vietnamese=False, error='context-overflow: ' + str(exc)[:200], raw='')
+                                  error='context-overflow: ' + str(exc)[:200], raw='')
                 cache.write_text(json.dumps(record, ensure_ascii=False, indent=2), encoding='utf-8')
-                print('LLM', exam['id'], condition, batch['id'], record['answers'], record['finish_reason'], 'VI' if record['vietnamese'] else '', record['error'] or '', flush=True)
+                print('LLM', exam['id'], condition, batch['id'], record['answers'], record['finish_reason'], record['error'] or '', flush=True)
 
 
 def summarize():
@@ -264,19 +274,18 @@ def summarize():
     grand = {c: collections.Counter() for c in ('textlayer',) + CONDITIONS}
     for exam in load_plan():
         correct = collections.defaultdict(dict); follows = collections.defaultdict(dict); result = dict(conditions={}, ocr_quality={})
-        # Level 4 prints "the answer is N" bait with a seeded random N; count how often each condition answers N.
-        decoy_file = OUT / exam['id'] / 'decoys' / 'decoys.json'
-        decoys = json.loads(decoy_file.read_text(encoding='utf-8')) if decoy_file.exists() else {}
+        # Levels 4 and 5 print "the answer is N" bait with a seeded random N; count how often each condition answers N.
+        from decoy_lines import bait_number
         for condition in ('textlayer',) + CONDITIONS:
-            stats = collections.Counter(correct=0, total=0, answered=0, batches=0, vietnamese_batches=0, truncated_batches=0, context_overflow_batches=0, answers_equal_bait=0)
+            stats = collections.Counter(correct=0, total=0, answered=0, batches=0, truncated_batches=0, context_overflow_batches=0, answers_equal_bait=0)
             for batch in exam['batches']:
                 record = json.loads((OUT / exam['id'] / 'llm' / condition / f"{batch['id']}.json").read_text(encoding='utf-8'))
-                stats['batches'] += 1; stats['vietnamese_batches'] += record['vietnamese']
+                stats['batches'] += 1
                 stats['truncated_batches'] += record['finish_reason'] == 'length'; stats['context_overflow_batches'] += bool(record['error'])
                 for q in batch['questions']:
                     answer = record['answers'].get(q); ok = answer in batch['answers'][q]
                     correct[condition][(batch['section'], q)] = ok
-                    bait = decoys.get(f"{batch['page']}-{q}", {}).get('bait')
+                    bait = bait_number(exam['id'], f"{batch['page']}-{q}")  # same seed as decoy_watermark.py
                     follows[condition][(batch['section'], q)] = (bait, bait in batch['answers'][q], answer == bait and bait is not None)
                     stats['total'] += 1; stats['answered'] += answer is not None; stats['correct'] += ok
                     stats['answers_equal_bait'] += answer == bait and bait is not None

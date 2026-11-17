@@ -145,7 +145,7 @@ def audit(out):
         for c,p in e['inputs'].items():
             if sha(p)!=seal['pdfs'][e['id']][c]:raise ValueError('Changed PDF')
         manifest=Path(e['inputs']['current_choices']).with_suffix('.manifest.json');meta=read(manifest)
-        if meta['payload_policy']!='current-choices' or meta['math_watermark']:raise ValueError('Wrong payload policy or generated math')
+        if meta['payload_policy']!='current-choices' or meta.get('math_watermark'):raise ValueError('Wrong payload policy or generated math')
         checked=0
         for s in e['sections']:
             for page,batch in s['pages'].items():

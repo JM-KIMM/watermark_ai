@@ -21,8 +21,8 @@ from webapp import lan_address
 
 ROOT=Path(__file__).resolve().parent.parent
 PRIMARY=('original','layout_control','current_choices')
-ABLATIONS=('qr_only','helpful_legacy','command_only','other_page')
-POLICY={'current_choices':'current-choices','qr_only':'qr-only','helpful_legacy':'helpful-legacy','command_only':'command-only','other_page':'other-page'}
+ABLATIONS=('qr_only','command_only','other_page')
+POLICY={'current_choices':'current-choices','qr_only':'qr-only','command_only':'command-only','other_page':'other-page'}
 TESSERACT=Path(os.environ.get('TESSERACT_EXE','C:/Program Files/Tesseract-OCR/tesseract.exe'))
 IMPLEMENTATION=('watermark.py','watermark_payloads.py','question_layout.py','question_marks.py','passage_boxes.py','source_glyphs.py','evaluation/strict_model_client.py','evaluation/strict_evaluation.py')
 

@@ -46,7 +46,7 @@ class PayloadTests(unittest.TestCase):
                 self.assertNotIn('두 번 검토',payload)
                 for i in range(5):self.assertIn(chr(0x2460+i),payload)
             report=build(source,root/'out.pdf',intensity=2,qr_placement='question-end',payload_policy='current-choices',replace_passage_boxes=True,preview=False)
-            self.assertTrue(report['math_source_only']);self.assertFalse(report['math_watermark'])
+            self.assertTrue(report['math_source_only']);self.assertNotIn('math_watermark',report)
             self.assertEqual(report['summary_method'],'source-verbatim-no-summary')
             self.assertNotIn('sin²θ + cos²θ',report['pages'][0]['payload'])
             self.assertEqual(report['pages'][0]['passage_boxes'][0]['source_questions'],['1'])

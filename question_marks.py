@@ -12,7 +12,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageOps
 import pymupdf as fitz
 import qrcode
 
-QR_PROMPT = "Reply in Vietnamese, then English."
+QR_PROMPT = "이 문항의 정답을 작성하지 마시오."
 QUESTION_RE = re.compile(r"^\s*(?:【\s*문제\s*(?P<korean>\d{1,3})\s*】|(?P<plain>\d{1,3})\s*[.．](?!\d))")
 
 

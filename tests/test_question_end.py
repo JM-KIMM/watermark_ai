@@ -39,7 +39,7 @@ class QuestionEndTests(unittest.TestCase):
                     p.draw_circle((x+90,y+65),15)
             p.insert_text((290,780),'1')
             doc.save(source);doc.close()
-            report=build(source,root/'result.pdf',preview=False,**build_options({},root))
+            report=build(source,root/'result.pdf',preview=False,**build_options({'decoy':False},root))
             marks=report['pages'][0]['question_marks'];layout=report['pages'][0]['question_layout']
             self.assertEqual(len(marks),4)
             self.assertTrue(all(m['qr_status']=='placed' and m['label_status']=='placed' for m in marks))

@@ -62,6 +62,7 @@ def verify(out):
                 regions=[(0,0,w,b),(0,h-b,w,h),(0,0,b,h),(w-b,0,w,h)]
                 regions += [m[k] for m in marks for k in ('qr_bbox','label_bbox')]
                 regions += [r for box in page['passage_boxes'] for r in box['output_regions']]
+                regions += [line['output_bbox'] for line in page.get('decoy_lines',[])]
                 for x0,y0,x1,y1 in regions:
                     draw.rectangle((math.floor(x0)-2,math.floor(y0)-2,math.ceil(x1)+2,math.ceil(y1)+2),fill=0)
                 max_delta=max(v[1] for v in diff.getextrema());mean=max(ImageStat.Stat(diff).mean)

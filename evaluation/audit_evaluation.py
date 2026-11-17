@@ -4,10 +4,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # repository root
 import base64
 import csv
-import hashlib
 import json
 from pathlib import Path
-import time
 import pymupdf as fitz
 from benchmark_local import request
 
@@ -33,7 +31,7 @@ def main():
     key=json.loads((ROOT/'outputs/benchmark_input/key.json').read_text(encoding='utf-8'))
     results={label:load_answers(folder,kind,key) for label,folder,kind in [
         ('original','eval_level2_v2','original'),('level2','eval_level2_v2','watermarked'),
-        ('level3','eval_level3_v2','watermarked'),('blank','eval_blank_border_v2','watermarked')]}
+        ('blank','eval_blank_border_v2','watermarked')]}
     rows=[]
     for q in sorted(key['answers'],key=int):
         expected=key['answers'][q];expected=expected if isinstance(expected,list) else [expected]
@@ -43,11 +41,7 @@ def main():
         rows.append(row)
     with (OUT/'questions.csv').open('w',encoding='utf-8-sig',newline='') as handle:
         writer=csv.DictWriter(handle,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
-    summary=dict(multiple_choice=80,descriptive=0,totals={c:sum(r[c+'_correct'] for r in rows) for c in results},
-                 stage_differences=[r for r in rows if r['level2']!=r['level3']])
-    with fitz.open(ROOT/'outputs/benchmark_input/level2.pdf') as a,fitz.open(ROOT/'outputs/benchmark_input/level3.pdf') as b:
-        summary['equal_150dpi_png_pages']=[i+1 for i in range(len(a)) if
-            hashlib.sha256(a[i].get_pixmap(dpi=150).tobytes('png')).digest()==hashlib.sha256(b[i].get_pixmap(dpi=150).tobytes('png')).digest()]
+    summary=dict(multiple_choice=80,descriptive=0,totals={c:sum(r[c+'_correct'] for r in rows) for c in results})
     (OUT/'audit.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps(summary),flush=True)
     # Repeat exactly the ambiguous page, using the original evaluation prompt/options.

@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parent.parent
-NAMES={'original':'원본','layout_control':'동일 배치 대조군','current_choices':'현재 문제 보기','qr_only':'URL QR만','helpful_legacy':'과거 지시문','command_only':'비풀이 명령만','other_page':'다른 페이지 원문'}
+NAMES={'original':'원본','layout_control':'동일 배치 대조군','current_choices':'현재 문제 보기','qr_only':'URL QR만','command_only':'비풀이 명령만','other_page':'다른 페이지 원문'}
 EXAMS={'exam01':'세무사 1교시','exam02':'세무사 2교시·민법','exam03':'세무사 2교시·상법','exam04':'세무사 2교시·행정소송법','exam05':'수능 국어','exam08':'수능 수학','exam09':'수능 영어'}
 
 
@@ -102,7 +102,6 @@ def export(out):
              '- 원본 정확도가 낮거나 한 번호로 답이 쏠리면 차단 성능의 근거로 삼을 수 없습니다. 응답 분포·거부·오류·과목별 점수를 함께 확인해야 합니다.',
              '- 공식 전원 정답 문항을 제외한 보조 정확도와 복수 정답을 반영한 균등 무작위 선택의 기대 정확도도 JSON에 제공합니다. 이 자료에서 무작위 선택 기대값을 무조건 20%로 고정하지 않습니다.',
              '- 알려진 시험지를 재사용한 실험이며 손대지 않은 외부 검증 세트가 아닙니다. 사람의 가독성·시험 점수·실제 AI 안경은 측정하지 않았습니다.',
-             '- 과거 지시문 조건에는 검토 요청과 출력 언어 지시가 함께 들어 있습니다. 각 성분이나 과거 수학의 새 공식 요소를 따로 분리한 조건이 아니므로 이전 상승 원인을 하나로 확정하지 않습니다.',
              '- 두 로컬 백엔드는 서로 다른 모델과 입력 경로입니다. 차이를 순수한 OCR 효과라고 해석하지 않습니다. temperature 0에서 seed 반복이 같은 답을 낼 수 있으며 독립 표본으로 취급하지 않습니다.',
              '- 상용 API 평가는 실행하지 않았습니다. LAN 접속·영구 CSV·재시작 복구는 별도의 기능 시험이며 IP만으로 개인 신원이나 부정행위를 확정하지 않습니다.','',
              '[사전 계획](STRICT_EXPERIMENT_PLAN.md) · [실행 방법](STRICT_RUN.md) · [독립 감사 및 신뢰구간](evaluation/strict_audit.json) · [문항별 정오](evaluation/strict_questions.json) · [QR 대시보드](QR_DASHBOARD.md)']

@@ -28,10 +28,9 @@
     blobLink(pdf, $('download-pdf'), job.name.replace(/\.pdf$/i, '')+'_워터마크.pdf');
     blobLink(manifest, $('download-manifest'), '워터마크_처리기록.json');
     const s = job.summary;
-    $('result-stats').textContent = `${s.pages}쪽 · QR ${s.qr}개 · 박스 ${s.boxes || 0}개 교체`;
+    $('result-stats').textContent = `${s.pages}쪽 · QR ${s.qr}개 · 방해 문장 ${s.baits || s.decoys || 0}문항 · 지문 테두리 ${s.boxes || 0}개`;
     $('result').hidden = false;
     let message = '완료했습니다. PDF를 내려받으세요.';
-    if (s.math_watermark) message += ' 수학 전용 수식을 적용했습니다.';
     if (s.skipped) message += ` 고정 위치가 겹치는 ${s.skipped}개 QR은 생략했습니다. 처리 기록을 확인하세요.`;
     status(message);
   }
