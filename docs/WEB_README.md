@@ -22,4 +22,4 @@ Windows / Python 3.10 이상이 필요합니다. 첫 실행에는 의존 패키�
 
 개발 실행: `python webapp.py --no-browser`. 검증: `python -m unittest discover -s tests -t . -v`.
 
-웹 생성기는 로컬 LLM 평가를 실행하지 않습니다. 새 구성의 평가는 [사전 실험계획](STRICT_EXPERIMENT_PLAN.md)을 따릅니다. 기본 구성의 근거는 [OCR+LLM 결과](OCR_LLM_RESULTS_2026-11-16.md)이며, 테두리와 방해 문장을 따로 잰 것이라 둘을 합친 현재 구성의 수치는 아닙니다. [페이지 캡처 평가](CAPTURE_RESULTS_2026-11-16.md)는 이전 v3 구성의 결과입니다. 코드 라이선스는 `LICENSE`, 의존성 고지는 `THIRD_PARTY_NOTICES.md`를 참조하세요. 배포에는 원본 시험지·생성 PDF·접속 기록·모델을 포함하지 않습니다.
+웹 생성기는 로컬 LLM 평가를 실행하지 않습니다. 새 구성의 평가는 [사전 실험계획](STRICT_EXPERIMENT_PLAN.md)을 따릅니다. 기본 구성의 근거는 [OCR+LLM 결과](OCR_LLM_RESULTS_2026-11-16.md)이며, 테두리와 방해 문장을 따로 잰 것이라 둘을 합친 현재 구성은 [국어 56문항](RESULTS.md)으로만 쟀습니다. 보기 원문 테두리 구성(`payload_policy: "current-choices"`)의 554문항 결과는 [엄격 캡처 평가](STRICT_RESULTS_2026-11-17.md)에 있으며, 배치 대조군 대비 추가 효과는 확인되지 않았습니다. [페이지 캡처 평가](CAPTURE_RESULTS_2026-11-16.md)는 이전 v3 구성의 결과입니다. 코드 라이선스는 `LICENSE`, 의존성 고지는 `THIRD_PARTY_NOTICES.md`를 참조하세요. 배포에는 원본 시험지·생성 PDF·접속 기록·모델을 포함하지 않습니다.

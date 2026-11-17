@@ -1,0 +1,98 @@
+{
+  "files": [
+    {
+      "exam": "exam01",
+      "decode": {
+        "200": {
+          "correct": 80,
+          "total": 80
+        },
+        "300": {
+          "correct": 80,
+          "total": 80
+        }
+      }
+    },
+    {
+      "exam": "exam02",
+      "decode": {
+        "200": {
+          "correct": 80,
+          "total": 80
+        },
+        "300": {
+          "correct": 80,
+          "total": 80
+        }
+      }
+    },
+    {
+      "exam": "exam03",
+      "decode": {
+        "200": {
+          "correct": 80,
+          "total": 80
+        },
+        "300": {
+          "correct": 80,
+          "total": 80
+        }
+      }
+    },
+    {
+      "exam": "exam04",
+      "decode": {
+        "200": {
+          "correct": 80,
+          "total": 80
+        },
+        "300": {
+          "correct": 80,
+          "total": 80
+        }
+      }
+    },
+    {
+      "exam": "exam05",
+      "decode": {
+        "200": {
+          "correct": 112,
+          "total": 112
+        },
+        "300": {
+          "correct": 112,
+          "total": 112
+        }
+      }
+    },
+    {
+      "exam": "exam08",
+      "decode": {
+        "200": {
+          "correct": 92,
+          "total": 92
+        },
+        "300": {
+          "correct": 92,
+          "total": 92
+        }
+      }
+    },
+    {
+      "exam": "exam09",
+      "decode": {
+        "200": {
+          "correct": 90,
+          "total": 90
+        },
+        "300": {
+          "correct": 90,
+          "total": 90
+        }
+      }
+    }
+  ],
+  "failures": [],
+  "http_requests_sent": 0,
+  "note": "Raster crop decode; neither a camera measurement nor proof that an LLM visits QR URLs."
+}

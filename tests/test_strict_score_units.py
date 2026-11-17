@@ -21,3 +21,4 @@ class ScoreUnitTests(unittest.TestCase):
         rows=[dict(exam='exam09',section='odd',question='24',weight=1,seed=42,condition='original',status='format_error',correct=0)]
         u=score_units(rows)[0]
         self.assertEqual((u['max_points'],u['points'],u['unresolved']),(3,0,1))
+        self.assertEqual(u['possible_points_range'],[0,3])

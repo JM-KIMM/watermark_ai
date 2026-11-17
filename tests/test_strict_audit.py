@@ -1,6 +1,6 @@
 import unittest
 
-from evaluation.audit_strict_evaluation import metrics,paired,request_groups
+from evaluation.audit_strict_evaluation import metrics,paired,request_groups,capture_keys
 
 
 def row(q,c,correct,cluster=None,status='ok',accepted=None):
@@ -9,6 +9,11 @@ def row(q,c,correct,cluster=None,status='ok',accepted=None):
 
 
 class StrictAuditTests(unittest.TestCase):
+    def test_windows_seal_paths_match_portable_inference_lookup(self):
+        seal={'captures':{r'captures\exam01\current_choices\page-001.png':'digest'}}
+        self.assertEqual(capture_keys(seal)['captures/exam01/current_choices/page-001.png'],'digest')
+        self.assertIn(r'captures\exam01\current_choices\page-001.png',seal['captures'])
+
     def test_duplicate_cluster_mean_differs_from_exposure_mean(self):
         rows=[]
         for q,cluster,a,b in [(1,'shared',0,1),(2,'shared',0,1),(3,'unique',1,0)]:
@@ -45,3 +50,11 @@ class StrictAuditTests(unittest.TestCase):
         self.assertEqual(result['correct_to_wrong'],2)
         self.assertEqual(result['correct_to_unanswered'],1)
         self.assertEqual(result['correct_to_answered_wrong'],1)
+
+    def test_bootstrap_does_not_depend_on_file_or_row_order(self):
+        rows=[]
+        for q in range(30):
+            rows += [row(q,'a',int(q%3==0),str(q//2)),row(q,'b',int(q%4==0),str(q//2))]
+        first=paired(rows,'a','b',1000);second=paired(list(reversed(rows)),'a','b',1000)
+        self.assertEqual(first['cluster_bootstrap_95'],second['cluster_bootstrap_95'])
+        self.assertEqual(first['cluster_mean_bootstrap_95'],second['cluster_mean_bootstrap_95'])

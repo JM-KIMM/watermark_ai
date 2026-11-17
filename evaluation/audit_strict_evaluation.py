@@ -23,6 +23,10 @@ def sha(p):
     return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 
 
+def capture_keys(seal):
+    return {name.replace('\\','/'):digest for name,digest in seal['captures'].items()}
+
+
 def logical_cluster(exam,section,q):
     family=section.removeprefix('odd_').removeprefix('even_')
     if family in ('odd','even'):family='english'
@@ -99,7 +103,7 @@ def paired(rows,a,b,iterations=10000,cluster_key='cluster'):
     if not pairs:return dict(conditions=[a,b],pairs=0)
     clusters=defaultdict(list)
     for x,y in pairs:clusters[x[cluster_key]].append(y['correct']-x['correct'])
-    arrays=list(clusters.values());sums=np.array([sum(v) for v in arrays]);sizes=np.array([len(v) for v in arrays]);means=sums/sizes
+    arrays=[clusters[name] for name in sorted(clusters)];sums=np.array([sum(v) for v in arrays]);sizes=np.array([len(v) for v in arrays]);means=sums/sizes
     rng=np.random.default_rng(20261116);indices=rng.integers(len(arrays),size=(iterations,len(arrays)))
     exposure=100*sums[indices].sum(axis=1)/sizes[indices].sum(axis=1)
     macro=100*means[indices].mean(axis=1)
@@ -122,6 +126,7 @@ def paired(rows,a,b,iterations=10000,cluster_key='cluster'):
 
 def audit(out):
     plan=read(out/'plan.json');inventory=read(out/'inventory.json');seal=read(out/'input_seal.json')
+    capture_digests=capture_keys(seal)
     frozen_plan={k:v for k,v in plan.items() if k!='identity'}
     identity=hashlib.sha256(json.dumps(dict(plan=frozen_plan,keys=[e['sections'] for e in inventory if e['status']=='included']),sort_keys=True).encode()).hexdigest()
     if identity!=plan['identity'] or seal['identity']!=identity:raise ValueError('Frozen plan or answer mapping changed')
@@ -165,21 +170,21 @@ def audit(out):
     pilot={(v['exam'],v['section'],v['question']) for v in plan['pilot']}
     public={};allrows={}
     for backend in ('vision','ocr_llm'):
-        rows=[];responses=list((out/'responses'/backend).glob('seed-*/*/*/*.json'));usages=[]
+        rows=[];responses=sorted((out/'responses'/backend).glob('seed-*/*/*/*.json'));usages=[]
         for path in responses:
             r=read(path)
             usages += [a['usage'] for a in r['attempts'] if a.get('usage')]
             if r['identity']!=plan['identity'] or r['input_seal_sha256']!=sha(out/'input_seal.json'):raise ValueError('Response experiment changed')
             for p,digest in zip(r['context_pages'],r['image_sha256']):
                 relative=f"captures/{r['exam']}/{r['condition']}/page-{p:03}.png"
-                if seal['captures'][relative]!=digest:raise ValueError('Wrong inference image')
+                if capture_digests[relative]!=digest:raise ValueError('Wrong inference image')
             if backend=='ocr_llm':
                 for p,digest in zip(r['context_pages'],r['ocr_text_sha256']):
                     cache=read(out/'ocr'/r['exam']/r['condition']/f'{p}.json')
                     if cache['lang'] not in plan['tesseract']['languages']:raise ValueError('Wrong OCR language')
                     if cache['text_sha256']!=digest or hashlib.sha256(cache['text'].encode()).hexdigest()!=digest:raise ValueError('Changed OCR')
                     image=f"captures/{r['exam']}/{r['condition']}/page-{p:03}.png"
-                    if cache['image_sha256']!=seal['captures'][image]:raise ValueError('Wrong OCR source image')
+                    if cache['image_sha256']!=capture_digests[image]:raise ValueError('Wrong OCR source image')
             if r['status']=='ok':
                 answers=final_answers(r['attempts'][-1]['raw'],r['questions'])
                 if answers!=r['answers']:raise ValueError('Stored answer disagrees with raw final answer')
