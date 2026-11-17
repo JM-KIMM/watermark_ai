@@ -29,6 +29,8 @@ FILES=[
     "docs/evaluation/capture_audit.json","docs/evaluation/capture_qr_check.json","docs/evaluation/capture_qr_all.json",
     "docs/evaluation/capture_inventory.json",
     "docs/OCR_LLM_RESULTS_2026-11-16.md","docs/evaluation/ocr_llm_scores.json",
+    "docs/DISTRIBUTION_EXPERIMENT.md","docs/evaluation/korean2025_scores.json","docs/evaluation/korean2025_distribution.json",
+    "evaluation/korean2025_build.py","evaluation/korean2025_eval.py","docs/STRICT_RESULTS_2026-11-17.md","tests/test_open_frames.py",
     "docs/evaluation/corpus_scores.json","docs/evaluation/corpus_questions.json",
     "docs/evaluation/corpus_inventory.json","docs/evaluation/corpus_protocol.json",
     "docs/evaluation/corpus_verification.json",
