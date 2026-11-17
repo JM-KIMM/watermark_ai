@@ -22,7 +22,9 @@ def score_units(rows):
     result=[]
     for (exam,unit,condition,note),items in sorted(groups.items()):
         unresolved=sum(r['status'] not in ('ok','refused') for r,w in items)
+        points=sum(r['correct']*w for r,w in items)
+        unknown_points=sum(w for r,w in items if r['status'] not in ('ok','refused'))
         result.append(dict(exam=exam,unit=unit,condition=condition,note=note,questions=len(items),
-                           correct=sum(r['correct'] for r,w in items),points=sum(r['correct']*w for r,w in items),
+                           correct=sum(r['correct'] for r,w in items),points=points,possible_points_range=[points,points+unknown_points],
                            max_points=sum(w for r,w in items),unresolved=unresolved))
     return result

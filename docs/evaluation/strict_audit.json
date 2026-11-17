@@ -1,0 +1,5629 @@
+{
+  "identity": "22fca2b6056a40b773bec8ad7b00a9a4ad4dcca2c5b89d089e33dfe411478706",
+  "independent_regrade": true,
+  "input_hashes_verified": true,
+  "environment_hashes_verified": true,
+  "input_seal_sha256": "a9369103c289841bd23bda30247796b4c04c03efc84f79e79b39637ce7c844c0",
+  "capture_count": 879,
+  "source_payload_preflight": [
+    {
+      "exam": "exam01",
+      "scored_questions": 80,
+      "five_choices_complete": true,
+      "choice_text_hashes_verified": true,
+      "manifest_sha256": "b130501bb40bb457ff6f36c0234039ec588db9d74f77a9d566964b281641b245",
+      "math_source_only": false,
+      "generated_math": false,
+      "outer_border_source_glyph_uses": 290
+    },
+    {
+      "exam": "exam02",
+      "scored_questions": 80,
+      "five_choices_complete": true,
+      "choice_text_hashes_verified": true,
+      "manifest_sha256": "f29e7acebdbdb56ff3d2c190755ce4fce464c8e61a9797f6034d0709d7e7063b",
+      "math_source_only": false,
+      "generated_math": false,
+      "outer_border_source_glyph_uses": 0
+    },
+    {
+      "exam": "exam03",
+      "scored_questions": 80,
+      "five_choices_complete": true,
+      "choice_text_hashes_verified": true,
+      "manifest_sha256": "ddcba60d798406444ac758cfba970349b8d6a105d11ecaf99c20ac8ad46c1ffd",
+      "math_source_only": false,
+      "generated_math": false,
+      "outer_border_source_glyph_uses": 0
+    },
+    {
+      "exam": "exam04",
+      "scored_questions": 80,
+      "five_choices_complete": true,
+      "choice_text_hashes_verified": true,
+      "manifest_sha256": "3f6830cecb31747853f2b57467994fa2fdf0ae352742375a8ebfaad9c6fc21b0",
+      "math_source_only": false,
+      "generated_math": false,
+      "outer_border_source_glyph_uses": 16
+    },
+    {
+      "exam": "exam05",
+      "scored_questions": 112,
+      "five_choices_complete": true,
+      "choice_text_hashes_verified": true,
+      "manifest_sha256": "e193034e8467de1eac01b35823b3439399896f1f5eae30c68a006d0bc9078f66",
+      "math_source_only": false,
+      "generated_math": false,
+      "outer_border_source_glyph_uses": 8
+    },
+    {
+      "exam": "exam08",
+      "scored_questions": 66,
+      "five_choices_complete": true,
+      "choice_text_hashes_verified": true,
+      "manifest_sha256": "41848abe3cf0efc34f98da39155ee08c2ae16e9414f94cf5a874359dd2099b73",
+      "math_source_only": true,
+      "generated_math": false,
+      "outer_border_source_glyph_uses": 7432
+    },
+    {
+      "exam": "exam09",
+      "scored_questions": 56,
+      "five_choices_complete": true,
+      "choice_text_hashes_verified": true,
+      "manifest_sha256": "5803b6c9c87f00eb38a4b5756a897f9f12090a2a2fa787eda8430eb2613ddee0",
+      "math_source_only": false,
+      "generated_math": false,
+      "outer_border_source_glyph_uses": 10
+    }
+  ],
+  "backends": {
+    "vision": {
+      "response_batches": 1207,
+      "inference_checks": {
+        "max_observed_prompt_tokens": 16240,
+        "configured_context": 32768,
+        "near_context_limit": 0,
+        "done_reasons": {
+          "stop": 1204
+        }
+      },
+      "primary": {
+        "original": {
+          "total": 554,
+          "resolved": 549,
+          "correct": 145,
+          "percent": 26.41165755919854,
+          "answered": 547,
+          "conditional_accuracy": 26.508226691042047,
+          "quality_valid": true,
+          "all_scheduled_accuracy_bounds_percent": [
+            26.173285198555956,
+            27.075812274368232
+          ],
+          "statuses": {
+            "ok": 549,
+            "format_error": 5
+          },
+          "answers": {
+            "4": 122,
+            "5": 116,
+            "3": 160,
+            "2": 77,
+            "1": 72,
+            "None": 2
+          },
+          "unique_clusters": 357,
+          "cluster_mean_percent": 27.497665732959852,
+          "points_using_frozen_weights": 228,
+          "max_frozen_weight": 824,
+          "uniform_random_expected_percent": 20.216606498194945,
+          "constant_choice_correct": {
+            "1": 99,
+            "2": 110,
+            "3": 111,
+            "4": 124,
+            "5": 116
+          }
+        },
+        "layout_control": {
+          "total": 554,
+          "resolved": 554,
+          "correct": 135,
+          "percent": 24.36823104693141,
+          "answered": 550,
+          "conditional_accuracy": 24.545454545454547,
+          "quality_valid": true,
+          "all_scheduled_accuracy_bounds_percent": [
+            24.36823104693141,
+            24.36823104693141
+          ],
+          "statuses": {
+            "ok": 554
+          },
+          "answers": {
+            "3": 151,
+            "5": 120,
+            "1": 77,
+            "4": 111,
+            "None": 4,
+            "2": 91
+          },
+          "unique_clusters": 357,
+          "cluster_mean_percent": 25.163398692810457,
+          "points_using_frozen_weights": 215,
+          "max_frozen_weight": 832,
+          "uniform_random_expected_percent": 20.216606498194945,
+          "constant_choice_correct": {
+            "1": 99,
+            "2": 110,
+            "3": 111,
+            "4": 124,
+            "5": 116
+          }
+        },
+        "current_choices": {
+          "total": 554,
+          "resolved": 554,
+          "correct": 129,
+          "percent": 23.28519855595668,
+          "answered": 548,
+          "conditional_accuracy": 23.54014598540146,
+          "quality_valid": true,
+          "all_scheduled_accuracy_bounds_percent": [
+            23.28519855595668,
+            23.28519855595668
+          ],
+          "statuses": {
+            "ok": 554
+          },
+          "answers": {
+            "2": 98,
+            "4": 129,
+            "3": 153,
+            "1": 70,
+            "5": 98,
+            "None": 6
+          },
+          "unique_clusters": 357,
+          "cluster_mean_percent": 24.13632119514472,
+          "points_using_frozen_weights": 194,
+          "max_frozen_weight": 832,
+          "uniform_random_expected_percent": 20.216606498194945,
+          "constant_choice_correct": {
+            "1": 99,
+            "2": 110,
+            "3": 111,
+            "4": 124,
+            "5": 116
+          }
+        }
+      },
+      "primary_comparisons": [
+        {
+          "conditions": [
+            "original",
+            "current_choices"
+          ],
+          "direction": "second minus first; negative means lower accuracy",
+          "pairs": 549,
+          "clusters": 357,
+          "cluster_unit": "cluster",
+          "all_scheduled_pairs": 554,
+          "all_scheduled_delta_bounds_percentage_points": [
+            -3.7906137184115525,
+            -2.888086642599278
+          ],
+          "correct_to_wrong": 70,
+          "wrong_to_correct": 52,
+          "correct_to_unanswered": 0,
+          "correct_to_answered_wrong": 70,
+          "unanswered_to_correct": 0,
+          "answered_wrong_to_correct": 52,
+          "delta_percentage_points": -3.278688524590164,
+          "cluster_bootstrap_95": [
+            -8.127241879137248,
+            1.6514520372369121
+          ],
+          "cluster_mean_delta_percentage_points": -3.361344537815126,
+          "cluster_mean_bootstrap_95": [
+            -8.0765639589169,
+            1.3538748832866476
+          ],
+          "bootstrap_iterations": 10000
+        },
+        {
+          "conditions": [
+            "layout_control",
+            "current_choices"
+          ],
+          "direction": "second minus first; negative means lower accuracy",
+          "pairs": 554,
+          "clusters": 357,
+          "cluster_unit": "cluster",
+          "all_scheduled_pairs": 554,
+          "all_scheduled_delta_bounds_percentage_points": [
+            -1.0830324909747293,
+            -1.0830324909747293
+          ],
+          "correct_to_wrong": 64,
+          "wrong_to_correct": 58,
+          "correct_to_unanswered": 0,
+          "correct_to_answered_wrong": 64,
+          "unanswered_to_correct": 1,
+          "answered_wrong_to_correct": 57,
+          "delta_percentage_points": -1.0830324909747293,
+          "cluster_bootstrap_95": [
+            -5.6467074187274235,
+            3.5250463821892395
+          ],
+          "cluster_mean_delta_percentage_points": -1.0270774976657329,
+          "cluster_mean_bootstrap_95": [
+            -5.648926237161531,
+            3.5480859010270773
+          ],
+          "bootstrap_iterations": 10000
+        }
+      ],
+      "supplementary_shared_context_comparisons": [
+        {
+          "conditions": [
+            "original",
+            "current_choices"
+          ],
+          "direction": "second minus first; negative means lower accuracy",
+          "pairs": 549,
+          "clusters": 117,
+          "cluster_unit": "request_context_group",
+          "all_scheduled_pairs": 554,
+          "all_scheduled_delta_bounds_percentage_points": [
+            -3.7906137184115525,
+            -2.888086642599278
+          ],
+          "correct_to_wrong": 70,
+          "wrong_to_correct": 52,
+          "correct_to_unanswered": 0,
+          "correct_to_answered_wrong": 70,
+          "unanswered_to_correct": 0,
+          "answered_wrong_to_correct": 52,
+          "delta_percentage_points": -3.278688524590164,
+          "cluster_bootstrap_95": [
+            -7.91095596173314,
+            1.1978761510212164
+          ],
+          "cluster_mean_delta_percentage_points": -4.462532956122699,
+          "cluster_mean_bootstrap_95": [
+            -9.458340389430132,
+            0.4781354388726181
+          ],
+          "bootstrap_iterations": 10000
+        },
+        {
+          "conditions": [
+            "layout_control",
+            "current_choices"
+          ],
+          "direction": "second minus first; negative means lower accuracy",
+          "pairs": 554,
+          "clusters": 117,
+          "cluster_unit": "request_context_group",
+          "all_scheduled_pairs": 554,
+          "all_scheduled_delta_bounds_percentage_points": [
+            -1.0830324909747293,
+            -1.0830324909747293
+          ],
+          "correct_to_wrong": 64,
+          "wrong_to_correct": 58,
+          "correct_to_unanswered": 0,
+          "correct_to_answered_wrong": 64,
+          "unanswered_to_correct": 1,
+          "answered_wrong_to_correct": 57,
+          "delta_percentage_points": -1.0830324909747293,
+          "cluster_bootstrap_95": [
+            -5.118859232175503,
+            3.0304467828186974
+          ],
+          "cluster_mean_delta_percentage_points": -0.9031803903598774,
+          "cluster_mean_bootstrap_95": [
+            -6.12319363921928,
+            4.391295432962096
+          ],
+          "bootstrap_iterations": 10000
+        }
+      ],
+      "excluding_all_choices_accepted": {
+        "original": {
+          "total": 553,
+          "resolved": 548,
+          "correct": 144,
+          "percent": 26.277372262773724,
+          "answered": 546,
+          "conditional_accuracy": 26.373626373626372,
+          "quality_valid": true,
+          "all_scheduled_accuracy_bounds_percent": [
+            26.039783001808317,
+            26.94394213381555
+          ],
+          "statuses": {
+            "ok": 548,
+            "format_error": 5
+          },
+          "answers": {
+            "4": 122,
+            "5": 116,
+            "3": 160,
+            "2": 76,
+            "1": 72,
+            "None": 2
+          },
+          "unique_clusters": 356,
+          "cluster_mean_percent": 27.29400749063671,
+          "points_using_frozen_weights": 227,
+          "max_frozen_weight": 823,
+          "uniform_random_expected_percent": 20.07233273056058,
+          "constant_choice_correct": {
+            "1": 98,
+            "2": 109,
+            "3": 110,
+            "4": 123,
+            "5": 115
+          }
+        },
+        "layout_control": {
+          "total": 553,
+          "resolved": 553,
+          "correct": 134,
+          "percent": 24.231464737793853,
+          "answered": 549,
+          "conditional_accuracy": 24.408014571949,
+          "quality_valid": true,
+          "all_scheduled_accuracy_bounds_percent": [
+            24.231464737793853,
+            24.231464737793853
+          ],
+          "statuses": {
+            "ok": 553
+          },
+          "answers": {
+            "3": 151,
+            "5": 120,
+            "1": 77,
+            "4": 111,
+            "None": 4,
+            "2": 90
+          },
+          "unique_clusters": 356,
+          "cluster_mean_percent": 24.95318352059925,
+          "points_using_frozen_weights": 214,
+          "max_frozen_weight": 831,
+          "uniform_random_expected_percent": 20.07233273056058,
+          "constant_choice_correct": {
+            "1": 98,
+            "2": 109,
+            "3": 110,
+            "4": 123,
+            "5": 115
+          }
+        },
+        "current_choices": {
+          "total": 553,
+          "resolved": 553,
+          "correct": 128,
+          "percent": 23.146473779385172,
+          "answered": 547,
+          "conditional_accuracy": 23.40036563071298,
+          "quality_valid": true,
+          "all_scheduled_accuracy_bounds_percent": [
+            23.146473779385172,
+            23.146473779385172
+          ],
+          "statuses": {
+            "ok": 553
+          },
+          "answers": {
+            "2": 98,
+            "4": 128,
+            "3": 153,
+            "1": 70,
+            "5": 98,
+            "None": 6
+          },
+          "unique_clusters": 356,
+          "cluster_mean_percent": 23.923220973782772,
+          "points_using_frozen_weights": 193,
+          "max_frozen_weight": 831,
+          "uniform_random_expected_percent": 20.07233273056058,
+          "constant_choice_correct": {
+            "1": 98,
+            "2": 109,
+            "3": 110,
+            "4": 123,
+            "5": 115
+          }
+        }
+      },
+      "exams": {
+        "exam01": {
+          "original": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 24,
+            "percent": 30.0,
+            "answered": 80,
+            "conditional_accuracy": 30.0,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              30.0,
+              30.0
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "4": 14,
+              "5": 22,
+              "3": 20,
+              "2": 12,
+              "1": 12
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 30.0,
+            "points_using_frozen_weights": 24,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 21.25,
+            "constant_choice_correct": {
+              "1": 15,
+              "2": 16,
+              "3": 18,
+              "4": 18,
+              "5": 18
+            }
+          },
+          "layout_control": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 21,
+            "percent": 26.25,
+            "answered": 79,
+            "conditional_accuracy": 26.582278481012658,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              26.25,
+              26.25
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "3": 25,
+              "5": 23,
+              "1": 12,
+              "4": 11,
+              "None": 1,
+              "2": 8
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 26.25,
+            "points_using_frozen_weights": 21,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 21.25,
+            "constant_choice_correct": {
+              "1": 15,
+              "2": 16,
+              "3": 18,
+              "4": 18,
+              "5": 18
+            }
+          },
+          "current_choices": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 20,
+            "percent": 25.0,
+            "answered": 78,
+            "conditional_accuracy": 25.641025641025642,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              25.0,
+              25.0
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "2": 12,
+              "4": 16,
+              "3": 22,
+              "1": 11,
+              "5": 17,
+              "None": 2
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 25.0,
+            "points_using_frozen_weights": 20,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 21.25,
+            "constant_choice_correct": {
+              "1": 15,
+              "2": 16,
+              "3": 18,
+              "4": 18,
+              "5": 18
+            }
+          }
+        },
+        "exam02": {
+          "original": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 14,
+            "percent": 17.5,
+            "answered": 80,
+            "conditional_accuracy": 17.5,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              17.5,
+              17.5
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "3": 25,
+              "5": 16,
+              "4": 27,
+              "2": 8,
+              "1": 4
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 17.5,
+            "points_using_frozen_weights": 14,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 16,
+              "2": 16,
+              "3": 15,
+              "4": 17,
+              "5": 16
+            }
+          },
+          "layout_control": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 16,
+            "percent": 20.0,
+            "answered": 80,
+            "conditional_accuracy": 20.0,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              20.0,
+              20.0
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "2": 9,
+              "5": 18,
+              "1": 6,
+              "4": 23,
+              "3": 24
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 20.0,
+            "points_using_frozen_weights": 16,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 16,
+              "2": 16,
+              "3": 15,
+              "4": 17,
+              "5": 16
+            }
+          },
+          "current_choices": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 10,
+            "percent": 12.5,
+            "answered": 80,
+            "conditional_accuracy": 12.5,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              12.5,
+              12.5
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "3": 21,
+              "4": 26,
+              "2": 13,
+              "1": 8,
+              "5": 12
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 12.5,
+            "points_using_frozen_weights": 10,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 16,
+              "2": 16,
+              "3": 15,
+              "4": 17,
+              "5": 16
+            }
+          }
+        },
+        "exam03": {
+          "original": {
+            "total": 80,
+            "resolved": 77,
+            "correct": 19,
+            "percent": 24.675324675324674,
+            "answered": 77,
+            "conditional_accuracy": 24.675324675324674,
+            "quality_valid": false,
+            "all_scheduled_accuracy_bounds_percent": [
+              23.75,
+              27.5
+            ],
+            "statuses": {
+              "ok": 77,
+              "format_error": 3
+            },
+            "answers": {
+              "3": 23,
+              "5": 22,
+              "4": 24,
+              "2": 4,
+              "1": 4
+            },
+            "unique_clusters": 77,
+            "cluster_mean_percent": 24.675324675324674,
+            "points_using_frozen_weights": 19,
+            "max_frozen_weight": 77,
+            "uniform_random_expected_percent": 20.25,
+            "constant_choice_correct": {
+              "1": 17,
+              "2": 15,
+              "3": 14,
+              "4": 19,
+              "5": 16
+            }
+          },
+          "layout_control": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 15,
+            "percent": 18.75,
+            "answered": 80,
+            "conditional_accuracy": 18.75,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              18.75,
+              18.75
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "2": 10,
+              "5": 21,
+              "1": 6,
+              "3": 18,
+              "4": 25
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 18.75,
+            "points_using_frozen_weights": 15,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 20.25,
+            "constant_choice_correct": {
+              "1": 17,
+              "2": 15,
+              "3": 14,
+              "4": 19,
+              "5": 16
+            }
+          },
+          "current_choices": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 23,
+            "percent": 28.75,
+            "answered": 80,
+            "conditional_accuracy": 28.75,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              28.75,
+              28.75
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "3": 17,
+              "4": 23,
+              "5": 19,
+              "2": 11,
+              "1": 10
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 28.749999999999996,
+            "points_using_frozen_weights": 23,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 20.25,
+            "constant_choice_correct": {
+              "1": 17,
+              "2": 15,
+              "3": 14,
+              "4": 19,
+              "5": 16
+            }
+          }
+        },
+        "exam04": {
+          "original": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 15,
+            "percent": 18.75,
+            "answered": 80,
+            "conditional_accuracy": 18.75,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              18.75,
+              18.75
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "3": 26,
+              "5": 21,
+              "4": 22,
+              "2": 6,
+              "1": 5
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 18.75,
+            "points_using_frozen_weights": 15,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 17,
+              "2": 15,
+              "3": 14,
+              "4": 18,
+              "5": 16
+            }
+          },
+          "layout_control": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 10,
+            "percent": 12.5,
+            "answered": 80,
+            "conditional_accuracy": 12.5,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              12.5,
+              12.5
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "3": 24,
+              "5": 19,
+              "1": 12,
+              "4": 20,
+              "2": 5
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 12.5,
+            "points_using_frozen_weights": 10,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 17,
+              "2": 15,
+              "3": 14,
+              "4": 18,
+              "5": 16
+            }
+          },
+          "current_choices": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 13,
+            "percent": 16.25,
+            "answered": 76,
+            "conditional_accuracy": 17.105263157894736,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              16.25,
+              16.25
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "3": 22,
+              "4": 24,
+              "5": 15,
+              "2": 6,
+              "1": 9,
+              "None": 4
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 16.25,
+            "points_using_frozen_weights": 13,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 17,
+              "2": 15,
+              "3": 14,
+              "4": 18,
+              "5": 16
+            }
+          }
+        },
+        "exam05": {
+          "original": {
+            "total": 112,
+            "resolved": 112,
+            "correct": 25,
+            "percent": 22.321428571428573,
+            "answered": 112,
+            "conditional_accuracy": 22.321428571428573,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              22.321428571428573,
+              22.321428571428573
+            ],
+            "statuses": {
+              "ok": 112
+            },
+            "answers": {
+              "5": 20,
+              "4": 18,
+              "1": 24,
+              "3": 32,
+              "2": 18
+            },
+            "unique_clusters": 56,
+            "cluster_mean_percent": 22.321428571428573,
+            "points_using_frozen_weights": 54,
+            "max_frozen_weight": 248,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 18,
+              "2": 24,
+              "3": 22,
+              "4": 24,
+              "5": 24
+            }
+          },
+          "layout_control": {
+            "total": 112,
+            "resolved": 112,
+            "correct": 25,
+            "percent": 22.321428571428573,
+            "answered": 112,
+            "conditional_accuracy": 22.321428571428573,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              22.321428571428573,
+              22.321428571428573
+            ],
+            "statuses": {
+              "ok": 112
+            },
+            "answers": {
+              "1": 17,
+              "2": 34,
+              "5": 22,
+              "3": 24,
+              "4": 15
+            },
+            "unique_clusters": 56,
+            "cluster_mean_percent": 22.321428571428573,
+            "points_using_frozen_weights": 56,
+            "max_frozen_weight": 248,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 18,
+              "2": 24,
+              "3": 22,
+              "4": 24,
+              "5": 24
+            }
+          },
+          "current_choices": {
+            "total": 112,
+            "resolved": 112,
+            "correct": 20,
+            "percent": 17.857142857142858,
+            "answered": 112,
+            "conditional_accuracy": 17.857142857142858,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              17.857142857142858,
+              17.857142857142858
+            ],
+            "statuses": {
+              "ok": 112
+            },
+            "answers": {
+              "2": 31,
+              "4": 21,
+              "3": 35,
+              "5": 16,
+              "1": 9
+            },
+            "unique_clusters": 56,
+            "cluster_mean_percent": 17.857142857142858,
+            "points_using_frozen_weights": 45,
+            "max_frozen_weight": 248,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 18,
+              "2": 24,
+              "3": 22,
+              "4": 24,
+              "5": 24
+            }
+          }
+        },
+        "exam08": {
+          "original": {
+            "total": 66,
+            "resolved": 64,
+            "correct": 26,
+            "percent": 40.625,
+            "answered": 62,
+            "conditional_accuracy": 41.935483870967744,
+            "quality_valid": false,
+            "all_scheduled_accuracy_bounds_percent": [
+              39.39393939393939,
+              42.42424242424242
+            ],
+            "statuses": {
+              "ok": 64,
+              "format_error": 2
+            },
+            "answers": {
+              "3": 19,
+              "2": 14,
+              "None": 2,
+              "1": 12,
+              "4": 14,
+              "5": 3
+            },
+            "unique_clusters": 33,
+            "cluster_mean_percent": 42.42424242424242,
+            "points_using_frozen_weights": 80,
+            "max_frozen_weight": 203,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 10,
+              "2": 12,
+              "3": 16,
+              "4": 16,
+              "5": 12
+            }
+          },
+          "layout_control": {
+            "total": 66,
+            "resolved": 66,
+            "correct": 24,
+            "percent": 36.36363636363637,
+            "answered": 64,
+            "conditional_accuracy": 37.5,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              36.36363636363637,
+              36.36363636363637
+            ],
+            "statuses": {
+              "ok": 66
+            },
+            "answers": {
+              "3": 24,
+              "2": 13,
+              "5": 7,
+              "1": 5,
+              "4": 15,
+              "None": 2
+            },
+            "unique_clusters": 33,
+            "cluster_mean_percent": 36.36363636363637,
+            "points_using_frozen_weights": 73,
+            "max_frozen_weight": 208,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 10,
+              "2": 12,
+              "3": 16,
+              "4": 16,
+              "5": 12
+            }
+          },
+          "current_choices": {
+            "total": 66,
+            "resolved": 66,
+            "correct": 21,
+            "percent": 31.818181818181817,
+            "answered": 66,
+            "conditional_accuracy": 31.818181818181817,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              31.818181818181817,
+              31.818181818181817
+            ],
+            "statuses": {
+              "ok": 66
+            },
+            "answers": {
+              "3": 25,
+              "2": 15,
+              "5": 7,
+              "1": 6,
+              "4": 13
+            },
+            "unique_clusters": 33,
+            "cluster_mean_percent": 31.818181818181817,
+            "points_using_frozen_weights": 61,
+            "max_frozen_weight": 208,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 10,
+              "2": 12,
+              "3": 16,
+              "4": 16,
+              "5": 12
+            }
+          }
+        },
+        "exam09": {
+          "original": {
+            "total": 56,
+            "resolved": 56,
+            "correct": 22,
+            "percent": 39.285714285714285,
+            "answered": 56,
+            "conditional_accuracy": 39.285714285714285,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              39.285714285714285,
+              39.285714285714285
+            ],
+            "statuses": {
+              "ok": 56
+            },
+            "answers": {
+              "2": 15,
+              "1": 11,
+              "3": 15,
+              "4": 3,
+              "5": 12
+            },
+            "unique_clusters": 28,
+            "cluster_mean_percent": 39.285714285714285,
+            "points_using_frozen_weights": 22,
+            "max_frozen_weight": 56,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 6,
+              "2": 12,
+              "3": 12,
+              "4": 12,
+              "5": 14
+            }
+          },
+          "layout_control": {
+            "total": 56,
+            "resolved": 56,
+            "correct": 24,
+            "percent": 42.857142857142854,
+            "answered": 55,
+            "conditional_accuracy": 43.63636363636363,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              42.857142857142854,
+              42.857142857142854
+            ],
+            "statuses": {
+              "ok": 56
+            },
+            "answers": {
+              "2": 12,
+              "3": 12,
+              "1": 19,
+              "5": 10,
+              "None": 1,
+              "4": 2
+            },
+            "unique_clusters": 28,
+            "cluster_mean_percent": 42.857142857142854,
+            "points_using_frozen_weights": 24,
+            "max_frozen_weight": 56,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 6,
+              "2": 12,
+              "3": 12,
+              "4": 12,
+              "5": 14
+            }
+          },
+          "current_choices": {
+            "total": 56,
+            "resolved": 56,
+            "correct": 22,
+            "percent": 39.285714285714285,
+            "answered": 56,
+            "conditional_accuracy": 39.285714285714285,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              39.285714285714285,
+              39.285714285714285
+            ],
+            "statuses": {
+              "ok": 56
+            },
+            "answers": {
+              "2": 10,
+              "3": 11,
+              "4": 6,
+              "1": 17,
+              "5": 12
+            },
+            "unique_clusters": 28,
+            "cluster_mean_percent": 39.285714285714285,
+            "points_using_frozen_weights": 22,
+            "max_frozen_weight": 56,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 6,
+              "2": 12,
+              "3": 12,
+              "4": 12,
+              "5": 14
+            }
+          }
+        }
+      },
+      "pilot": {
+        "42": {
+          "original": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 20,
+            "percent": 28.571428571428573,
+            "answered": 70,
+            "conditional_accuracy": 28.571428571428573,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              28.571428571428573,
+              28.571428571428573
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "3": 22,
+              "2": 10,
+              "5": 15,
+              "1": 9,
+              "4": 14
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 28.57142857142857,
+            "points_using_frozen_weights": 35,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          },
+          "layout_control": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 17,
+            "percent": 24.285714285714285,
+            "answered": 69,
+            "conditional_accuracy": 24.63768115942029,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              24.285714285714285,
+              24.285714285714285
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "5": 16,
+              "1": 11,
+              "2": 8,
+              "3": 16,
+              "4": 18,
+              "None": 1
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 24.285714285714285,
+            "points_using_frozen_weights": 31,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          },
+          "current_choices": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 21,
+            "percent": 30.0,
+            "answered": 68,
+            "conditional_accuracy": 30.88235294117647,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              30.0,
+              30.0
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "3": 17,
+              "1": 9,
+              "5": 18,
+              "2": 9,
+              "4": 15,
+              "None": 2
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 30.0,
+            "points_using_frozen_weights": 32,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          },
+          "qr_only": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 17,
+            "percent": 24.285714285714285,
+            "answered": 70,
+            "conditional_accuracy": 24.285714285714285,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              24.285714285714285,
+              24.285714285714285
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "5": 19,
+              "1": 9,
+              "2": 7,
+              "3": 21,
+              "4": 14
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 24.285714285714285,
+            "points_using_frozen_weights": 27,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          },
+          "helpful_legacy": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 21,
+            "percent": 30.0,
+            "answered": 70,
+            "conditional_accuracy": 30.0,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              30.0,
+              30.0
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "5": 16,
+              "1": 9,
+              "2": 14,
+              "3": 14,
+              "4": 17
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 30.0,
+            "points_using_frozen_weights": 29,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          },
+          "command_only": {
+            "total": 70,
+            "resolved": 69,
+            "correct": 22,
+            "percent": 31.884057971014492,
+            "answered": 69,
+            "conditional_accuracy": 31.884057971014492,
+            "quality_valid": false,
+            "all_scheduled_accuracy_bounds_percent": [
+              31.428571428571427,
+              32.857142857142854
+            ],
+            "statuses": {
+              "ok": 69,
+              "format_error": 1
+            },
+            "answers": {
+              "5": 16,
+              "1": 8,
+              "3": 14,
+              "2": 13,
+              "4": 18
+            },
+            "unique_clusters": 69,
+            "cluster_mean_percent": 31.88405797101449,
+            "points_using_frozen_weights": 35,
+            "max_frozen_weight": 103,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          },
+          "other_page": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 17,
+            "percent": 24.285714285714285,
+            "answered": 70,
+            "conditional_accuracy": 24.285714285714285,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              24.285714285714285,
+              24.285714285714285
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "5": 14,
+              "1": 5,
+              "2": 16,
+              "3": 15,
+              "4": 20
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 24.285714285714285,
+            "points_using_frozen_weights": 28,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          }
+        },
+        "314": {
+          "original": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 21,
+            "percent": 30.0,
+            "answered": 70,
+            "conditional_accuracy": 30.0,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              30.0,
+              30.0
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "3": 20,
+              "2": 11,
+              "5": 16,
+              "1": 9,
+              "4": 14
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 30.0,
+            "points_using_frozen_weights": 37,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          },
+          "layout_control": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 16,
+            "percent": 22.857142857142858,
+            "answered": 69,
+            "conditional_accuracy": 23.18840579710145,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              22.857142857142858,
+              22.857142857142858
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "5": 17,
+              "1": 11,
+              "2": 8,
+              "3": 15,
+              "4": 18,
+              "None": 1
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 22.857142857142858,
+            "points_using_frozen_weights": 28,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          },
+          "current_choices": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 21,
+            "percent": 30.0,
+            "answered": 68,
+            "conditional_accuracy": 30.88235294117647,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              30.0,
+              30.0
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "3": 17,
+              "1": 9,
+              "5": 18,
+              "2": 9,
+              "4": 15,
+              "None": 2
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 30.0,
+            "points_using_frozen_weights": 32,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          }
+        },
+        "2026": {
+          "original": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 21,
+            "percent": 30.0,
+            "answered": 70,
+            "conditional_accuracy": 30.0,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              30.0,
+              30.0
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "3": 20,
+              "2": 11,
+              "5": 16,
+              "1": 9,
+              "4": 14
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 30.0,
+            "points_using_frozen_weights": 37,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          },
+          "layout_control": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 16,
+            "percent": 22.857142857142858,
+            "answered": 69,
+            "conditional_accuracy": 23.18840579710145,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              22.857142857142858,
+              22.857142857142858
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "5": 17,
+              "1": 11,
+              "2": 8,
+              "3": 15,
+              "4": 18,
+              "None": 1
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 22.857142857142858,
+            "points_using_frozen_weights": 28,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          },
+          "current_choices": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 21,
+            "percent": 30.0,
+            "answered": 68,
+            "conditional_accuracy": 30.88235294117647,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              30.0,
+              30.0
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "3": 17,
+              "1": 9,
+              "5": 18,
+              "2": 9,
+              "4": 15,
+              "None": 2
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 30.0,
+            "points_using_frozen_weights": 32,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          }
+        }
+      },
+      "pilot_comparisons": {
+        "42": [
+          {
+            "conditions": [
+              "original",
+              "current_choices"
+            ],
+            "direction": "second minus first; negative means lower accuracy",
+            "pairs": 70,
+            "clusters": 70,
+            "cluster_unit": "cluster",
+            "all_scheduled_pairs": 70,
+            "all_scheduled_delta_bounds_percentage_points": [
+              1.4285714285714286,
+              1.4285714285714286
+            ],
+            "correct_to_wrong": 8,
+            "wrong_to_correct": 9,
+            "correct_to_unanswered": 0,
+            "correct_to_answered_wrong": 8,
+            "unanswered_to_correct": 0,
+            "answered_wrong_to_correct": 9,
+            "delta_percentage_points": 1.4285714285714286,
+            "cluster_bootstrap_95": [
+              -10.0,
+              12.857142857142858
+            ],
+            "cluster_mean_delta_percentage_points": 1.4285714285714286,
+            "cluster_mean_bootstrap_95": [
+              -10.0,
+              12.857142857142856
+            ],
+            "bootstrap_iterations": 10000
+          },
+          {
+            "conditions": [
+              "layout_control",
+              "current_choices"
+            ],
+            "direction": "second minus first; negative means lower accuracy",
+            "pairs": 70,
+            "clusters": 70,
+            "cluster_unit": "cluster",
+            "all_scheduled_pairs": 70,
+            "all_scheduled_delta_bounds_percentage_points": [
+              5.714285714285714,
+              5.714285714285714
+            ],
+            "correct_to_wrong": 7,
+            "wrong_to_correct": 11,
+            "correct_to_unanswered": 0,
+            "correct_to_answered_wrong": 7,
+            "unanswered_to_correct": 0,
+            "answered_wrong_to_correct": 11,
+            "delta_percentage_points": 5.714285714285714,
+            "cluster_bootstrap_95": [
+              -5.714285714285714,
+              17.142857142857142
+            ],
+            "cluster_mean_delta_percentage_points": 5.714285714285714,
+            "cluster_mean_bootstrap_95": [
+              -5.714285714285714,
+              17.142857142857142
+            ],
+            "bootstrap_iterations": 10000
+          },
+          {
+            "conditions": [
+              "other_page",
+              "current_choices"
+            ],
+            "direction": "second minus first; negative means lower accuracy",
+            "pairs": 70,
+            "clusters": 70,
+            "cluster_unit": "cluster",
+            "all_scheduled_pairs": 70,
+            "all_scheduled_delta_bounds_percentage_points": [
+              5.714285714285714,
+              5.714285714285714
+            ],
+            "correct_to_wrong": 5,
+            "wrong_to_correct": 9,
+            "correct_to_unanswered": 0,
+            "correct_to_answered_wrong": 5,
+            "unanswered_to_correct": 0,
+            "answered_wrong_to_correct": 9,
+            "delta_percentage_points": 5.714285714285714,
+            "cluster_bootstrap_95": [
+              -4.285714285714286,
+              15.714285714285714
+            ],
+            "cluster_mean_delta_percentage_points": 5.714285714285714,
+            "cluster_mean_bootstrap_95": [
+              -4.285714285714286,
+              15.714285714285714
+            ],
+            "bootstrap_iterations": 10000
+          },
+          {
+            "conditions": [
+              "command_only",
+              "current_choices"
+            ],
+            "direction": "second minus first; negative means lower accuracy",
+            "pairs": 69,
+            "clusters": 69,
+            "cluster_unit": "cluster",
+            "all_scheduled_pairs": 70,
+            "all_scheduled_delta_bounds_percentage_points": [
+              -2.857142857142857,
+              -1.4285714285714286
+            ],
+            "correct_to_wrong": 11,
+            "wrong_to_correct": 9,
+            "correct_to_unanswered": 0,
+            "correct_to_answered_wrong": 11,
+            "unanswered_to_correct": 0,
+            "answered_wrong_to_correct": 9,
+            "delta_percentage_points": -2.898550724637681,
+            "cluster_bootstrap_95": [
+              -15.942028985507246,
+              10.144927536231885
+            ],
+            "cluster_mean_delta_percentage_points": -2.898550724637681,
+            "cluster_mean_bootstrap_95": [
+              -15.942028985507244,
+              10.144927536231885
+            ],
+            "bootstrap_iterations": 10000
+          }
+        ],
+        "314": [
+          {
+            "conditions": [
+              "original",
+              "current_choices"
+            ],
+            "direction": "second minus first; negative means lower accuracy",
+            "pairs": 70,
+            "clusters": 70,
+            "cluster_unit": "cluster",
+            "all_scheduled_pairs": 70,
+            "all_scheduled_delta_bounds_percentage_points": [
+              0.0,
+              0.0
+            ],
+            "correct_to_wrong": 8,
+            "wrong_to_correct": 8,
+            "correct_to_unanswered": 0,
+            "correct_to_answered_wrong": 8,
+            "unanswered_to_correct": 0,
+            "answered_wrong_to_correct": 8,
+            "delta_percentage_points": 0.0,
+            "cluster_bootstrap_95": [
+              -11.428571428571429,
+              11.428571428571429
+            ],
+            "cluster_mean_delta_percentage_points": 0.0,
+            "cluster_mean_bootstrap_95": [
+              -11.428571428571429,
+              11.428571428571429
+            ],
+            "bootstrap_iterations": 10000
+          },
+          {
+            "conditions": [
+              "layout_control",
+              "current_choices"
+            ],
+            "direction": "second minus first; negative means lower accuracy",
+            "pairs": 70,
+            "clusters": 70,
+            "cluster_unit": "cluster",
+            "all_scheduled_pairs": 70,
+            "all_scheduled_delta_bounds_percentage_points": [
+              7.142857142857143,
+              7.142857142857143
+            ],
+            "correct_to_wrong": 7,
+            "wrong_to_correct": 12,
+            "correct_to_unanswered": 0,
+            "correct_to_answered_wrong": 7,
+            "unanswered_to_correct": 0,
+            "answered_wrong_to_correct": 12,
+            "delta_percentage_points": 7.142857142857143,
+            "cluster_bootstrap_95": [
+              -4.285714285714286,
+              18.571428571428573
+            ],
+            "cluster_mean_delta_percentage_points": 7.142857142857142,
+            "cluster_mean_bootstrap_95": [
+              -4.285714285714286,
+              18.571428571428573
+            ],
+            "bootstrap_iterations": 10000
+          }
+        ],
+        "2026": [
+          {
+            "conditions": [
+              "original",
+              "current_choices"
+            ],
+            "direction": "second minus first; negative means lower accuracy",
+            "pairs": 70,
+            "clusters": 70,
+            "cluster_unit": "cluster",
+            "all_scheduled_pairs": 70,
+            "all_scheduled_delta_bounds_percentage_points": [
+              0.0,
+              0.0
+            ],
+            "correct_to_wrong": 8,
+            "wrong_to_correct": 8,
+            "correct_to_unanswered": 0,
+            "correct_to_answered_wrong": 8,
+            "unanswered_to_correct": 0,
+            "answered_wrong_to_correct": 8,
+            "delta_percentage_points": 0.0,
+            "cluster_bootstrap_95": [
+              -11.428571428571429,
+              11.428571428571429
+            ],
+            "cluster_mean_delta_percentage_points": 0.0,
+            "cluster_mean_bootstrap_95": [
+              -11.428571428571429,
+              11.428571428571429
+            ],
+            "bootstrap_iterations": 10000
+          },
+          {
+            "conditions": [
+              "layout_control",
+              "current_choices"
+            ],
+            "direction": "second minus first; negative means lower accuracy",
+            "pairs": 70,
+            "clusters": 70,
+            "cluster_unit": "cluster",
+            "all_scheduled_pairs": 70,
+            "all_scheduled_delta_bounds_percentage_points": [
+              7.142857142857143,
+              7.142857142857143
+            ],
+            "correct_to_wrong": 7,
+            "wrong_to_correct": 12,
+            "correct_to_unanswered": 0,
+            "correct_to_answered_wrong": 7,
+            "unanswered_to_correct": 0,
+            "answered_wrong_to_correct": 12,
+            "delta_percentage_points": 7.142857142857143,
+            "cluster_bootstrap_95": [
+              -4.285714285714286,
+              18.571428571428573
+            ],
+            "cluster_mean_delta_percentage_points": 7.142857142857142,
+            "cluster_mean_bootstrap_95": [
+              -4.285714285714286,
+              18.571428571428573
+            ],
+            "bootstrap_iterations": 10000
+          }
+        ]
+      }
+    },
+    "ocr_llm": {
+      "response_batches": 1207,
+      "inference_checks": {
+        "max_observed_prompt_tokens": 11280,
+        "configured_context": 32768,
+        "near_context_limit": 0,
+        "done_reasons": {
+          "stop": 1206
+        }
+      },
+      "primary": {
+        "original": {
+          "total": 554,
+          "resolved": 554,
+          "correct": 143,
+          "percent": 25.812274368231048,
+          "answered": 512,
+          "conditional_accuracy": 27.9296875,
+          "quality_valid": true,
+          "all_scheduled_accuracy_bounds_percent": [
+            25.812274368231048,
+            25.812274368231048
+          ],
+          "statuses": {
+            "ok": 554
+          },
+          "answers": {
+            "3": 122,
+            "4": 122,
+            "None": 42,
+            "2": 130,
+            "1": 92,
+            "5": 46
+          },
+          "unique_clusters": 357,
+          "cluster_mean_percent": 25.210084033613445,
+          "points_using_frozen_weights": 215,
+          "max_frozen_weight": 832,
+          "uniform_random_expected_percent": 20.216606498194945,
+          "constant_choice_correct": {
+            "1": 99,
+            "2": 110,
+            "3": 111,
+            "4": 124,
+            "5": 116
+          }
+        },
+        "layout_control": {
+          "total": 554,
+          "resolved": 554,
+          "correct": 120,
+          "percent": 21.660649819494584,
+          "answered": 511,
+          "conditional_accuracy": 23.483365949119374,
+          "quality_valid": true,
+          "all_scheduled_accuracy_bounds_percent": [
+            21.660649819494584,
+            21.660649819494584
+          ],
+          "statuses": {
+            "ok": 554
+          },
+          "answers": {
+            "4": 133,
+            "5": 46,
+            "2": 92,
+            "None": 43,
+            "1": 99,
+            "3": 141
+          },
+          "unique_clusters": 357,
+          "cluster_mean_percent": 20.68160597572362,
+          "points_using_frozen_weights": 147,
+          "max_frozen_weight": 832,
+          "uniform_random_expected_percent": 20.216606498194945,
+          "constant_choice_correct": {
+            "1": 99,
+            "2": 110,
+            "3": 111,
+            "4": 124,
+            "5": 116
+          }
+        },
+        "current_choices": {
+          "total": 554,
+          "resolved": 554,
+          "correct": 103,
+          "percent": 18.592057761732853,
+          "answered": 531,
+          "conditional_accuracy": 19.397363465160076,
+          "quality_valid": true,
+          "all_scheduled_accuracy_bounds_percent": [
+            18.592057761732853,
+            18.592057761732853
+          ],
+          "statuses": {
+            "ok": 554
+          },
+          "answers": {
+            "2": 141,
+            "1": 102,
+            "5": 36,
+            "None": 23,
+            "3": 142,
+            "4": 110
+          },
+          "unique_clusters": 357,
+          "cluster_mean_percent": 17.320261437908496,
+          "points_using_frozen_weights": 143,
+          "max_frozen_weight": 832,
+          "uniform_random_expected_percent": 20.216606498194945,
+          "constant_choice_correct": {
+            "1": 99,
+            "2": 110,
+            "3": 111,
+            "4": 124,
+            "5": 116
+          }
+        }
+      },
+      "primary_comparisons": [
+        {
+          "conditions": [
+            "original",
+            "current_choices"
+          ],
+          "direction": "second minus first; negative means lower accuracy",
+          "pairs": 554,
+          "clusters": 357,
+          "cluster_unit": "cluster",
+          "all_scheduled_pairs": 554,
+          "all_scheduled_delta_bounds_percentage_points": [
+            -7.2202166064981945,
+            -7.2202166064981945
+          ],
+          "correct_to_wrong": 102,
+          "wrong_to_correct": 62,
+          "correct_to_unanswered": 6,
+          "correct_to_answered_wrong": 96,
+          "unanswered_to_correct": 8,
+          "answered_wrong_to_correct": 54,
+          "delta_percentage_points": -7.2202166064981945,
+          "cluster_bootstrap_95": [
+            -12.386156648451731,
+            -2.026995918570505
+          ],
+          "cluster_mean_delta_percentage_points": -7.889822595704948,
+          "cluster_mean_bootstrap_95": [
+            -12.885154061624648,
+            -2.8944911297852474
+          ],
+          "bootstrap_iterations": 10000
+        },
+        {
+          "conditions": [
+            "layout_control",
+            "current_choices"
+          ],
+          "direction": "second minus first; negative means lower accuracy",
+          "pairs": 554,
+          "clusters": 357,
+          "cluster_unit": "cluster",
+          "all_scheduled_pairs": 554,
+          "all_scheduled_delta_bounds_percentage_points": [
+            -3.068592057761733,
+            -3.068592057761733
+          ],
+          "correct_to_wrong": 95,
+          "wrong_to_correct": 78,
+          "correct_to_unanswered": 5,
+          "correct_to_answered_wrong": 90,
+          "unanswered_to_correct": 9,
+          "answered_wrong_to_correct": 69,
+          "delta_percentage_points": -3.068592057761733,
+          "cluster_bootstrap_95": [
+            -8.170713186791419,
+            1.992844038507061
+          ],
+          "cluster_mean_delta_percentage_points": -3.361344537815126,
+          "cluster_mean_bootstrap_95": [
+            -8.26330532212885,
+            1.4939309056956118
+          ],
+          "bootstrap_iterations": 10000
+        }
+      ],
+      "supplementary_shared_context_comparisons": [
+        {
+          "conditions": [
+            "original",
+            "current_choices"
+          ],
+          "direction": "second minus first; negative means lower accuracy",
+          "pairs": 554,
+          "clusters": 117,
+          "cluster_unit": "request_context_group",
+          "all_scheduled_pairs": 554,
+          "all_scheduled_delta_bounds_percentage_points": [
+            -7.2202166064981945,
+            -7.2202166064981945
+          ],
+          "correct_to_wrong": 102,
+          "wrong_to_correct": 62,
+          "correct_to_unanswered": 6,
+          "correct_to_answered_wrong": 96,
+          "unanswered_to_correct": 8,
+          "answered_wrong_to_correct": 54,
+          "delta_percentage_points": -7.2202166064981945,
+          "cluster_bootstrap_95": [
+            -12.167350674955237,
+            -2.676815066606867
+          ],
+          "cluster_mean_delta_percentage_points": -6.2818603523731715,
+          "cluster_mean_bootstrap_95": [
+            -11.96040263748597,
+            -0.41735318337882604
+          ],
+          "bootstrap_iterations": 10000
+        },
+        {
+          "conditions": [
+            "layout_control",
+            "current_choices"
+          ],
+          "direction": "second minus first; negative means lower accuracy",
+          "pairs": 554,
+          "clusters": 117,
+          "cluster_unit": "request_context_group",
+          "all_scheduled_pairs": 554,
+          "all_scheduled_delta_bounds_percentage_points": [
+            -3.068592057761733,
+            -3.068592057761733
+          ],
+          "correct_to_wrong": 95,
+          "wrong_to_correct": 78,
+          "correct_to_unanswered": 5,
+          "correct_to_answered_wrong": 90,
+          "unanswered_to_correct": 9,
+          "answered_wrong_to_correct": 69,
+          "delta_percentage_points": -3.068592057761733,
+          "cluster_bootstrap_95": [
+            -8.834692341772977,
+            2.200248618784527
+          ],
+          "cluster_mean_delta_percentage_points": -3.4018355813227603,
+          "cluster_mean_bootstrap_95": [
+            -9.270714624881291,
+            2.3503982959111105
+          ],
+          "bootstrap_iterations": 10000
+        }
+      ],
+      "excluding_all_choices_accepted": {
+        "original": {
+          "total": 553,
+          "resolved": 553,
+          "correct": 142,
+          "percent": 25.678119349005424,
+          "answered": 511,
+          "conditional_accuracy": 27.788649706457925,
+          "quality_valid": true,
+          "all_scheduled_accuracy_bounds_percent": [
+            25.678119349005424,
+            25.678119349005424
+          ],
+          "statuses": {
+            "ok": 553
+          },
+          "answers": {
+            "3": 122,
+            "4": 122,
+            "None": 42,
+            "2": 130,
+            "1": 91,
+            "5": 46
+          },
+          "unique_clusters": 356,
+          "cluster_mean_percent": 25.0,
+          "points_using_frozen_weights": 214,
+          "max_frozen_weight": 831,
+          "uniform_random_expected_percent": 20.07233273056058,
+          "constant_choice_correct": {
+            "1": 98,
+            "2": 109,
+            "3": 110,
+            "4": 123,
+            "5": 115
+          }
+        },
+        "layout_control": {
+          "total": 553,
+          "resolved": 553,
+          "correct": 119,
+          "percent": 21.518987341772153,
+          "answered": 510,
+          "conditional_accuracy": 23.333333333333332,
+          "quality_valid": true,
+          "all_scheduled_accuracy_bounds_percent": [
+            21.518987341772153,
+            21.518987341772153
+          ],
+          "statuses": {
+            "ok": 553
+          },
+          "answers": {
+            "4": 133,
+            "5": 46,
+            "2": 92,
+            "None": 43,
+            "1": 98,
+            "3": 141
+          },
+          "unique_clusters": 356,
+          "cluster_mean_percent": 20.45880149812734,
+          "points_using_frozen_weights": 146,
+          "max_frozen_weight": 831,
+          "uniform_random_expected_percent": 20.07233273056058,
+          "constant_choice_correct": {
+            "1": 98,
+            "2": 109,
+            "3": 110,
+            "4": 123,
+            "5": 115
+          }
+        },
+        "current_choices": {
+          "total": 553,
+          "resolved": 553,
+          "correct": 103,
+          "percent": 18.625678119349004,
+          "answered": 531,
+          "conditional_accuracy": 19.397363465160076,
+          "quality_valid": true,
+          "all_scheduled_accuracy_bounds_percent": [
+            18.625678119349004,
+            18.625678119349004
+          ],
+          "statuses": {
+            "ok": 553
+          },
+          "answers": {
+            "2": 141,
+            "1": 102,
+            "5": 36,
+            "None": 22,
+            "3": 142,
+            "4": 110
+          },
+          "unique_clusters": 356,
+          "cluster_mean_percent": 17.368913857677903,
+          "points_using_frozen_weights": 143,
+          "max_frozen_weight": 831,
+          "uniform_random_expected_percent": 20.07233273056058,
+          "constant_choice_correct": {
+            "1": 98,
+            "2": 109,
+            "3": 110,
+            "4": 123,
+            "5": 115
+          }
+        }
+      },
+      "exams": {
+        "exam01": {
+          "original": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 16,
+            "percent": 20.0,
+            "answered": 75,
+            "conditional_accuracy": 21.333333333333332,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              20.0,
+              20.0
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "3": 17,
+              "4": 14,
+              "None": 5,
+              "2": 23,
+              "1": 17,
+              "5": 4
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 20.0,
+            "points_using_frozen_weights": 16,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 21.25,
+            "constant_choice_correct": {
+              "1": 15,
+              "2": 16,
+              "3": 18,
+              "4": 18,
+              "5": 18
+            }
+          },
+          "layout_control": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 17,
+            "percent": 21.25,
+            "answered": 73,
+            "conditional_accuracy": 23.28767123287671,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              21.25,
+              21.25
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "4": 15,
+              "5": 6,
+              "2": 15,
+              "None": 7,
+              "1": 16,
+              "3": 21
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 21.25,
+            "points_using_frozen_weights": 17,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 21.25,
+            "constant_choice_correct": {
+              "1": 15,
+              "2": 16,
+              "3": 18,
+              "4": 18,
+              "5": 18
+            }
+          },
+          "current_choices": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 17,
+            "percent": 21.25,
+            "answered": 75,
+            "conditional_accuracy": 22.666666666666668,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              21.25,
+              21.25
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "2": 17,
+              "1": 18,
+              "5": 6,
+              "None": 5,
+              "3": 25,
+              "4": 9
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 21.25,
+            "points_using_frozen_weights": 17,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 21.25,
+            "constant_choice_correct": {
+              "1": 15,
+              "2": 16,
+              "3": 18,
+              "4": 18,
+              "5": 18
+            }
+          }
+        },
+        "exam02": {
+          "original": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 20,
+            "percent": 25.0,
+            "answered": 73,
+            "conditional_accuracy": 27.397260273972602,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              25.0,
+              25.0
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "4": 19,
+              "3": 21,
+              "2": 17,
+              "1": 9,
+              "5": 7,
+              "None": 7
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 25.0,
+            "points_using_frozen_weights": 20,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 16,
+              "2": 16,
+              "3": 15,
+              "4": 17,
+              "5": 16
+            }
+          },
+          "layout_control": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 16,
+            "percent": 20.0,
+            "answered": 76,
+            "conditional_accuracy": 21.05263157894737,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              20.0,
+              20.0
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "1": 15,
+              "2": 13,
+              "4": 18,
+              "3": 25,
+              "5": 5,
+              "None": 4
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 20.0,
+            "points_using_frozen_weights": 16,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 16,
+              "2": 16,
+              "3": 15,
+              "4": 17,
+              "5": 16
+            }
+          },
+          "current_choices": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 14,
+            "percent": 17.5,
+            "answered": 77,
+            "conditional_accuracy": 18.181818181818183,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              17.5,
+              17.5
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "4": 16,
+              "3": 23,
+              "2": 21,
+              "1": 15,
+              "None": 3,
+              "5": 2
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 17.5,
+            "points_using_frozen_weights": 14,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 16,
+              "2": 16,
+              "3": 15,
+              "4": 17,
+              "5": 16
+            }
+          }
+        },
+        "exam03": {
+          "original": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 19,
+            "percent": 23.75,
+            "answered": 70,
+            "conditional_accuracy": 27.142857142857142,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              23.75,
+              23.75
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "4": 20,
+              "3": 16,
+              "2": 19,
+              "1": 10,
+              "5": 5,
+              "None": 10
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 23.75,
+            "points_using_frozen_weights": 19,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 20.25,
+            "constant_choice_correct": {
+              "1": 17,
+              "2": 15,
+              "3": 14,
+              "4": 19,
+              "5": 16
+            }
+          },
+          "layout_control": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 20,
+            "percent": 25.0,
+            "answered": 70,
+            "conditional_accuracy": 28.571428571428573,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              25.0,
+              25.0
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "1": 12,
+              "3": 20,
+              "4": 23,
+              "5": 5,
+              "2": 10,
+              "None": 10
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 25.0,
+            "points_using_frozen_weights": 20,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 20.25,
+            "constant_choice_correct": {
+              "1": 17,
+              "2": 15,
+              "3": 14,
+              "4": 19,
+              "5": 16
+            }
+          },
+          "current_choices": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 12,
+            "percent": 15.0,
+            "answered": 76,
+            "conditional_accuracy": 15.789473684210526,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              15.0,
+              15.0
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "4": 17,
+              "3": 16,
+              "2": 23,
+              "5": 6,
+              "1": 14,
+              "None": 4
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 15.0,
+            "points_using_frozen_weights": 12,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 20.25,
+            "constant_choice_correct": {
+              "1": 17,
+              "2": 15,
+              "3": 14,
+              "4": 19,
+              "5": 16
+            }
+          }
+        },
+        "exam04": {
+          "original": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 18,
+            "percent": 22.5,
+            "answered": 66,
+            "conditional_accuracy": 27.272727272727273,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              22.5,
+              22.5
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "4": 20,
+              "3": 15,
+              "2": 15,
+              "1": 11,
+              "5": 5,
+              "None": 14
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 22.5,
+            "points_using_frozen_weights": 18,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 17,
+              "2": 15,
+              "3": 14,
+              "4": 18,
+              "5": 16
+            }
+          },
+          "layout_control": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 20,
+            "percent": 25.0,
+            "answered": 67,
+            "conditional_accuracy": 29.850746268656717,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              25.0,
+              25.0
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "1": 11,
+              "3": 18,
+              "4": 23,
+              "2": 11,
+              "5": 4,
+              "None": 13
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 25.0,
+            "points_using_frozen_weights": 20,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 17,
+              "2": 15,
+              "3": 14,
+              "4": 18,
+              "5": 16
+            }
+          },
+          "current_choices": {
+            "total": 80,
+            "resolved": 80,
+            "correct": 19,
+            "percent": 23.75,
+            "answered": 76,
+            "conditional_accuracy": 25.0,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              23.75,
+              23.75
+            ],
+            "statuses": {
+              "ok": 80
+            },
+            "answers": {
+              "4": 24,
+              "3": 16,
+              "1": 11,
+              "2": 18,
+              "5": 7,
+              "None": 4
+            },
+            "unique_clusters": 80,
+            "cluster_mean_percent": 23.75,
+            "points_using_frozen_weights": 19,
+            "max_frozen_weight": 80,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 17,
+              "2": 15,
+              "3": 14,
+              "4": 18,
+              "5": 16
+            }
+          }
+        },
+        "exam05": {
+          "original": {
+            "total": 112,
+            "resolved": 112,
+            "correct": 27,
+            "percent": 24.107142857142858,
+            "answered": 111,
+            "conditional_accuracy": 24.324324324324323,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              24.107142857142858,
+              24.107142857142858
+            ],
+            "statuses": {
+              "ok": 112
+            },
+            "answers": {
+              "4": 32,
+              "3": 29,
+              "5": 9,
+              "2": 25,
+              "1": 16,
+              "None": 1
+            },
+            "unique_clusters": 56,
+            "cluster_mean_percent": 24.107142857142858,
+            "points_using_frozen_weights": 60,
+            "max_frozen_weight": 248,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 18,
+              "2": 24,
+              "3": 22,
+              "4": 24,
+              "5": 24
+            }
+          },
+          "layout_control": {
+            "total": 112,
+            "resolved": 112,
+            "correct": 19,
+            "percent": 16.964285714285715,
+            "answered": 111,
+            "conditional_accuracy": 17.117117117117118,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              16.964285714285715,
+              16.964285714285715
+            ],
+            "statuses": {
+              "ok": 112
+            },
+            "answers": {
+              "3": 31,
+              "2": 17,
+              "4": 35,
+              "1": 20,
+              "5": 8,
+              "None": 1
+            },
+            "unique_clusters": 56,
+            "cluster_mean_percent": 16.964285714285715,
+            "points_using_frozen_weights": 41,
+            "max_frozen_weight": 248,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 18,
+              "2": 24,
+              "3": 22,
+              "4": 24,
+              "5": 24
+            }
+          },
+          "current_choices": {
+            "total": 112,
+            "resolved": 112,
+            "correct": 21,
+            "percent": 18.75,
+            "answered": 110,
+            "conditional_accuracy": 19.09090909090909,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              18.75,
+              18.75
+            ],
+            "statuses": {
+              "ok": 112
+            },
+            "answers": {
+              "4": 28,
+              "5": 3,
+              "2": 27,
+              "3": 33,
+              "1": 19,
+              "None": 2
+            },
+            "unique_clusters": 56,
+            "cluster_mean_percent": 18.75,
+            "points_using_frozen_weights": 44,
+            "max_frozen_weight": 248,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 18,
+              "2": 24,
+              "3": 22,
+              "4": 24,
+              "5": 24
+            }
+          }
+        },
+        "exam08": {
+          "original": {
+            "total": 66,
+            "resolved": 66,
+            "correct": 18,
+            "percent": 27.272727272727273,
+            "answered": 62,
+            "conditional_accuracy": 29.032258064516128,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              27.272727272727273,
+              27.272727272727273
+            ],
+            "statuses": {
+              "ok": 66
+            },
+            "answers": {
+              "1": 18,
+              "None": 4,
+              "3": 14,
+              "2": 14,
+              "5": 9,
+              "4": 7
+            },
+            "unique_clusters": 33,
+            "cluster_mean_percent": 27.27272727272727,
+            "points_using_frozen_weights": 57,
+            "max_frozen_weight": 208,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 10,
+              "2": 12,
+              "3": 16,
+              "4": 16,
+              "5": 12
+            }
+          },
+          "layout_control": {
+            "total": 66,
+            "resolved": 66,
+            "correct": 3,
+            "percent": 4.545454545454546,
+            "answered": 60,
+            "conditional_accuracy": 5.0,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              4.545454545454546,
+              4.545454545454546
+            ],
+            "statuses": {
+              "ok": 66
+            },
+            "answers": {
+              "1": 13,
+              "4": 11,
+              "5": 11,
+              "None": 6,
+              "2": 11,
+              "3": 14
+            },
+            "unique_clusters": 33,
+            "cluster_mean_percent": 4.545454545454546,
+            "points_using_frozen_weights": 8,
+            "max_frozen_weight": 208,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 10,
+              "2": 12,
+              "3": 16,
+              "4": 16,
+              "5": 12
+            }
+          },
+          "current_choices": {
+            "total": 66,
+            "resolved": 66,
+            "correct": 8,
+            "percent": 12.121212121212121,
+            "answered": 63,
+            "conditional_accuracy": 12.698412698412698,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              12.121212121212121,
+              12.121212121212121
+            ],
+            "statuses": {
+              "ok": 66
+            },
+            "answers": {
+              "1": 17,
+              "2": 23,
+              "4": 5,
+              "3": 14,
+              "5": 4,
+              "None": 3
+            },
+            "unique_clusters": 33,
+            "cluster_mean_percent": 12.121212121212121,
+            "points_using_frozen_weights": 25,
+            "max_frozen_weight": 208,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 10,
+              "2": 12,
+              "3": 16,
+              "4": 16,
+              "5": 12
+            }
+          }
+        },
+        "exam09": {
+          "original": {
+            "total": 56,
+            "resolved": 56,
+            "correct": 25,
+            "percent": 44.642857142857146,
+            "answered": 55,
+            "conditional_accuracy": 45.45454545454545,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              44.642857142857146,
+              44.642857142857146
+            ],
+            "statuses": {
+              "ok": 56
+            },
+            "answers": {
+              "2": 17,
+              "4": 10,
+              "5": 7,
+              "3": 10,
+              "1": 11,
+              "None": 1
+            },
+            "unique_clusters": 28,
+            "cluster_mean_percent": 44.642857142857146,
+            "points_using_frozen_weights": 25,
+            "max_frozen_weight": 56,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 6,
+              "2": 12,
+              "3": 12,
+              "4": 12,
+              "5": 14
+            }
+          },
+          "layout_control": {
+            "total": 56,
+            "resolved": 56,
+            "correct": 25,
+            "percent": 44.642857142857146,
+            "answered": 54,
+            "conditional_accuracy": 46.2962962962963,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              44.642857142857146,
+              44.642857142857146
+            ],
+            "statuses": {
+              "ok": 56
+            },
+            "answers": {
+              "2": 15,
+              "5": 7,
+              "1": 12,
+              "3": 12,
+              "4": 8,
+              "None": 2
+            },
+            "unique_clusters": 28,
+            "cluster_mean_percent": 44.642857142857146,
+            "points_using_frozen_weights": 25,
+            "max_frozen_weight": 56,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 6,
+              "2": 12,
+              "3": 12,
+              "4": 12,
+              "5": 14
+            }
+          },
+          "current_choices": {
+            "total": 56,
+            "resolved": 56,
+            "correct": 12,
+            "percent": 21.428571428571427,
+            "answered": 54,
+            "conditional_accuracy": 22.22222222222222,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              21.428571428571427,
+              21.428571428571427
+            ],
+            "statuses": {
+              "ok": 56
+            },
+            "answers": {
+              "2": 12,
+              "4": 11,
+              "5": 8,
+              "3": 15,
+              "None": 2,
+              "1": 8
+            },
+            "unique_clusters": 28,
+            "cluster_mean_percent": 21.428571428571427,
+            "points_using_frozen_weights": 12,
+            "max_frozen_weight": 56,
+            "uniform_random_expected_percent": 20.0,
+            "constant_choice_correct": {
+              "1": 6,
+              "2": 12,
+              "3": 12,
+              "4": 12,
+              "5": 14
+            }
+          }
+        }
+      },
+      "pilot": {
+        "42": {
+          "original": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 21,
+            "percent": 30.0,
+            "answered": 64,
+            "conditional_accuracy": 32.8125,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              30.0,
+              30.0
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "4": 13,
+              "2": 17,
+              "3": 16,
+              "1": 11,
+              "None": 6,
+              "5": 7
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 30.0,
+            "points_using_frozen_weights": 33,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          },
+          "layout_control": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 14,
+            "percent": 20.0,
+            "answered": 61,
+            "conditional_accuracy": 22.950819672131146,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              20.0,
+              20.0
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "2": 11,
+              "3": 15,
+              "1": 17,
+              "None": 9,
+              "4": 10,
+              "5": 8
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 20.0,
+            "points_using_frozen_weights": 19,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          },
+          "current_choices": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 4,
+            "percent": 5.714285714285714,
+            "answered": 67,
+            "conditional_accuracy": 5.970149253731344,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              5.714285714285714,
+              5.714285714285714
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "1": 15,
+              "5": 5,
+              "2": 19,
+              "3": 19,
+              "4": 9,
+              "None": 3
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 5.714285714285714,
+            "points_using_frozen_weights": 6,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          },
+          "qr_only": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 11,
+            "percent": 15.714285714285714,
+            "answered": 59,
+            "conditional_accuracy": 18.64406779661017,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              15.714285714285714,
+              15.714285714285714
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "4": 17,
+              "1": 10,
+              "3": 17,
+              "None": 11,
+              "2": 11,
+              "5": 4
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 15.714285714285714,
+            "points_using_frozen_weights": 14,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          },
+          "helpful_legacy": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 9,
+            "percent": 12.857142857142858,
+            "answered": 69,
+            "conditional_accuracy": 13.043478260869565,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              12.857142857142858,
+              12.857142857142858
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "4": 12,
+              "2": 19,
+              "3": 23,
+              "1": 10,
+              "5": 5,
+              "None": 1
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 12.857142857142856,
+            "points_using_frozen_weights": 15,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          },
+          "command_only": {
+            "total": 70,
+            "resolved": 68,
+            "correct": 15,
+            "percent": 22.058823529411764,
+            "answered": 60,
+            "conditional_accuracy": 25.0,
+            "quality_valid": false,
+            "all_scheduled_accuracy_bounds_percent": [
+              21.428571428571427,
+              24.285714285714285
+            ],
+            "statuses": {
+              "ok": 68,
+              "transport_error": 2
+            },
+            "answers": {
+              "2": 19,
+              "1": 9,
+              "3": 15,
+              "None": 8,
+              "4": 11,
+              "5": 6
+            },
+            "unique_clusters": 68,
+            "cluster_mean_percent": 22.058823529411764,
+            "points_using_frozen_weights": 22,
+            "max_frozen_weight": 102,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          },
+          "other_page": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 13,
+            "percent": 18.571428571428573,
+            "answered": 64,
+            "conditional_accuracy": 20.3125,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              18.571428571428573,
+              18.571428571428573
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "1": 10,
+              "3": 20,
+              "2": 12,
+              "4": 15,
+              "5": 7,
+              "None": 6
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 18.571428571428573,
+            "points_using_frozen_weights": 22,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          }
+        },
+        "314": {
+          "original": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 21,
+            "percent": 30.0,
+            "answered": 64,
+            "conditional_accuracy": 32.8125,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              30.0,
+              30.0
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "4": 13,
+              "2": 17,
+              "3": 16,
+              "1": 11,
+              "None": 6,
+              "5": 7
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 30.0,
+            "points_using_frozen_weights": 39,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          },
+          "layout_control": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 14,
+            "percent": 20.0,
+            "answered": 61,
+            "conditional_accuracy": 22.950819672131146,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              20.0,
+              20.0
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "4": 13,
+              "1": 19,
+              "3": 13,
+              "None": 9,
+              "2": 8,
+              "5": 8
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 20.0,
+            "points_using_frozen_weights": 21,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          },
+          "current_choices": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 7,
+            "percent": 10.0,
+            "answered": 65,
+            "conditional_accuracy": 10.76923076923077,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              10.0,
+              10.0
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "1": 10,
+              "5": 4,
+              "2": 21,
+              "3": 18,
+              "4": 12,
+              "None": 5
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 10.0,
+            "points_using_frozen_weights": 12,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          }
+        },
+        "2026": {
+          "original": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 21,
+            "percent": 30.0,
+            "answered": 64,
+            "conditional_accuracy": 32.8125,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              30.0,
+              30.0
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "4": 13,
+              "2": 17,
+              "3": 16,
+              "1": 11,
+              "None": 6,
+              "5": 7
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 30.0,
+            "points_using_frozen_weights": 39,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          },
+          "layout_control": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 15,
+            "percent": 21.428571428571427,
+            "answered": 61,
+            "conditional_accuracy": 24.59016393442623,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              21.428571428571427,
+              21.428571428571427
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "4": 12,
+              "1": 19,
+              "3": 13,
+              "None": 9,
+              "2": 8,
+              "5": 9
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 21.428571428571427,
+            "points_using_frozen_weights": 22,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          },
+          "current_choices": {
+            "total": 70,
+            "resolved": 70,
+            "correct": 7,
+            "percent": 10.0,
+            "answered": 65,
+            "conditional_accuracy": 10.76923076923077,
+            "quality_valid": true,
+            "all_scheduled_accuracy_bounds_percent": [
+              10.0,
+              10.0
+            ],
+            "statuses": {
+              "ok": 70
+            },
+            "answers": {
+              "1": 10,
+              "5": 4,
+              "2": 21,
+              "3": 18,
+              "4": 12,
+              "None": 5
+            },
+            "unique_clusters": 70,
+            "cluster_mean_percent": 10.0,
+            "points_using_frozen_weights": 12,
+            "max_frozen_weight": 104,
+            "uniform_random_expected_percent": 20.285714285714285,
+            "constant_choice_correct": {
+              "1": 14,
+              "2": 11,
+              "3": 16,
+              "4": 14,
+              "5": 16
+            }
+          }
+        }
+      },
+      "pilot_comparisons": {
+        "42": [
+          {
+            "conditions": [
+              "original",
+              "current_choices"
+            ],
+            "direction": "second minus first; negative means lower accuracy",
+            "pairs": 70,
+            "clusters": 70,
+            "cluster_unit": "cluster",
+            "all_scheduled_pairs": 70,
+            "all_scheduled_delta_bounds_percentage_points": [
+              -24.285714285714285,
+              -24.285714285714285
+            ],
+            "correct_to_wrong": 18,
+            "wrong_to_correct": 1,
+            "correct_to_unanswered": 1,
+            "correct_to_answered_wrong": 17,
+            "unanswered_to_correct": 0,
+            "answered_wrong_to_correct": 1,
+            "delta_percentage_points": -24.285714285714285,
+            "cluster_bootstrap_95": [
+              -35.714285714285715,
+              -14.285714285714286
+            ],
+            "cluster_mean_delta_percentage_points": -24.285714285714285,
+            "cluster_mean_bootstrap_95": [
+              -35.714285714285715,
+              -14.285714285714285
+            ],
+            "bootstrap_iterations": 10000
+          },
+          {
+            "conditions": [
+              "layout_control",
+              "current_choices"
+            ],
+            "direction": "second minus first; negative means lower accuracy",
+            "pairs": 70,
+            "clusters": 70,
+            "cluster_unit": "cluster",
+            "all_scheduled_pairs": 70,
+            "all_scheduled_delta_bounds_percentage_points": [
+              -14.285714285714286,
+              -14.285714285714286
+            ],
+            "correct_to_wrong": 14,
+            "wrong_to_correct": 4,
+            "correct_to_unanswered": 1,
+            "correct_to_answered_wrong": 13,
+            "unanswered_to_correct": 1,
+            "answered_wrong_to_correct": 3,
+            "delta_percentage_points": -14.285714285714286,
+            "cluster_bootstrap_95": [
+              -25.714285714285715,
+              -2.857142857142857
+            ],
+            "cluster_mean_delta_percentage_points": -14.285714285714285,
+            "cluster_mean_bootstrap_95": [
+              -25.71428571428571,
+              -2.857142857142857
+            ],
+            "bootstrap_iterations": 10000
+          },
+          {
+            "conditions": [
+              "other_page",
+              "current_choices"
+            ],
+            "direction": "second minus first; negative means lower accuracy",
+            "pairs": 70,
+            "clusters": 70,
+            "cluster_unit": "cluster",
+            "all_scheduled_pairs": 70,
+            "all_scheduled_delta_bounds_percentage_points": [
+              -12.857142857142858,
+              -12.857142857142858
+            ],
+            "correct_to_wrong": 10,
+            "wrong_to_correct": 1,
+            "correct_to_unanswered": 1,
+            "correct_to_answered_wrong": 9,
+            "unanswered_to_correct": 0,
+            "answered_wrong_to_correct": 1,
+            "delta_percentage_points": -12.857142857142858,
+            "cluster_bootstrap_95": [
+              -21.428571428571427,
+              -4.285714285714286
+            ],
+            "cluster_mean_delta_percentage_points": -12.857142857142856,
+            "cluster_mean_bootstrap_95": [
+              -21.428571428571427,
+              -4.285714285714286
+            ],
+            "bootstrap_iterations": 10000
+          },
+          {
+            "conditions": [
+              "command_only",
+              "current_choices"
+            ],
+            "direction": "second minus first; negative means lower accuracy",
+            "pairs": 68,
+            "clusters": 68,
+            "cluster_unit": "cluster",
+            "all_scheduled_pairs": 70,
+            "all_scheduled_delta_bounds_percentage_points": [
+              -18.571428571428573,
+              -15.714285714285714
+            ],
+            "correct_to_wrong": 13,
+            "wrong_to_correct": 2,
+            "correct_to_unanswered": 0,
+            "correct_to_answered_wrong": 13,
+            "unanswered_to_correct": 0,
+            "answered_wrong_to_correct": 2,
+            "delta_percentage_points": -16.176470588235293,
+            "cluster_bootstrap_95": [
+              -26.470588235294116,
+              -5.882352941176471
+            ],
+            "cluster_mean_delta_percentage_points": -16.176470588235293,
+            "cluster_mean_bootstrap_95": [
+              -26.47058823529412,
+              -5.88235294117647
+            ],
+            "bootstrap_iterations": 10000
+          }
+        ],
+        "314": [
+          {
+            "conditions": [
+              "original",
+              "current_choices"
+            ],
+            "direction": "second minus first; negative means lower accuracy",
+            "pairs": 70,
+            "clusters": 70,
+            "cluster_unit": "cluster",
+            "all_scheduled_pairs": 70,
+            "all_scheduled_delta_bounds_percentage_points": [
+              -20.0,
+              -20.0
+            ],
+            "correct_to_wrong": 18,
+            "wrong_to_correct": 4,
+            "correct_to_unanswered": 2,
+            "correct_to_answered_wrong": 16,
+            "unanswered_to_correct": 0,
+            "answered_wrong_to_correct": 4,
+            "delta_percentage_points": -20.0,
+            "cluster_bootstrap_95": [
+              -32.857142857142854,
+              -8.571428571428571
+            ],
+            "cluster_mean_delta_percentage_points": -20.0,
+            "cluster_mean_bootstrap_95": [
+              -32.857142857142854,
+              -8.571428571428571
+            ],
+            "bootstrap_iterations": 10000
+          },
+          {
+            "conditions": [
+              "layout_control",
+              "current_choices"
+            ],
+            "direction": "second minus first; negative means lower accuracy",
+            "pairs": 70,
+            "clusters": 70,
+            "cluster_unit": "cluster",
+            "all_scheduled_pairs": 70,
+            "all_scheduled_delta_bounds_percentage_points": [
+              -10.0,
+              -10.0
+            ],
+            "correct_to_wrong": 13,
+            "wrong_to_correct": 6,
+            "correct_to_unanswered": 1,
+            "correct_to_answered_wrong": 12,
+            "unanswered_to_correct": 1,
+            "answered_wrong_to_correct": 5,
+            "delta_percentage_points": -10.0,
+            "cluster_bootstrap_95": [
+              -21.428571428571427,
+              1.4285714285714286
+            ],
+            "cluster_mean_delta_percentage_points": -10.0,
+            "cluster_mean_bootstrap_95": [
+              -21.428571428571427,
+              1.4285714285714286
+            ],
+            "bootstrap_iterations": 10000
+          }
+        ],
+        "2026": [
+          {
+            "conditions": [
+              "original",
+              "current_choices"
+            ],
+            "direction": "second minus first; negative means lower accuracy",
+            "pairs": 70,
+            "clusters": 70,
+            "cluster_unit": "cluster",
+            "all_scheduled_pairs": 70,
+            "all_scheduled_delta_bounds_percentage_points": [
+              -20.0,
+              -20.0
+            ],
+            "correct_to_wrong": 18,
+            "wrong_to_correct": 4,
+            "correct_to_unanswered": 2,
+            "correct_to_answered_wrong": 16,
+            "unanswered_to_correct": 0,
+            "answered_wrong_to_correct": 4,
+            "delta_percentage_points": -20.0,
+            "cluster_bootstrap_95": [
+              -32.857142857142854,
+              -8.571428571428571
+            ],
+            "cluster_mean_delta_percentage_points": -20.0,
+            "cluster_mean_bootstrap_95": [
+              -32.857142857142854,
+              -8.571428571428571
+            ],
+            "bootstrap_iterations": 10000
+          },
+          {
+            "conditions": [
+              "layout_control",
+              "current_choices"
+            ],
+            "direction": "second minus first; negative means lower accuracy",
+            "pairs": 70,
+            "clusters": 70,
+            "cluster_unit": "cluster",
+            "all_scheduled_pairs": 70,
+            "all_scheduled_delta_bounds_percentage_points": [
+              -11.428571428571429,
+              -11.428571428571429
+            ],
+            "correct_to_wrong": 14,
+            "wrong_to_correct": 6,
+            "correct_to_unanswered": 1,
+            "correct_to_answered_wrong": 13,
+            "unanswered_to_correct": 1,
+            "answered_wrong_to_correct": 5,
+            "delta_percentage_points": -11.428571428571429,
+            "cluster_bootstrap_95": [
+              -24.285714285714285,
+              1.4285714285714286
+            ],
+            "cluster_mean_delta_percentage_points": -11.428571428571429,
+            "cluster_mean_bootstrap_95": [
+              -24.285714285714285,
+              1.4285714285714286
+            ],
+            "bootstrap_iterations": 10000
+          }
+        ]
+      }
+    }
+  },
+  "commercial": {
+    "status": "not_run",
+    "reason": "Separate API connection selected by user; no configured credentials/model"
+  },
+  "warning": "Previously seen corpus; low original accuracy or answer collapse limits interpretation. Capture evaluation is not a real camera or AI glasses test.",
+  "supplementary_subject_scores": {
+    "vision": [
+      {
+        "exam": "exam01",
+        "unit": "questions_1_40",
+        "condition": "current_choices",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 13,
+        "points": 32.5,
+        "possible_points_range": [
+          32.5,
+          32.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam01",
+        "unit": "questions_1_40",
+        "condition": "layout_control",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 12,
+        "points": 30.0,
+        "possible_points_range": [
+          30.0,
+          30.0
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam01",
+        "unit": "questions_1_40",
+        "condition": "original",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 13,
+        "points": 32.5,
+        "possible_points_range": [
+          32.5,
+          32.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam01",
+        "unit": "questions_41_80",
+        "condition": "current_choices",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 7,
+        "points": 17.5,
+        "possible_points_range": [
+          17.5,
+          17.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam01",
+        "unit": "questions_41_80",
+        "condition": "layout_control",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 9,
+        "points": 22.5,
+        "possible_points_range": [
+          22.5,
+          22.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam01",
+        "unit": "questions_41_80",
+        "condition": "original",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 11,
+        "points": 27.5,
+        "possible_points_range": [
+          27.5,
+          27.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam02",
+        "unit": "questions_1_40",
+        "condition": "current_choices",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 5,
+        "points": 12.5,
+        "possible_points_range": [
+          12.5,
+          12.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam02",
+        "unit": "questions_1_40",
+        "condition": "layout_control",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 6,
+        "points": 15.0,
+        "possible_points_range": [
+          15.0,
+          15.0
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam02",
+        "unit": "questions_1_40",
+        "condition": "original",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 6,
+        "points": 15.0,
+        "possible_points_range": [
+          15.0,
+          15.0
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam02",
+        "unit": "questions_41_80",
+        "condition": "current_choices",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 5,
+        "points": 12.5,
+        "possible_points_range": [
+          12.5,
+          12.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam02",
+        "unit": "questions_41_80",
+        "condition": "layout_control",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 10,
+        "points": 25.0,
+        "possible_points_range": [
+          25.0,
+          25.0
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam02",
+        "unit": "questions_41_80",
+        "condition": "original",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 8,
+        "points": 20.0,
+        "possible_points_range": [
+          20.0,
+          20.0
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam03",
+        "unit": "questions_1_40",
+        "condition": "current_choices",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 6,
+        "points": 15.0,
+        "possible_points_range": [
+          15.0,
+          15.0
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam03",
+        "unit": "questions_1_40",
+        "condition": "layout_control",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 3,
+        "points": 7.5,
+        "possible_points_range": [
+          7.5,
+          7.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam03",
+        "unit": "questions_1_40",
+        "condition": "original",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 6,
+        "points": 15.0,
+        "possible_points_range": [
+          15.0,
+          22.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 3
+      },
+      {
+        "exam": "exam03",
+        "unit": "questions_41_80",
+        "condition": "current_choices",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 17,
+        "points": 42.5,
+        "possible_points_range": [
+          42.5,
+          42.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam03",
+        "unit": "questions_41_80",
+        "condition": "layout_control",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 12,
+        "points": 30.0,
+        "possible_points_range": [
+          30.0,
+          30.0
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam03",
+        "unit": "questions_41_80",
+        "condition": "original",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 13,
+        "points": 32.5,
+        "possible_points_range": [
+          32.5,
+          32.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam04",
+        "unit": "questions_1_40",
+        "condition": "current_choices",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 6,
+        "points": 15.0,
+        "possible_points_range": [
+          15.0,
+          15.0
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam04",
+        "unit": "questions_1_40",
+        "condition": "layout_control",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 4,
+        "points": 10.0,
+        "possible_points_range": [
+          10.0,
+          10.0
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam04",
+        "unit": "questions_1_40",
+        "condition": "original",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 6,
+        "points": 15.0,
+        "possible_points_range": [
+          15.0,
+          15.0
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam04",
+        "unit": "questions_41_80",
+        "condition": "current_choices",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 7,
+        "points": 17.5,
+        "possible_points_range": [
+          17.5,
+          17.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam04",
+        "unit": "questions_41_80",
+        "condition": "layout_control",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 6,
+        "points": 15.0,
+        "possible_points_range": [
+          15.0,
+          15.0
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam04",
+        "unit": "questions_41_80",
+        "condition": "original",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 9,
+        "points": 22.5,
+        "possible_points_range": [
+          22.5,
+          22.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "even_language",
+        "condition": "current_choices",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 5,
+        "points": 12,
+        "possible_points_range": [
+          12,
+          12
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "even_language",
+        "condition": "layout_control",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 8,
+        "points": 18,
+        "possible_points_range": [
+          18,
+          18
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "even_language",
+        "condition": "original",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 10,
+        "points": 22,
+        "possible_points_range": [
+          22,
+          22
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "even_speech",
+        "condition": "current_choices",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 5,
+        "points": 11,
+        "possible_points_range": [
+          11,
+          11
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "even_speech",
+        "condition": "layout_control",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 10,
+        "points": 23,
+        "possible_points_range": [
+          23,
+          23
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "even_speech",
+        "condition": "original",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 11,
+        "points": 24,
+        "possible_points_range": [
+          24,
+          24
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "odd_language",
+        "condition": "current_choices",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 9,
+        "points": 21,
+        "possible_points_range": [
+          21,
+          21
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "odd_language",
+        "condition": "layout_control",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 10,
+        "points": 22,
+        "possible_points_range": [
+          22,
+          22
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "odd_language",
+        "condition": "original",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 10,
+        "points": 22,
+        "possible_points_range": [
+          22,
+          22
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "odd_speech",
+        "condition": "current_choices",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 12,
+        "points": 27,
+        "possible_points_range": [
+          27,
+          27
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "odd_speech",
+        "condition": "layout_control",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 11,
+        "points": 25,
+        "possible_points_range": [
+          25,
+          25
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "odd_speech",
+        "condition": "original",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 12,
+        "points": 26,
+        "possible_points_range": [
+          26,
+          26
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "even_calculus",
+        "condition": "current_choices",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 6,
+        "points": 19,
+        "possible_points_range": [
+          19,
+          19
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "even_calculus",
+        "condition": "layout_control",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 7,
+        "points": 24,
+        "possible_points_range": [
+          24,
+          24
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "even_calculus",
+        "condition": "original",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 5,
+        "points": 15,
+        "possible_points_range": [
+          15,
+          15
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "even_geometry",
+        "condition": "current_choices",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 6,
+        "points": 19,
+        "possible_points_range": [
+          19,
+          19
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "even_geometry",
+        "condition": "layout_control",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 6,
+        "points": 20,
+        "possible_points_range": [
+          20,
+          20
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "even_geometry",
+        "condition": "original",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 6,
+        "points": 19,
+        "possible_points_range": [
+          19,
+          19
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "even_probability",
+        "condition": "current_choices",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 7,
+        "points": 22,
+        "possible_points_range": [
+          22,
+          22
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "even_probability",
+        "condition": "layout_control",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 8,
+        "points": 26,
+        "possible_points_range": [
+          26,
+          26
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "even_probability",
+        "condition": "original",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 7,
+        "points": 23,
+        "possible_points_range": [
+          23,
+          28
+        ],
+        "max_points": 68,
+        "unresolved": 2
+      },
+      {
+        "exam": "exam08",
+        "unit": "odd_calculus",
+        "condition": "current_choices",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 5,
+        "points": 16,
+        "possible_points_range": [
+          16,
+          16
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "odd_calculus",
+        "condition": "layout_control",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 5,
+        "points": 15,
+        "possible_points_range": [
+          15,
+          15
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "odd_calculus",
+        "condition": "original",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 5,
+        "points": 16,
+        "possible_points_range": [
+          16,
+          16
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "odd_geometry",
+        "condition": "current_choices",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 4,
+        "points": 13,
+        "possible_points_range": [
+          13,
+          13
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "odd_geometry",
+        "condition": "layout_control",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 7,
+        "points": 22,
+        "possible_points_range": [
+          22,
+          22
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "odd_geometry",
+        "condition": "original",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 6,
+        "points": 19,
+        "possible_points_range": [
+          19,
+          19
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "odd_probability",
+        "condition": "current_choices",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 7,
+        "points": 22,
+        "possible_points_range": [
+          22,
+          22
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "odd_probability",
+        "condition": "layout_control",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 5,
+        "points": 16,
+        "possible_points_range": [
+          16,
+          16
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "odd_probability",
+        "condition": "original",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 9,
+        "points": 28,
+        "possible_points_range": [
+          28,
+          28
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam09",
+        "unit": "even",
+        "condition": "current_choices",
+        "note": "English reading only; listening excluded",
+        "questions": 28,
+        "correct": 11,
+        "points": 23,
+        "possible_points_range": [
+          23,
+          23
+        ],
+        "max_points": 63,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam09",
+        "unit": "even",
+        "condition": "layout_control",
+        "note": "English reading only; listening excluded",
+        "questions": 28,
+        "correct": 11,
+        "points": 23,
+        "possible_points_range": [
+          23,
+          23
+        ],
+        "max_points": 63,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam09",
+        "unit": "even",
+        "condition": "original",
+        "note": "English reading only; listening excluded",
+        "questions": 28,
+        "correct": 11,
+        "points": 23,
+        "possible_points_range": [
+          23,
+          23
+        ],
+        "max_points": 63,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam09",
+        "unit": "odd",
+        "condition": "current_choices",
+        "note": "English reading only; listening excluded",
+        "questions": 28,
+        "correct": 11,
+        "points": 25,
+        "possible_points_range": [
+          25,
+          25
+        ],
+        "max_points": 63,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam09",
+        "unit": "odd",
+        "condition": "layout_control",
+        "note": "English reading only; listening excluded",
+        "questions": 28,
+        "correct": 13,
+        "points": 28,
+        "possible_points_range": [
+          28,
+          28
+        ],
+        "max_points": 63,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam09",
+        "unit": "odd",
+        "condition": "original",
+        "note": "English reading only; listening excluded",
+        "questions": 28,
+        "correct": 11,
+        "points": 25,
+        "possible_points_range": [
+          25,
+          25
+        ],
+        "max_points": 63,
+        "unresolved": 0
+      }
+    ],
+    "ocr_llm": [
+      {
+        "exam": "exam01",
+        "unit": "questions_1_40",
+        "condition": "current_choices",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 9,
+        "points": 22.5,
+        "possible_points_range": [
+          22.5,
+          22.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam01",
+        "unit": "questions_1_40",
+        "condition": "layout_control",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 8,
+        "points": 20.0,
+        "possible_points_range": [
+          20.0,
+          20.0
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam01",
+        "unit": "questions_1_40",
+        "condition": "original",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 9,
+        "points": 22.5,
+        "possible_points_range": [
+          22.5,
+          22.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam01",
+        "unit": "questions_41_80",
+        "condition": "current_choices",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 8,
+        "points": 20.0,
+        "possible_points_range": [
+          20.0,
+          20.0
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam01",
+        "unit": "questions_41_80",
+        "condition": "layout_control",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 9,
+        "points": 22.5,
+        "possible_points_range": [
+          22.5,
+          22.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam01",
+        "unit": "questions_41_80",
+        "condition": "original",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 7,
+        "points": 17.5,
+        "possible_points_range": [
+          17.5,
+          17.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam02",
+        "unit": "questions_1_40",
+        "condition": "current_choices",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 8,
+        "points": 20.0,
+        "possible_points_range": [
+          20.0,
+          20.0
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam02",
+        "unit": "questions_1_40",
+        "condition": "layout_control",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 8,
+        "points": 20.0,
+        "possible_points_range": [
+          20.0,
+          20.0
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam02",
+        "unit": "questions_1_40",
+        "condition": "original",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 9,
+        "points": 22.5,
+        "possible_points_range": [
+          22.5,
+          22.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam02",
+        "unit": "questions_41_80",
+        "condition": "current_choices",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 6,
+        "points": 15.0,
+        "possible_points_range": [
+          15.0,
+          15.0
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam02",
+        "unit": "questions_41_80",
+        "condition": "layout_control",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 8,
+        "points": 20.0,
+        "possible_points_range": [
+          20.0,
+          20.0
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam02",
+        "unit": "questions_41_80",
+        "condition": "original",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 11,
+        "points": 27.5,
+        "possible_points_range": [
+          27.5,
+          27.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam03",
+        "unit": "questions_1_40",
+        "condition": "current_choices",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 9,
+        "points": 22.5,
+        "possible_points_range": [
+          22.5,
+          22.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam03",
+        "unit": "questions_1_40",
+        "condition": "layout_control",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 11,
+        "points": 27.5,
+        "possible_points_range": [
+          27.5,
+          27.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam03",
+        "unit": "questions_1_40",
+        "condition": "original",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 10,
+        "points": 25.0,
+        "possible_points_range": [
+          25.0,
+          25.0
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam03",
+        "unit": "questions_41_80",
+        "condition": "current_choices",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 3,
+        "points": 7.5,
+        "possible_points_range": [
+          7.5,
+          7.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam03",
+        "unit": "questions_41_80",
+        "condition": "layout_control",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 9,
+        "points": 22.5,
+        "possible_points_range": [
+          22.5,
+          22.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam03",
+        "unit": "questions_41_80",
+        "condition": "original",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 9,
+        "points": 22.5,
+        "possible_points_range": [
+          22.5,
+          22.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam04",
+        "unit": "questions_1_40",
+        "condition": "current_choices",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 14,
+        "points": 35.0,
+        "possible_points_range": [
+          35.0,
+          35.0
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam04",
+        "unit": "questions_1_40",
+        "condition": "layout_control",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 15,
+        "points": 37.5,
+        "possible_points_range": [
+          37.5,
+          37.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam04",
+        "unit": "questions_1_40",
+        "condition": "original",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 8,
+        "points": 20.0,
+        "possible_points_range": [
+          20.0,
+          20.0
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam04",
+        "unit": "questions_41_80",
+        "condition": "current_choices",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 5,
+        "points": 12.5,
+        "possible_points_range": [
+          12.5,
+          12.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam04",
+        "unit": "questions_41_80",
+        "condition": "layout_control",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 5,
+        "points": 12.5,
+        "possible_points_range": [
+          12.5,
+          12.5
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam04",
+        "unit": "questions_41_80",
+        "condition": "original",
+        "note": "100-point conversion: 40 equally weighted questions",
+        "questions": 40,
+        "correct": 10,
+        "points": 25.0,
+        "possible_points_range": [
+          25.0,
+          25.0
+        ],
+        "max_points": 100.0,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "even_language",
+        "condition": "current_choices",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 9,
+        "points": 20,
+        "possible_points_range": [
+          20,
+          20
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "even_language",
+        "condition": "layout_control",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 10,
+        "points": 22,
+        "possible_points_range": [
+          22,
+          22
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "even_language",
+        "condition": "original",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 11,
+        "points": 25,
+        "possible_points_range": [
+          25,
+          25
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "even_speech",
+        "condition": "current_choices",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 8,
+        "points": 17,
+        "possible_points_range": [
+          17,
+          17
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "even_speech",
+        "condition": "layout_control",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 8,
+        "points": 18,
+        "possible_points_range": [
+          18,
+          18
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "even_speech",
+        "condition": "original",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 10,
+        "points": 23,
+        "possible_points_range": [
+          23,
+          23
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "odd_language",
+        "condition": "current_choices",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 7,
+        "points": 14,
+        "possible_points_range": [
+          14,
+          14
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "odd_language",
+        "condition": "layout_control",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 7,
+        "points": 15,
+        "possible_points_range": [
+          15,
+          15
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "odd_language",
+        "condition": "original",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 10,
+        "points": 23,
+        "possible_points_range": [
+          23,
+          23
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "odd_speech",
+        "condition": "current_choices",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 7,
+        "points": 14,
+        "possible_points_range": [
+          14,
+          14
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "odd_speech",
+        "condition": "layout_control",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 6,
+        "points": 13,
+        "possible_points_range": [
+          13,
+          13
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam05",
+        "unit": "odd_speech",
+        "condition": "original",
+        "note": "Korean common + one elective",
+        "questions": 45,
+        "correct": 10,
+        "points": 22,
+        "possible_points_range": [
+          22,
+          22
+        ],
+        "max_points": 100,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "even_calculus",
+        "condition": "current_choices",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 3,
+        "points": 8,
+        "possible_points_range": [
+          8,
+          8
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "even_calculus",
+        "condition": "layout_control",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 1,
+        "points": 3,
+        "possible_points_range": [
+          3,
+          3
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "even_calculus",
+        "condition": "original",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 4,
+        "points": 15,
+        "possible_points_range": [
+          15,
+          15
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "even_geometry",
+        "condition": "current_choices",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 3,
+        "points": 9,
+        "possible_points_range": [
+          9,
+          9
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "even_geometry",
+        "condition": "layout_control",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 0,
+        "points": 0,
+        "possible_points_range": [
+          0,
+          0
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "even_geometry",
+        "condition": "original",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 6,
+        "points": 20,
+        "possible_points_range": [
+          20,
+          20
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "even_probability",
+        "condition": "current_choices",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 3,
+        "points": 8,
+        "possible_points_range": [
+          8,
+          8
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "even_probability",
+        "condition": "layout_control",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 0,
+        "points": 0,
+        "possible_points_range": [
+          0,
+          0
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "even_probability",
+        "condition": "original",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 5,
+        "points": 18,
+        "possible_points_range": [
+          18,
+          18
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "odd_calculus",
+        "condition": "current_choices",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 1,
+        "points": 4,
+        "possible_points_range": [
+          4,
+          4
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "odd_calculus",
+        "condition": "layout_control",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 1,
+        "points": 2,
+        "possible_points_range": [
+          2,
+          2
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "odd_calculus",
+        "condition": "original",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 5,
+        "points": 17,
+        "possible_points_range": [
+          17,
+          17
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "odd_geometry",
+        "condition": "current_choices",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 1,
+        "points": 4,
+        "possible_points_range": [
+          4,
+          4
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "odd_geometry",
+        "condition": "layout_control",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 1,
+        "points": 2,
+        "possible_points_range": [
+          2,
+          2
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "odd_geometry",
+        "condition": "original",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 5,
+        "points": 17,
+        "possible_points_range": [
+          17,
+          17
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "odd_probability",
+        "condition": "current_choices",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 3,
+        "points": 10,
+        "possible_points_range": [
+          10,
+          10
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "odd_probability",
+        "condition": "layout_control",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 2,
+        "points": 5,
+        "possible_points_range": [
+          5,
+          5
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam08",
+        "unit": "odd_probability",
+        "condition": "original",
+        "note": "Math objective common + one elective; short answers excluded",
+        "questions": 21,
+        "correct": 7,
+        "points": 22,
+        "possible_points_range": [
+          22,
+          22
+        ],
+        "max_points": 68,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam09",
+        "unit": "even",
+        "condition": "current_choices",
+        "note": "English reading only; listening excluded",
+        "questions": 28,
+        "correct": 7,
+        "points": 17,
+        "possible_points_range": [
+          17,
+          17
+        ],
+        "max_points": 63,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam09",
+        "unit": "even",
+        "condition": "layout_control",
+        "note": "English reading only; listening excluded",
+        "questions": 28,
+        "correct": 15,
+        "points": 33,
+        "possible_points_range": [
+          33,
+          33
+        ],
+        "max_points": 63,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam09",
+        "unit": "even",
+        "condition": "original",
+        "note": "English reading only; listening excluded",
+        "questions": 28,
+        "correct": 14,
+        "points": 32,
+        "possible_points_range": [
+          32,
+          32
+        ],
+        "max_points": 63,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam09",
+        "unit": "odd",
+        "condition": "current_choices",
+        "note": "English reading only; listening excluded",
+        "questions": 28,
+        "correct": 5,
+        "points": 12,
+        "possible_points_range": [
+          12,
+          12
+        ],
+        "max_points": 63,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam09",
+        "unit": "odd",
+        "condition": "layout_control",
+        "note": "English reading only; listening excluded",
+        "questions": 28,
+        "correct": 10,
+        "points": 23,
+        "possible_points_range": [
+          23,
+          23
+        ],
+        "max_points": 63,
+        "unresolved": 0
+      },
+      {
+        "exam": "exam09",
+        "unit": "odd",
+        "condition": "original",
+        "note": "English reading only; listening excluded",
+        "questions": 28,
+        "correct": 11,
+        "points": 25,
+        "possible_points_range": [
+          25,
+          25
+        ],
+        "max_points": 63,
+        "unresolved": 0
+      }
+    ]
+  },
+  "scoring_note": "Frozen weights for English/tax are question counts. Supplementary subject scores use English printed 2/3 points, Korean/math official points and tax 100-point conversion. See docs/SCORING_CLARIFICATION.md.",
+  "supplementary_shared_context_note": "Exploratory sensitivity analysis added during execution: merge logical question clusters transitively when requests share a source context page. Does not replace the preregistered question-cluster analysis."
+}

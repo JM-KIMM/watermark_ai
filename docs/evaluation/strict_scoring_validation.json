@@ -1,0 +1,158 @@
+{
+  "source_sha256": "363ce5277acb4fda6a6499fc546d2bf8e51a4d584bcaa6944e4885cbe22de58d",
+  "source_kind": "KICE-format answer/point table hosted on third-party mirror; original exam printed point labels also checked",
+  "checks": [
+    {
+      "section": "odd",
+      "answers_match": true,
+      "three_point_questions": [
+        24,
+        30,
+        32,
+        34,
+        37,
+        39,
+        41
+      ],
+      "reading_max_points": 63
+    },
+    {
+      "section": "even",
+      "answers_match": true,
+      "three_point_questions": [
+        24,
+        30,
+        32,
+        34,
+        37,
+        39,
+        41
+      ],
+      "reading_max_points": 63
+    }
+  ],
+  "korean_math_checks": [
+    {
+      "exam": "exam05",
+      "section": "odd_common",
+      "answers_and_points_match": true,
+      "source_sha256": "2c3e35bd046370beca26788353cca9da0ed3902eb48d373fdca23664dee13ffc",
+      "questions": 34
+    },
+    {
+      "exam": "exam05",
+      "section": "odd_speech",
+      "answers_and_points_match": true,
+      "source_sha256": "2c3e35bd046370beca26788353cca9da0ed3902eb48d373fdca23664dee13ffc",
+      "questions": 11
+    },
+    {
+      "exam": "exam05",
+      "section": "odd_language",
+      "answers_and_points_match": true,
+      "source_sha256": "2c3e35bd046370beca26788353cca9da0ed3902eb48d373fdca23664dee13ffc",
+      "questions": 11
+    },
+    {
+      "exam": "exam05",
+      "section": "even_common",
+      "answers_and_points_match": true,
+      "source_sha256": "12461124246ee9c44f69f6be438ad1ce8df2d9f66ddf13726620659e366df4e3",
+      "questions": 34
+    },
+    {
+      "exam": "exam05",
+      "section": "even_speech",
+      "answers_and_points_match": true,
+      "source_sha256": "12461124246ee9c44f69f6be438ad1ce8df2d9f66ddf13726620659e366df4e3",
+      "questions": 11
+    },
+    {
+      "exam": "exam05",
+      "section": "even_language",
+      "answers_and_points_match": true,
+      "source_sha256": "12461124246ee9c44f69f6be438ad1ce8df2d9f66ddf13726620659e366df4e3",
+      "questions": 11
+    },
+    {
+      "exam": "exam08",
+      "section": "odd_common",
+      "answers_and_points_match": true,
+      "source_sha256": "14c5ea12e8e31bb3970d6e4315ce1fbde7d835b8e468dff7c627287affe740be",
+      "questions": 15
+    },
+    {
+      "exam": "exam08",
+      "section": "odd_probability",
+      "answers_and_points_match": true,
+      "source_sha256": "14c5ea12e8e31bb3970d6e4315ce1fbde7d835b8e468dff7c627287affe740be",
+      "questions": 6
+    },
+    {
+      "exam": "exam08",
+      "section": "odd_calculus",
+      "answers_and_points_match": true,
+      "source_sha256": "14c5ea12e8e31bb3970d6e4315ce1fbde7d835b8e468dff7c627287affe740be",
+      "questions": 6
+    },
+    {
+      "exam": "exam08",
+      "section": "odd_geometry",
+      "answers_and_points_match": true,
+      "source_sha256": "14c5ea12e8e31bb3970d6e4315ce1fbde7d835b8e468dff7c627287affe740be",
+      "questions": 6
+    },
+    {
+      "exam": "exam08",
+      "section": "even_common",
+      "answers_and_points_match": true,
+      "source_sha256": "384a06143cedc046908d0bf8312ac889c1636c4b579a08cb3e2f8cd94c1e956c",
+      "questions": 15
+    },
+    {
+      "exam": "exam08",
+      "section": "even_probability",
+      "answers_and_points_match": true,
+      "source_sha256": "384a06143cedc046908d0bf8312ac889c1636c4b579a08cb3e2f8cd94c1e956c",
+      "questions": 6
+    },
+    {
+      "exam": "exam08",
+      "section": "even_calculus",
+      "answers_and_points_match": true,
+      "source_sha256": "384a06143cedc046908d0bf8312ac889c1636c4b579a08cb3e2f8cd94c1e956c",
+      "questions": 6
+    },
+    {
+      "exam": "exam08",
+      "section": "even_geometry",
+      "answers_and_points_match": true,
+      "source_sha256": "384a06143cedc046908d0bf8312ac889c1636c4b579a08cb3e2f8cd94c1e956c",
+      "questions": 6
+    }
+  ],
+  "tax_checks": [
+    {
+      "exam": "exam01",
+      "answers_match_independent_manual_transcription": true,
+      "questions": 80
+    },
+    {
+      "exam": "exam02",
+      "answers_match_independent_manual_transcription": true,
+      "questions": 80
+    },
+    {
+      "exam": "exam03",
+      "answers_match_independent_manual_transcription": true,
+      "questions": 80
+    },
+    {
+      "exam": "exam04",
+      "answers_match_independent_manual_transcription": true,
+      "questions": 80
+    }
+  ],
+  "tax_official_pdf_sha256": "bf5bb07c118b2b3e399d1a150395a143dde895c63117f3d92b977426b2cba2cb",
+  "total_answer_exposures_rechecked": 554
+}

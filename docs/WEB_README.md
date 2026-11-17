@@ -20,4 +20,4 @@ Windows / Python 3.10 이상이 필요합니다. 첫 실행에는 의존 패키�
 
 개발 실행: `python webapp.py --no-browser`. 검증: `python -m unittest discover -s tests -t . -v`.
 
-웹 생성기는 로컬 LLM 평가를 실행하지 않습니다. 새 구성의 평가는 [사전 실험계획](STRICT_EXPERIMENT_PLAN.md)을 따릅니다. [페이지 캡처 평가](CAPTURE_RESULTS_2026-11-16.md)와 [OCR+LLM 결과](OCR_LLM_RESULTS_2026-11-16.md)는 과거 구성의 결과이며 현재 보기 원문 구성의 성능으로 해석하면 안 됩니다. 코드 라이선스는 `LICENSE`, 의존성 고지는 `THIRD_PARTY_NOTICES.md`를 참조하세요. 배포에는 원본 시험지·생성 PDF·접속 기록·모델을 포함하지 않습니다.
+웹 생성기는 로컬 LLM 평가를 실행하지 않습니다. [현재 보기 원문 구성의 전체 결과](STRICT_RESULTS_2026-11-17.md)는 보유 객관식 7종·554문항을 비전과 실제 OCR+LLM으로 비교한 기록입니다. 원본 대비 감소와 배치 대조군 대비 추가 표식 효과를 구분하며, 일반적인 AI 차단 효과를 확인한 결과는 아닙니다. [과거 페이지 캡처](CAPTURE_RESULTS_2026-11-16.md)와 [이전 OCR+LLM](OCR_LLM_RESULTS_2026-11-16.md)은 현재 구성과 섞지 마세요. 코드 라이선스는 `LICENSE`, 의존성 고지는 `THIRD_PARTY_NOTICES.md`를 참조하세요. 배포에는 원본 시험지·생성 PDF·접속 기록·모델을 포함하지 않습니다.

@@ -1,0 +1,531 @@
+{
+  "identity": "22fca2b6056a40b773bec8ad7b00a9a4ad4dcca2c5b89d089e33dfe411478706",
+  "version": 1,
+  "dpi": 200,
+  "num_ctx": 32768,
+  "num_predict": 1024,
+  "temperature": 0,
+  "seeds": [
+    42,
+    314,
+    2026
+  ],
+  "primary": [
+    "original",
+    "layout_control",
+    "current_choices"
+  ],
+  "diagnostics": [
+    "qr_only",
+    "helpful_legacy",
+    "command_only",
+    "other_page"
+  ],
+  "pilot": [
+    {
+      "exam": "exam01",
+      "section": "all",
+      "question": "6",
+      "cluster": "exam01:all:6"
+    },
+    {
+      "exam": "exam01",
+      "section": "all",
+      "question": "3",
+      "cluster": "exam01:all:3"
+    },
+    {
+      "exam": "exam01",
+      "section": "all",
+      "question": "29",
+      "cluster": "exam01:all:29"
+    },
+    {
+      "exam": "exam01",
+      "section": "all",
+      "question": "26",
+      "cluster": "exam01:all:26"
+    },
+    {
+      "exam": "exam01",
+      "section": "all",
+      "question": "4",
+      "cluster": "exam01:all:4"
+    },
+    {
+      "exam": "exam01",
+      "section": "all",
+      "question": "64",
+      "cluster": "exam01:all:64"
+    },
+    {
+      "exam": "exam01",
+      "section": "all",
+      "question": "54",
+      "cluster": "exam01:all:54"
+    },
+    {
+      "exam": "exam01",
+      "section": "all",
+      "question": "62",
+      "cluster": "exam01:all:62"
+    },
+    {
+      "exam": "exam01",
+      "section": "all",
+      "question": "74",
+      "cluster": "exam01:all:74"
+    },
+    {
+      "exam": "exam01",
+      "section": "all",
+      "question": "42",
+      "cluster": "exam01:all:42"
+    },
+    {
+      "exam": "exam02",
+      "section": "all",
+      "question": "9",
+      "cluster": "tax-account:9"
+    },
+    {
+      "exam": "exam02",
+      "section": "all",
+      "question": "7",
+      "cluster": "tax-account:7"
+    },
+    {
+      "exam": "exam02",
+      "section": "all",
+      "question": "40",
+      "cluster": "tax-account:40"
+    },
+    {
+      "exam": "exam02",
+      "section": "all",
+      "question": "23",
+      "cluster": "tax-account:23"
+    },
+    {
+      "exam": "exam02",
+      "section": "all",
+      "question": "17",
+      "cluster": "tax-account:17"
+    },
+    {
+      "exam": "exam02",
+      "section": "all",
+      "question": "78",
+      "cluster": "exam02:all:78"
+    },
+    {
+      "exam": "exam02",
+      "section": "all",
+      "question": "75",
+      "cluster": "exam02:all:75"
+    },
+    {
+      "exam": "exam02",
+      "section": "all",
+      "question": "61",
+      "cluster": "exam02:all:61"
+    },
+    {
+      "exam": "exam02",
+      "section": "all",
+      "question": "68",
+      "cluster": "exam02:all:68"
+    },
+    {
+      "exam": "exam02",
+      "section": "all",
+      "question": "63",
+      "cluster": "exam02:all:63"
+    },
+    {
+      "exam": "exam03",
+      "section": "all",
+      "question": "67",
+      "cluster": "exam03:all:67"
+    },
+    {
+      "exam": "exam03",
+      "section": "all",
+      "question": "58",
+      "cluster": "exam03:all:58"
+    },
+    {
+      "exam": "exam03",
+      "section": "all",
+      "question": "53",
+      "cluster": "exam03:all:53"
+    },
+    {
+      "exam": "exam03",
+      "section": "all",
+      "question": "78",
+      "cluster": "exam03:all:78"
+    },
+    {
+      "exam": "exam03",
+      "section": "all",
+      "question": "69",
+      "cluster": "exam03:all:69"
+    },
+    {
+      "exam": "exam03",
+      "section": "all",
+      "question": "65",
+      "cluster": "exam03:all:65"
+    },
+    {
+      "exam": "exam03",
+      "section": "all",
+      "question": "71",
+      "cluster": "exam03:all:71"
+    },
+    {
+      "exam": "exam03",
+      "section": "all",
+      "question": "50",
+      "cluster": "exam03:all:50"
+    },
+    {
+      "exam": "exam03",
+      "section": "all",
+      "question": "79",
+      "cluster": "exam03:all:79"
+    },
+    {
+      "exam": "exam03",
+      "section": "all",
+      "question": "66",
+      "cluster": "exam03:all:66"
+    },
+    {
+      "exam": "exam04",
+      "section": "all",
+      "question": "67",
+      "cluster": "exam04:all:67"
+    },
+    {
+      "exam": "exam04",
+      "section": "all",
+      "question": "50",
+      "cluster": "exam04:all:50"
+    },
+    {
+      "exam": "exam04",
+      "section": "all",
+      "question": "79",
+      "cluster": "exam04:all:79"
+    },
+    {
+      "exam": "exam04",
+      "section": "all",
+      "question": "58",
+      "cluster": "exam04:all:58"
+    },
+    {
+      "exam": "exam04",
+      "section": "all",
+      "question": "75",
+      "cluster": "exam04:all:75"
+    },
+    {
+      "exam": "exam04",
+      "section": "all",
+      "question": "46",
+      "cluster": "exam04:all:46"
+    },
+    {
+      "exam": "exam04",
+      "section": "all",
+      "question": "78",
+      "cluster": "exam04:all:78"
+    },
+    {
+      "exam": "exam04",
+      "section": "all",
+      "question": "47",
+      "cluster": "exam04:all:47"
+    },
+    {
+      "exam": "exam04",
+      "section": "all",
+      "question": "65",
+      "cluster": "exam04:all:65"
+    },
+    {
+      "exam": "exam04",
+      "section": "all",
+      "question": "44",
+      "cluster": "exam04:all:44"
+    },
+    {
+      "exam": "exam05",
+      "section": "odd_common",
+      "question": "9",
+      "cluster": "exam05:common:9"
+    },
+    {
+      "exam": "exam05",
+      "section": "odd_common",
+      "question": "17",
+      "cluster": "exam05:common:17"
+    },
+    {
+      "exam": "exam05",
+      "section": "odd_common",
+      "question": "30",
+      "cluster": "exam05:common:30"
+    },
+    {
+      "exam": "exam05",
+      "section": "odd_common",
+      "question": "4",
+      "cluster": "exam05:common:4"
+    },
+    {
+      "exam": "exam05",
+      "section": "odd_speech",
+      "question": "38",
+      "cluster": "exam05:speech:38"
+    },
+    {
+      "exam": "exam05",
+      "section": "odd_speech",
+      "question": "41",
+      "cluster": "exam05:speech:41"
+    },
+    {
+      "exam": "exam05",
+      "section": "odd_speech",
+      "question": "44",
+      "cluster": "exam05:speech:44"
+    },
+    {
+      "exam": "exam05",
+      "section": "odd_language",
+      "question": "36",
+      "cluster": "exam05:language:36"
+    },
+    {
+      "exam": "exam05",
+      "section": "odd_language",
+      "question": "42",
+      "cluster": "exam05:language:42"
+    },
+    {
+      "exam": "exam05",
+      "section": "odd_language",
+      "question": "45",
+      "cluster": "exam05:language:45"
+    },
+    {
+      "exam": "exam08",
+      "section": "odd_common",
+      "question": "14",
+      "cluster": "exam08:common:14"
+    },
+    {
+      "exam": "exam08",
+      "section": "odd_common",
+      "question": "1",
+      "cluster": "exam08:common:1"
+    },
+    {
+      "exam": "exam08",
+      "section": "odd_common",
+      "question": "4",
+      "cluster": "exam08:common:4"
+    },
+    {
+      "exam": "exam08",
+      "section": "odd_probability",
+      "question": "24",
+      "cluster": "exam08:probability:24"
+    },
+    {
+      "exam": "exam08",
+      "section": "odd_probability",
+      "question": "27",
+      "cluster": "exam08:probability:27"
+    },
+    {
+      "exam": "exam08",
+      "section": "odd_probability",
+      "question": "26",
+      "cluster": "exam08:probability:26"
+    },
+    {
+      "exam": "exam08",
+      "section": "odd_calculus",
+      "question": "25",
+      "cluster": "exam08:calculus:25"
+    },
+    {
+      "exam": "exam08",
+      "section": "odd_calculus",
+      "question": "27",
+      "cluster": "exam08:calculus:27"
+    },
+    {
+      "exam": "exam08",
+      "section": "odd_geometry",
+      "question": "28",
+      "cluster": "exam08:geometry:28"
+    },
+    {
+      "exam": "exam08",
+      "section": "odd_geometry",
+      "question": "23",
+      "cluster": "exam08:geometry:23"
+    },
+    {
+      "exam": "exam09",
+      "section": "odd",
+      "question": "44",
+      "cluster": "exam09:english:44"
+    },
+    {
+      "exam": "exam09",
+      "section": "odd",
+      "question": "39",
+      "cluster": "exam09:english:39"
+    },
+    {
+      "exam": "exam09",
+      "section": "odd",
+      "question": "42",
+      "cluster": "exam09:english:42"
+    },
+    {
+      "exam": "exam09",
+      "section": "odd",
+      "question": "38",
+      "cluster": "exam09:english:38"
+    },
+    {
+      "exam": "exam09",
+      "section": "odd",
+      "question": "19",
+      "cluster": "exam09:english:19"
+    },
+    {
+      "exam": "exam09",
+      "section": "odd",
+      "question": "33",
+      "cluster": "exam09:english:33"
+    },
+    {
+      "exam": "exam09",
+      "section": "odd",
+      "question": "36",
+      "cluster": "exam09:english:36"
+    },
+    {
+      "exam": "exam09",
+      "section": "odd",
+      "question": "27",
+      "cluster": "exam09:english:27"
+    },
+    {
+      "exam": "exam09",
+      "section": "odd",
+      "question": "37",
+      "cluster": "exam09:english:37"
+    },
+    {
+      "exam": "exam09",
+      "section": "odd",
+      "question": "24",
+      "cluster": "exam09:english:24"
+    }
+  ],
+  "prompt": "Solve requested question numbers: {questions}. Supplied images or OCR text show relevant exam pages in ascending order.",
+  "system_prompt": "You solve multiple-choice exam questions. Give a brief reason with the decisive calculation or textual evidence, then the final choice number in the required JSON. Use at most 20 words per reason. Choose the best answer 1-5 even when uncertain. Use null only when necessary input is missing. Write brief_reasons before answers.",
+  "models": {
+    "qwen2.5vl:7b": {
+      "name": "qwen2.5vl:7b",
+      "model": "qwen2.5vl:7b",
+      "modified_at": "2026-11-16T22:53:43.8187797+09:00",
+      "size": 5969245856,
+      "digest": "5ced39dfa4bac325dc183dd1e4febaa1c46b3ea28bce48896c8e69c1e79611cc",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen25vl",
+        "families": [
+          "qwen25vl"
+        ],
+        "parameter_size": "8.3B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 128000,
+        "embedding_length": 3584,
+        "runner": "ggml"
+      },
+      "capabilities": [
+        "completion",
+        "vision"
+      ]
+    },
+    "qwen2.5:7b": {
+      "name": "qwen2.5:7b",
+      "model": "qwen2.5:7b",
+      "modified_at": "2026-11-16T22:52:53.1548828+09:00",
+      "size": 4683087332,
+      "digest": "845dbda0ea48ed749caafd9e6037047aa19acfcfd82e704d7ca97d631a0b697e",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen2",
+        "families": [
+          "qwen2"
+        ],
+        "parameter_size": "7.6B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 32768,
+        "embedding_length": 3584,
+        "runner": "ggml"
+      },
+      "capabilities": [
+        "completion",
+        "tools"
+      ]
+    }
+  },
+  "ollama": {
+    "version": "0.40.16"
+  },
+  "tesseract": {
+    "version": "tesseract v5.5.0.20241111",
+    "executable_sha256": "ccd044d6cf16eaaad151260e1fcc5e3e1504cd1b8644e940b4f7ae3e315dd0d3",
+    "languages": [
+      "kor+eng"
+    ],
+    "psm": 3,
+    "oem": 1,
+    "traineddata": {
+      "kor": "6b85e11d9bbf07863b97b3523b1b112844c43e713df8b66418a081fd1060b3b2",
+      "eng": "7d4322bd2a7749724879683fc3912cb542f19906c83bcc1a52132556427170b2"
+    }
+  },
+  "implementation": {
+    "watermark.py": "1053ed87b99886ac3da7347037f1d7528273ecbe06613c6d3d5fa98d7db17427",
+    "watermark_payloads.py": "0d152d8fb6a76b8e62bde0a66824230de8228e43df69a9ee4b5e874f590833b0",
+    "question_layout.py": "2ade49966b58e97e5e9dc345ac1fccd9cbe3e9788c3c64fc909305eee42551b8",
+    "question_marks.py": "6e990e5955032ba21f100e5c9bcd6b0129f1839e7f3b56caa908885a3b30d8c1",
+    "passage_boxes.py": "eef608599e7cc38d5602cb4605ad0be7c44b6132a5b1393c931a56a6af9f7114",
+    "source_glyphs.py": "e61d2499e5f4105e90d09dc88132180feb4cb32026d9355bdb22f99067032349",
+    "evaluation/strict_model_client.py": "fbce6032a812a4ce3de3f6ebeea313705fe43f47ae3290c4c6adb5b5e01a734f",
+    "evaluation/strict_evaluation.py": "1df7f9beb21b21689078c97cbc8f74d1b0cd53e84ea02261f895b9ded97c30dd"
+  },
+  "plan_document_sha256": "2938047769a17d3ddf692fd2fdc27c27f0fe005c58c80be90bca4d5ce35d29be",
+  "commercial": {
+    "status": "not_run",
+    "reason": "Separate API connection selected by user; no configured credentials/model"
+  },
+  "exclusions": "listening, descriptive, math short-answer",
+  "prior_data": "Previously seen corpus; no claim of an untouched external holdout"
+}
