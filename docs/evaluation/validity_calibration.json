@@ -1,0 +1,808 @@
+{
+  "results": [
+    {
+      "study": "legacy56",
+      "condition": "textlayer",
+      "n": 56,
+      "brier": 0.7428187653719007,
+      "nll": 1.784512842311661,
+      "ece": 0.178753617184523,
+      "bins": [
+        {
+          "bin": 0,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "n": 9,
+          "confidence": 0.3324107044430193,
+          "accuracy": 0.4444444444444444
+        },
+        {
+          "bin": 2,
+          "n": 17,
+          "confidence": 0.4851597406456457,
+          "accuracy": 0.47058823529411764
+        },
+        {
+          "bin": 3,
+          "n": 11,
+          "confidence": 0.7199810311951977,
+          "accuracy": 0.2727272727272727
+        },
+        {
+          "bin": 4,
+          "n": 19,
+          "confidence": 0.9386522088524899,
+          "accuracy": 0.7368421052631579
+        }
+      ],
+      "nll_floor": 1e-12
+    },
+    {
+      "study": "legacy56",
+      "condition": "original",
+      "n": 56,
+      "brier": 0.8720604377463262,
+      "nll": 2.1192319784971128,
+      "ece": 0.14499173113053615,
+      "bins": [
+        {
+          "bin": 0,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "n": 14,
+          "confidence": 0.3442848774325335,
+          "accuracy": 0.35714285714285715
+        },
+        {
+          "bin": 2,
+          "n": 35,
+          "confidence": 0.47656021623467404,
+          "accuracy": 0.3142857142857143
+        },
+        {
+          "bin": 3,
+          "n": 5,
+          "confidence": 0.6712066849580892,
+          "accuracy": 0.4
+        },
+        {
+          "bin": 4,
+          "n": 2,
+          "confidence": 0.9519421171807274,
+          "accuracy": 0.5
+        }
+      ],
+      "nll_floor": 1e-12
+    },
+    {
+      "study": "legacy56",
+      "condition": "border",
+      "n": 56,
+      "brier": 0.9006748411176414,
+      "nll": 1.9962387535200732,
+      "ece": 0.1958750982067008,
+      "bins": [
+        {
+          "bin": 0,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "n": 21,
+          "confidence": 0.3397451053433095,
+          "accuracy": 0.38095238095238093
+        },
+        {
+          "bin": 2,
+          "n": 33,
+          "confidence": 0.47462383642795697,
+          "accuracy": 0.18181818181818182
+        },
+        {
+          "bin": 3,
+          "n": 2,
+          "confidence": 0.7205330548310817,
+          "accuracy": 0.5
+        },
+        {
+          "bin": 4,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        }
+      ],
+      "nll_floor": 1e-12
+    },
+    {
+      "study": "legacy56",
+      "condition": "frames",
+      "n": 56,
+      "brier": 1.4275139098833385,
+      "nll": 5.9570527461949085,
+      "ece": 0.6553899047324395,
+      "bins": [
+        {
+          "bin": 0,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "n": 3,
+          "confidence": 0.33640528027692157,
+          "accuracy": 0.3333333333333333
+        },
+        {
+          "bin": 2,
+          "n": 10,
+          "confidence": 0.47726479184220577,
+          "accuracy": 0.1
+        },
+        {
+          "bin": 3,
+          "n": 7,
+          "confidence": 0.6653868116814232,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 4,
+          "n": 36,
+          "confidence": 0.9795073117776063,
+          "accuracy": 0.19444444444444445
+        }
+      ],
+      "nll_floor": 1e-12
+    },
+    {
+      "study": "legacy56",
+      "condition": "frames_labelled",
+      "n": 56,
+      "brier": 1.3306803153368025,
+      "nll": 5.421726952301062,
+      "ece": 0.5937024266142025,
+      "bins": [
+        {
+          "bin": 0,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "n": 4,
+          "confidence": 0.33194757351056114,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 2,
+          "n": 11,
+          "confidence": 0.48320841958300337,
+          "accuracy": 0.18181818181818182
+        },
+        {
+          "bin": 3,
+          "n": 8,
+          "confidence": 0.6761240413796368,
+          "accuracy": 0.25
+        },
+        {
+          "bin": 4,
+          "n": 33,
+          "confidence": 0.9756139590879686,
+          "accuracy": 0.21212121212121213
+        }
+      ],
+      "nll_floor": 1e-12
+    },
+    {
+      "study": "legacy56",
+      "condition": "frames6",
+      "n": 56,
+      "brier": 1.7053820698680902,
+      "nll": 6.663344848254458,
+      "ece": 0.7953731845094483,
+      "bins": [
+        {
+          "bin": 0,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "n": 8,
+          "confidence": 0.34199048804014776,
+          "accuracy": 0.125
+        },
+        {
+          "bin": 2,
+          "n": 4,
+          "confidence": 0.4441178502393128,
+          "accuracy": 0.25
+        },
+        {
+          "bin": 3,
+          "n": 4,
+          "confidence": 0.7477627024688767,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 4,
+          "n": 40,
+          "confidence": 0.975936305434379,
+          "accuracy": 0.0
+        }
+      ],
+      "nll_floor": 1e-12
+    },
+    {
+      "study": "legacy56",
+      "condition": "lines",
+      "n": 56,
+      "brier": 1.7021663110407312,
+      "nll": 9.049143180212667,
+      "ece": 0.8510911949939426,
+      "bins": [
+        {
+          "bin": 0,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 2,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 3,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 4,
+          "n": 56,
+          "confidence": 0.9939483378510855,
+          "accuracy": 0.14285714285714285
+        }
+      ],
+      "nll_floor": 1e-12
+    },
+    {
+      "study": "synthetic20",
+      "route": "ocr",
+      "ignore": false,
+      "condition": "original",
+      "n": 20,
+      "brier": 1.0526035381875072,
+      "nll": 4.647114309170001,
+      "ece": 0.5050842332837145,
+      "bins": [
+        {
+          "bin": 0,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 2,
+          "n": 4,
+          "confidence": 0.5478038597504784,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 3,
+          "n": 2,
+          "confidence": 0.7680237075664897,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 4,
+          "n": 14,
+          "confidence": 0.9604654744146682,
+          "accuracy": 0.42857142857142855
+        }
+      ],
+      "nll_floor": 1e-12
+    },
+    {
+      "study": "synthetic20",
+      "route": "ocr",
+      "ignore": false,
+      "condition": "neutral",
+      "n": 20,
+      "brier": 0.8638552767717318,
+      "nll": 3.409764848541434,
+      "ece": 0.44281268655802164,
+      "bins": [
+        {
+          "bin": 0,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "n": 1,
+          "confidence": 0.37102340739497786,
+          "accuracy": 1.0
+        },
+        {
+          "bin": 2,
+          "n": 4,
+          "confidence": 0.5509850395957802,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 3,
+          "n": 4,
+          "confidence": 0.680730099304016,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 4,
+          "n": 11,
+          "confidence": 0.9364015075414751,
+          "accuracy": 0.6363636363636364
+        }
+      ],
+      "nll_floor": 1e-12
+    },
+    {
+      "study": "synthetic20",
+      "route": "ocr",
+      "ignore": false,
+      "condition": "marked",
+      "n": 20,
+      "brier": 1.3364736426150066,
+      "nll": 4.615951822567149,
+      "ece": 0.6326538086983046,
+      "bins": [
+        {
+          "bin": 0,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "n": 1,
+          "confidence": 0.37940157129790275,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 2,
+          "n": 4,
+          "confidence": 0.4522828037388972,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 3,
+          "n": 5,
+          "confidence": 0.733827218206841,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 4,
+          "n": 10,
+          "confidence": 0.9795407296678394,
+          "accuracy": 0.3
+        }
+      ],
+      "nll_floor": 1e-12
+    },
+    {
+      "study": "synthetic20",
+      "route": "ocr",
+      "ignore": true,
+      "condition": "original",
+      "n": 20,
+      "brier": 1.536915413759665,
+      "nll": 8.313628628036954,
+      "ece": 0.7531970421489684,
+      "bins": [
+        {
+          "bin": 0,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 2,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 3,
+          "n": 4,
+          "confidence": 0.6775038305841941,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 4,
+          "n": 16,
+          "confidence": 0.9596203450401619,
+          "accuracy": 0.1875
+        }
+      ],
+      "nll_floor": 1e-12
+    },
+    {
+      "study": "synthetic20",
+      "route": "ocr",
+      "ignore": true,
+      "condition": "neutral",
+      "n": 20,
+      "brier": 1.2599258925344003,
+      "nll": 5.277768377058778,
+      "ece": 0.5410900461715045,
+      "bins": [
+        {
+          "bin": 0,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 2,
+          "n": 3,
+          "confidence": 0.481345242799222,
+          "accuracy": 0.3333333333333333
+        },
+        {
+          "bin": 3,
+          "n": 4,
+          "confidence": 0.7018775552207159,
+          "accuracy": 0.25
+        },
+        {
+          "bin": 4,
+          "n": 13,
+          "confidence": 0.9669426903191969,
+          "accuracy": 0.3076923076923077
+        }
+      ],
+      "nll_floor": 1e-12
+    },
+    {
+      "study": "synthetic20",
+      "route": "ocr",
+      "ignore": true,
+      "condition": "marked",
+      "n": 20,
+      "brier": 1.104859369523997,
+      "nll": 4.1296107989765165,
+      "ece": 0.4751204085881325,
+      "bins": [
+        {
+          "bin": 0,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 2,
+          "n": 3,
+          "confidence": 0.5170885472072126,
+          "accuracy": 0.3333333333333333
+        },
+        {
+          "bin": 3,
+          "n": 4,
+          "confidence": 0.6956683680822938,
+          "accuracy": 0.25
+        },
+        {
+          "bin": 4,
+          "n": 13,
+          "confidence": 0.9360360813701413,
+          "accuracy": 0.38461538461538464
+        }
+      ],
+      "nll_floor": 1e-12
+    },
+    {
+      "study": "synthetic20",
+      "route": "vision",
+      "ignore": false,
+      "condition": "original",
+      "n": 20,
+      "brier": 0.7389547051818823,
+      "nll": 1.6906282369978727,
+      "ece": 0.21072798312089053,
+      "bins": [
+        {
+          "bin": 0,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 2,
+          "n": 6,
+          "confidence": 0.5340929824219853,
+          "accuracy": 0.3333333333333333
+        },
+        {
+          "bin": 3,
+          "n": 8,
+          "confidence": 0.6959483889511343,
+          "accuracy": 0.5
+        },
+        {
+          "bin": 4,
+          "n": 6,
+          "confidence": 0.9070691093794706,
+          "accuracy": 0.6666666666666666
+        }
+      ],
+      "nll_floor": 1e-12
+    },
+    {
+      "study": "synthetic20",
+      "route": "vision",
+      "ignore": false,
+      "condition": "neutral",
+      "n": 20,
+      "brier": 1.4514375226944174,
+      "nll": 3.6091028660535813,
+      "ece": 0.7004797146742244,
+      "bins": [
+        {
+          "bin": 0,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 2,
+          "n": 4,
+          "confidence": 0.5220768101544637,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 3,
+          "n": 3,
+          "confidence": 0.6940007962760298,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 4,
+          "n": 13,
+          "confidence": 0.9107142049260418,
+          "accuracy": 0.15384615384615385
+        }
+      ],
+      "nll_floor": 1e-12
+    },
+    {
+      "study": "synthetic20",
+      "route": "vision",
+      "ignore": false,
+      "condition": "marked",
+      "n": 20,
+      "brier": 0.8852484477111192,
+      "nll": 1.8323429603129626,
+      "ece": 0.37896035267098377,
+      "bins": [
+        {
+          "bin": 0,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "n": 2,
+          "confidence": 0.33649569776293786,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 2,
+          "n": 9,
+          "confidence": 0.5509818077791871,
+          "accuracy": 0.1111111111111111
+        },
+        {
+          "bin": 3,
+          "n": 5,
+          "confidence": 0.6854796854593863,
+          "accuracy": 0.4
+        },
+        {
+          "bin": 4,
+          "n": 4,
+          "confidence": 0.8799952401460459,
+          "accuracy": 0.5
+        }
+      ],
+      "nll_floor": 1e-12
+    },
+    {
+      "study": "synthetic20",
+      "route": "vision",
+      "ignore": true,
+      "condition": "original",
+      "n": 20,
+      "brier": 0.7858511078917391,
+      "nll": 1.918668861873448,
+      "ece": 0.2320136958822718,
+      "bins": [
+        {
+          "bin": 0,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 2,
+          "n": 8,
+          "confidence": 0.508643993136435,
+          "accuracy": 0.375
+        },
+        {
+          "bin": 3,
+          "n": 6,
+          "confidence": 0.6922879960095069,
+          "accuracy": 0.3333333333333333
+        },
+        {
+          "bin": 4,
+          "n": 6,
+          "confidence": 0.9028989994161524,
+          "accuracy": 0.6666666666666666
+        }
+      ],
+      "nll_floor": 1e-12
+    },
+    {
+      "study": "synthetic20",
+      "route": "vision",
+      "ignore": true,
+      "condition": "neutral",
+      "n": 20,
+      "brier": 1.596329878911145,
+      "nll": 4.453922551590949,
+      "ece": 0.7828110354041111,
+      "bins": [
+        {
+          "bin": 0,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 2,
+          "n": 1,
+          "confidence": 0.5311237538869437,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 3,
+          "n": 3,
+          "confidence": 0.6624773748294807,
+          "accuracy": 0.0
+        },
+        {
+          "bin": 4,
+          "n": 16,
+          "confidence": 0.9461040518566772,
+          "accuracy": 0.125
+        }
+      ],
+      "nll_floor": 1e-12
+    },
+    {
+      "study": "synthetic20",
+      "route": "vision",
+      "ignore": true,
+      "condition": "marked",
+      "n": 20,
+      "brier": 1.133763065325366,
+      "nll": 2.598748453333974,
+      "ece": 0.4881208475977282,
+      "bins": [
+        {
+          "bin": 0,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 1,
+          "n": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "bin": 2,
+          "n": 4,
+          "confidence": 0.5443255291316239,
+          "accuracy": 0.25
+        },
+        {
+          "bin": 3,
+          "n": 9,
+          "confidence": 0.7255232854753729,
+          "accuracy": 0.2222222222222222
+        },
+        {
+          "bin": 4,
+          "n": 7,
+          "confidence": 0.8650578951642446,
+          "accuracy": 0.2857142857142857
+        }
+      ],
+      "nll_floor": 1e-12
+    }
+  ],
+  "caveat": "Residual category combines unobserved digits and non-answer tokens. Top20 digits are lower-bound estimates. This is first-token digit-event calibration, not semantic final-answer confidence."
+}

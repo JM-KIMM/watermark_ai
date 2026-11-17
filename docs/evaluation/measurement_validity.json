@@ -1,0 +1,4689 @@
+{
+  "summary": [
+    {
+      "route": "ocr",
+      "original_first_token_correct": 8,
+      "clear_final_correct": 20,
+      "n": 20,
+      "first_final_mismatch": 12,
+      "errors": 0,
+      "order_invariant": 10,
+      "order_n": 10,
+      "order_correct_by_shift": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "order": [
+        {
+          "i": 0,
+          "correct_by_shift": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "selected_values": [
+            45,
+            45,
+            45,
+            45,
+            45
+          ],
+          "invariant": true
+        },
+        {
+          "i": 1,
+          "correct_by_shift": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "selected_values": [
+            93,
+            93,
+            93,
+            93,
+            93
+          ],
+          "invariant": true
+        },
+        {
+          "i": 2,
+          "correct_by_shift": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "selected_values": [
+            151,
+            151,
+            151,
+            151,
+            151
+          ],
+          "invariant": true
+        },
+        {
+          "i": 3,
+          "correct_by_shift": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "selected_values": [
+            146,
+            146,
+            146,
+            146,
+            146
+          ],
+          "invariant": true
+        },
+        {
+          "i": 4,
+          "correct_by_shift": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "selected_values": [
+            113,
+            113,
+            113,
+            113,
+            113
+          ],
+          "invariant": true
+        },
+        {
+          "i": 5,
+          "correct_by_shift": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "selected_values": [
+            118,
+            118,
+            118,
+            118,
+            118
+          ],
+          "invariant": true
+        },
+        {
+          "i": 6,
+          "correct_by_shift": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "selected_values": [
+            107,
+            107,
+            107,
+            107,
+            107
+          ],
+          "invariant": true
+        },
+        {
+          "i": 7,
+          "correct_by_shift": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "selected_values": [
+            46,
+            46,
+            46,
+            46,
+            46
+          ],
+          "invariant": true
+        },
+        {
+          "i": 8,
+          "correct_by_shift": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "selected_values": [
+            65,
+            65,
+            65,
+            65,
+            65
+          ],
+          "invariant": true
+        },
+        {
+          "i": 9,
+          "correct_by_shift": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "selected_values": [
+            140,
+            140,
+            140,
+            140,
+            140
+          ],
+          "invariant": true
+        }
+      ],
+      "paired": [
+        {
+          "i": 0,
+          "previous": true,
+          "current": true
+        },
+        {
+          "i": 1,
+          "previous": true,
+          "current": true
+        },
+        {
+          "i": 2,
+          "previous": false,
+          "current": true
+        },
+        {
+          "i": 3,
+          "previous": true,
+          "current": true
+        },
+        {
+          "i": 4,
+          "previous": false,
+          "current": true
+        },
+        {
+          "i": 5,
+          "previous": true,
+          "current": true
+        },
+        {
+          "i": 6,
+          "previous": true,
+          "current": true
+        },
+        {
+          "i": 7,
+          "previous": false,
+          "current": true
+        },
+        {
+          "i": 8,
+          "previous": true,
+          "current": true
+        },
+        {
+          "i": 9,
+          "previous": false,
+          "current": true
+        },
+        {
+          "i": 10,
+          "previous": false,
+          "current": true
+        },
+        {
+          "i": 11,
+          "previous": false,
+          "current": true
+        },
+        {
+          "i": 12,
+          "previous": false,
+          "current": true
+        },
+        {
+          "i": 13,
+          "previous": true,
+          "current": true
+        },
+        {
+          "i": 14,
+          "previous": false,
+          "current": true
+        },
+        {
+          "i": 15,
+          "previous": false,
+          "current": true
+        },
+        {
+          "i": 16,
+          "previous": true,
+          "current": true
+        },
+        {
+          "i": 17,
+          "previous": false,
+          "current": true
+        },
+        {
+          "i": 18,
+          "previous": false,
+          "current": true
+        },
+        {
+          "i": 19,
+          "previous": false,
+          "current": true
+        }
+      ]
+    },
+    {
+      "route": "vision",
+      "original_first_token_correct": 10,
+      "clear_final_correct": 20,
+      "n": 20,
+      "first_final_mismatch": 10,
+      "errors": 0,
+      "order_invariant": 10,
+      "order_n": 10,
+      "order_correct_by_shift": [
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "order": [
+        {
+          "i": 0,
+          "correct_by_shift": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "selected_values": [
+            45,
+            45,
+            45,
+            45,
+            45
+          ],
+          "invariant": true
+        },
+        {
+          "i": 1,
+          "correct_by_shift": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "selected_values": [
+            93,
+            93,
+            93,
+            93,
+            93
+          ],
+          "invariant": true
+        },
+        {
+          "i": 2,
+          "correct_by_shift": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "selected_values": [
+            151,
+            151,
+            151,
+            151,
+            151
+          ],
+          "invariant": true
+        },
+        {
+          "i": 3,
+          "correct_by_shift": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "selected_values": [
+            146,
+            146,
+            146,
+            146,
+            146
+          ],
+          "invariant": true
+        },
+        {
+          "i": 4,
+          "correct_by_shift": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "selected_values": [
+            113,
+            113,
+            113,
+            113,
+            113
+          ],
+          "invariant": true
+        },
+        {
+          "i": 5,
+          "correct_by_shift": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "selected_values": [
+            118,
+            118,
+            118,
+            118,
+            118
+          ],
+          "invariant": true
+        },
+        {
+          "i": 6,
+          "correct_by_shift": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "selected_values": [
+            107,
+            107,
+            107,
+            107,
+            107
+          ],
+          "invariant": true
+        },
+        {
+          "i": 7,
+          "correct_by_shift": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "selected_values": [
+            46,
+            46,
+            46,
+            46,
+            46
+          ],
+          "invariant": true
+        },
+        {
+          "i": 8,
+          "correct_by_shift": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "selected_values": [
+            65,
+            65,
+            65,
+            65,
+            65
+          ],
+          "invariant": true
+        },
+        {
+          "i": 9,
+          "correct_by_shift": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "selected_values": [
+            140,
+            140,
+            140,
+            140,
+            140
+          ],
+          "invariant": true
+        }
+      ],
+      "paired": [
+        {
+          "i": 0,
+          "previous": true,
+          "current": true
+        },
+        {
+          "i": 1,
+          "previous": true,
+          "current": true
+        },
+        {
+          "i": 2,
+          "previous": true,
+          "current": true
+        },
+        {
+          "i": 3,
+          "previous": true,
+          "current": true
+        },
+        {
+          "i": 4,
+          "previous": false,
+          "current": true
+        },
+        {
+          "i": 5,
+          "previous": false,
+          "current": true
+        },
+        {
+          "i": 6,
+          "previous": false,
+          "current": true
+        },
+        {
+          "i": 7,
+          "previous": false,
+          "current": true
+        },
+        {
+          "i": 8,
+          "previous": true,
+          "current": true
+        },
+        {
+          "i": 9,
+          "previous": false,
+          "current": true
+        },
+        {
+          "i": 10,
+          "previous": true,
+          "current": true
+        },
+        {
+          "i": 11,
+          "previous": false,
+          "current": true
+        },
+        {
+          "i": 12,
+          "previous": false,
+          "current": true
+        },
+        {
+          "i": 13,
+          "previous": true,
+          "current": true
+        },
+        {
+          "i": 14,
+          "previous": false,
+          "current": true
+        },
+        {
+          "i": 15,
+          "previous": false,
+          "current": true
+        },
+        {
+          "i": 16,
+          "previous": true,
+          "current": true
+        },
+        {
+          "i": 17,
+          "previous": true,
+          "current": true
+        },
+        {
+          "i": 18,
+          "previous": false,
+          "current": true
+        },
+        {
+          "i": 19,
+          "previous": true,
+          "current": true
+        }
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "route": "ocr",
+      "i": 0,
+      "shift": 0,
+      "key": 1,
+      "computed_value": 45,
+      "choices": [
+        45,
+        42,
+        47,
+        50,
+        54
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": "1번. 30 + 15의 값은?\r\n1. 45\r\n2. 42\r\n3.47\r\n4. 50\r\n5. 54\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:30.4736395Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"30 + 15 equals 45.\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 2150358400,
+        "load_duration": 1935405200,
+        "prompt_eval_count": 120,
+        "prompt_eval_cached_count": 0,
+        "prompt_eval_duration": 79211000,
+        "eval_count": 20,
+        "eval_duration": 133768000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 0,
+      "shift": 1,
+      "key": 5,
+      "computed_value": 45,
+      "choices": [
+        42,
+        47,
+        50,
+        54,
+        45
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": "1번. 30 + 15의 값은?\r\n1. 42\r\n2.47\r\n3. 50\r\n4. 54\r\n5. 45\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:30.7651243Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"30 + 15 equals 45.\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 150655500,
+        "load_duration": 3124000,
+        "prompt_eval_count": 120,
+        "prompt_eval_cached_count": 90,
+        "prompt_eval_duration": 13888000,
+        "eval_count": 20,
+        "eval_duration": 130959000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 0,
+      "shift": 2,
+      "key": 4,
+      "computed_value": 45,
+      "choices": [
+        47,
+        50,
+        54,
+        45,
+        42
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": "1번. 30 + 15의 값은?\r\n1.47\r\n2. 50\r\n3. 54\r\n4. 45\r\n5. 42\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:31.0579654Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"30 + 15 equals 45.\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 148977900,
+        "load_duration": 3102000,
+        "prompt_eval_count": 120,
+        "prompt_eval_cached_count": 88,
+        "prompt_eval_duration": 13413000,
+        "eval_count": 20,
+        "eval_duration": 129889999
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 0,
+      "shift": 3,
+      "key": 3,
+      "computed_value": 45,
+      "choices": [
+        50,
+        54,
+        45,
+        42,
+        47
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": "1번. 30 + 15의 값은?\r\n1. 50\r\n2. 54\r\n3. 45\r\n4. 42\r\n5. 47\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:31.3342676Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"30 + 15 equals 45.\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 151828500,
+        "load_duration": 3725500,
+        "prompt_eval_count": 121,
+        "prompt_eval_cached_count": 88,
+        "prompt_eval_duration": 14027000,
+        "eval_count": 20,
+        "eval_duration": 130884999
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 0,
+      "shift": 4,
+      "key": 2,
+      "computed_value": 45,
+      "choices": [
+        54,
+        45,
+        42,
+        47,
+        50
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": "1번. 30 + 15의 값은?\r\n1. 54\r\n2. 45\r\n3. 42\r\n4.47\r\n5. 50\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:31.632255Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"30 + 15 equals 45.\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 148972600,
+        "load_duration": 3153100,
+        "prompt_eval_count": 120,
+        "prompt_eval_cached_count": 90,
+        "prompt_eval_duration": 13384000,
+        "eval_count": 20,
+        "eval_duration": 130076000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 1,
+      "shift": 0,
+      "key": 2,
+      "computed_value": 93,
+      "choices": [
+        86,
+        93,
+        95,
+        98,
+        102
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": "2번. 38 + 55의 값은?\r\n1. 86\r\n2. 93\r\n3. 95\r\n4.98\r\n5. 102\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:31.9322161Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"38 + 55 equals 93.\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 152812200,
+        "load_duration": 3681000,
+        "prompt_eval_count": 121,
+        "prompt_eval_cached_count": 72,
+        "prompt_eval_duration": 16690999,
+        "eval_count": 20,
+        "eval_duration": 130705000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 1,
+      "shift": 1,
+      "key": 1,
+      "computed_value": 93,
+      "choices": [
+        93,
+        95,
+        98,
+        102,
+        86
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": "2번. 38 + 55의 값은?\r\n1. 93\r\n2. 95\r\n3. 98\r\n4. 102\r\n5. 86\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:32.2296879Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"38 + 55 equals 93.\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 153291800,
+        "load_duration": 3703300,
+        "prompt_eval_count": 122,
+        "prompt_eval_cached_count": 89,
+        "prompt_eval_duration": 14780000,
+        "eval_count": 20,
+        "eval_duration": 132431000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 1,
+      "shift": 2,
+      "key": 5,
+      "computed_value": 93,
+      "choices": [
+        95,
+        98,
+        102,
+        86,
+        93
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": "2번. 38 + 55의 값은?\r\n1. 95\r\n2. 98\r\n3. 102\r\n4. 86\r\n5.93\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:32.5630644Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"38 + 55 equals 93. Option 5 is correct.\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 191218400,
+        "load_duration": 3642300,
+        "prompt_eval_count": 121,
+        "prompt_eval_cached_count": 90,
+        "prompt_eval_duration": 13960000,
+        "eval_count": 26,
+        "eval_duration": 171005000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 1,
+      "shift": 3,
+      "key": 4,
+      "computed_value": 93,
+      "choices": [
+        98,
+        102,
+        86,
+        93,
+        95
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": "2번. 38 + 55의 값은?\r\n1.98\r\n2. 102\r\n3. 86\r\n4. 93\r\n5. 95\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:32.8407825Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"38 + 55 equals 93.\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 151154600,
+        "load_duration": 3745500,
+        "prompt_eval_count": 121,
+        "prompt_eval_cached_count": 88,
+        "prompt_eval_duration": 14177000,
+        "eval_count": 20,
+        "eval_duration": 131086000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 1,
+      "shift": 4,
+      "key": 3,
+      "computed_value": 93,
+      "choices": [
+        102,
+        86,
+        93,
+        95,
+        98
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": "2번. 38 + 55의 값은?\r\n1. 102\r\n2. 86\r\n3. 93\r\n4. 95\r\n5. 98\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:33.1157615Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"38 + 55 equals 93.\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 149454500,
+        "load_duration": 3108400,
+        "prompt_eval_count": 122,
+        "prompt_eval_cached_count": 88,
+        "prompt_eval_duration": 14062000,
+        "eval_count": 20,
+        "eval_duration": 129652999
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 2,
+      "shift": 0,
+      "key": 3,
+      "computed_value": 151,
+      "choices": [
+        144,
+        148,
+        151,
+        156,
+        160
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": "3번. 73 + 78의 값은?\r\n1.144\r\n2. 148\r\n3. 151\r\n4. 156\r\n5. 160\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:33.4047999Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"73 + 78 = 151\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 161487700,
+        "load_duration": 4245300,
+        "prompt_eval_count": 125,
+        "prompt_eval_cached_count": 72,
+        "prompt_eval_duration": 17239000,
+        "eval_count": 21,
+        "eval_duration": 137499000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 2,
+      "shift": 1,
+      "key": 2,
+      "computed_value": 151,
+      "choices": [
+        148,
+        151,
+        156,
+        160,
+        144
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": "3번. 73 + 78의 값은?\r\n1.148\r\n2. 151\r\n3. 156\r\n4. 160\r\n5. 144\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:33.709359Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"73 + 78 = 151\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 155625600,
+        "load_duration": 3146200,
+        "prompt_eval_count": 125,
+        "prompt_eval_cached_count": 90,
+        "prompt_eval_duration": 14005000,
+        "eval_count": 21,
+        "eval_duration": 136074000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 2,
+      "shift": 2,
+      "key": 1,
+      "computed_value": 151,
+      "choices": [
+        151,
+        156,
+        160,
+        144,
+        148
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": "3번. 73 + 78의 값은?\r\n1. 151\r\n2. 156\r\n3. 160\r\n4. 144\r\n5. 148\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:34.021427Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"73 + 78 = 151\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 155557000,
+        "load_duration": 3542300,
+        "prompt_eval_count": 126,
+        "prompt_eval_cached_count": 88,
+        "prompt_eval_duration": 13926000,
+        "eval_count": 21,
+        "eval_duration": 135899000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 2,
+      "shift": 3,
+      "key": 5,
+      "computed_value": 151,
+      "choices": [
+        156,
+        160,
+        144,
+        148,
+        151
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": "3번. 73 + 78의 값은?\r\n1.156\r\n2. 160\r\n3. 144\r\n4. 148\r\n5. 151\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:34.3309832Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"73 + 78 = 151\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 155807300,
+        "load_duration": 3148300,
+        "prompt_eval_count": 125,
+        "prompt_eval_cached_count": 88,
+        "prompt_eval_duration": 14731000,
+        "eval_count": 21,
+        "eval_duration": 135652000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 2,
+      "shift": 4,
+      "key": 4,
+      "computed_value": 151,
+      "choices": [
+        160,
+        144,
+        148,
+        151,
+        156
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": "3번. 73 + 78의 값은?\r\n1. 160\r\n2. 144\r\n3. 148\r\n4.151\r\n5. 156\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:34.6201439Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"73 + 78 = 151\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 156205600,
+        "load_duration": 3144800,
+        "prompt_eval_count": 125,
+        "prompt_eval_cached_count": 88,
+        "prompt_eval_duration": 14008000,
+        "eval_count": 21,
+        "eval_duration": 136484000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 3,
+      "shift": 0,
+      "key": 4,
+      "computed_value": 146,
+      "choices": [
+        139,
+        143,
+        148,
+        146,
+        155
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": "4번. 68 + 78의 값은?\r\n1. 139\r\n2. 143\r\n3. 148\r\n4. 146\r\n5. 155\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:34.9262546Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"68 + 78 = 146\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 159640000,
+        "load_duration": 3206600,
+        "prompt_eval_count": 126,
+        "prompt_eval_cached_count": 72,
+        "prompt_eval_duration": 16254000,
+        "eval_count": 21,
+        "eval_duration": 136143000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 3,
+      "shift": 1,
+      "key": 3,
+      "computed_value": 146,
+      "choices": [
+        143,
+        148,
+        146,
+        155,
+        139
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": "4번. 68 + 78의 값은?\r\n1. 143\r\n2. 148\r\n3. 146\r\n4.155\r\n5. 139\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:35.2177936Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"68 + 78 = 146\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 159965000,
+        "load_duration": 3214800,
+        "prompt_eval_count": 125,
+        "prompt_eval_cached_count": 90,
+        "prompt_eval_duration": 14065000,
+        "eval_count": 21,
+        "eval_duration": 140024000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 3,
+      "shift": 2,
+      "key": 2,
+      "computed_value": 146,
+      "choices": [
+        148,
+        146,
+        155,
+        139,
+        143
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": "4번. 68 + 78의 값은?\r\n1.148\r\n2. 146\r\n3. 155\r\n4. 139\r\n5. 143\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:35.5176537Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"68 + 78 = 146\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 159272000,
+        "load_duration": 4935500,
+        "prompt_eval_count": 125,
+        "prompt_eval_cached_count": 88,
+        "prompt_eval_duration": 14147000,
+        "eval_count": 21,
+        "eval_duration": 137247000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 3,
+      "shift": 3,
+      "key": 1,
+      "computed_value": 146,
+      "choices": [
+        146,
+        155,
+        139,
+        143,
+        148
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": "4번. 68 + 78의 값은?\r\n1.146\r\n2. 155\r\n3. 139\r\n4. 143\r\n5. 148\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:35.8271288Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"68 + 78 = 146\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 156382400,
+        "load_duration": 3697600,
+        "prompt_eval_count": 125,
+        "prompt_eval_cached_count": 90,
+        "prompt_eval_duration": 14098000,
+        "eval_count": 21,
+        "eval_duration": 136600000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 3,
+      "shift": 4,
+      "key": 5,
+      "computed_value": 146,
+      "choices": [
+        155,
+        139,
+        143,
+        148,
+        146
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": "4번. 68 + 78의 값은?\r\n1.155\r\n2. 139\r\n3. 143\r\n4. 148\r\n5. 146\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:36.1216203Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"68 + 78 = 146\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 156240900,
+        "load_duration": 3150700,
+        "prompt_eval_count": 125,
+        "prompt_eval_cached_count": 89,
+        "prompt_eval_duration": 14139000,
+        "eval_count": 21,
+        "eval_duration": 136619000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 4,
+      "shift": 0,
+      "key": 5,
+      "computed_value": 113,
+      "choices": [
+        106,
+        110,
+        115,
+        118,
+        113
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": "5번. 79 + 34의 값은?\r\n1.106\r\n2.110\r\n3. 115\r\n4.118\r\n5. 113\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:36.4118157Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"79 + 34 = 113\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 161102900,
+        "load_duration": 4000500,
+        "prompt_eval_count": 123,
+        "prompt_eval_cached_count": 72,
+        "prompt_eval_duration": 16352000,
+        "eval_count": 21,
+        "eval_duration": 136248000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 4,
+      "shift": 1,
+      "key": 4,
+      "computed_value": 113,
+      "choices": [
+        110,
+        115,
+        118,
+        113,
+        106
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": "5번. 79 + 34의 값은?\r\n1.110\r\n2.115\r\n3.118\r\n4.113\r\n5. 106\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:36.707437Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"79 + 34 = 113\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 158095300,
+        "load_duration": 4004800,
+        "prompt_eval_count": 122,
+        "prompt_eval_cached_count": 89,
+        "prompt_eval_duration": 14089000,
+        "eval_count": 21,
+        "eval_duration": 137842000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 4,
+      "shift": 2,
+      "key": 3,
+      "computed_value": 113,
+      "choices": [
+        115,
+        118,
+        113,
+        106,
+        110
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": "5번. 79 + 34의 값은?\r\n1.115\r\n2.118\r\n3. 113\r\n4. 106\r\n5.110\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:37.0008061Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"79 + 34 = 113\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 157325100,
+        "load_duration": 3171100,
+        "prompt_eval_count": 123,
+        "prompt_eval_cached_count": 90,
+        "prompt_eval_duration": 14763000,
+        "eval_count": 21,
+        "eval_duration": 136967000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 4,
+      "shift": 3,
+      "key": 2,
+      "computed_value": 113,
+      "choices": [
+        118,
+        113,
+        106,
+        110,
+        115
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": "5번. 79 + 34의 값은?\r\n1.118\r\n2. 113\r\n3. 106\r\n4.110\r\n5. 115\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:37.3056547Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"79 + 34 = 113\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 156837000,
+        "load_duration": 3099800,
+        "prompt_eval_count": 124,
+        "prompt_eval_cached_count": 90,
+        "prompt_eval_duration": 14174000,
+        "eval_count": 21,
+        "eval_duration": 137110000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 4,
+      "shift": 4,
+      "key": 1,
+      "computed_value": 113,
+      "choices": [
+        113,
+        106,
+        110,
+        115,
+        118
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": "5번. 79 + 34의 값은?\r\n1.113\r\n2. 106\r\n3.110\r\n4.115\r\n5.118\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:37.6010335Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"79 + 34 = 113\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 156837600,
+        "load_duration": 3614400,
+        "prompt_eval_count": 122,
+        "prompt_eval_cached_count": 90,
+        "prompt_eval_duration": 13955000,
+        "eval_count": 21,
+        "eval_duration": 136558000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 5,
+      "shift": 0,
+      "key": 1,
+      "computed_value": 118,
+      "choices": [
+        118,
+        115,
+        120,
+        123,
+        127
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": "6번. 76 + 42의 값은?\r\n1.118\r\n2.115\r\n3. 120\r\n4.123\r\n5. 127\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:37.9151828Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"76 + 42 = 118\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 158302700,
+        "load_duration": 3000700,
+        "prompt_eval_count": 123,
+        "prompt_eval_cached_count": 72,
+        "prompt_eval_duration": 15564000,
+        "eval_count": 21,
+        "eval_duration": 136722000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 5,
+      "shift": 1,
+      "key": 5,
+      "computed_value": 118,
+      "choices": [
+        115,
+        120,
+        123,
+        127,
+        118
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": "6번. 76 + 42의 값은?\r\n1.115\r\n2. 120\r\n3. 123\r\n4.127\r\n5. 118\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:38.2275369Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"76 + 42 = 118\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 157159600,
+        "load_duration": 3191900,
+        "prompt_eval_count": 124,
+        "prompt_eval_cached_count": 90,
+        "prompt_eval_duration": 14466000,
+        "eval_count": 21,
+        "eval_duration": 137274000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 5,
+      "shift": 2,
+      "key": 4,
+      "computed_value": 118,
+      "choices": [
+        120,
+        123,
+        127,
+        118,
+        115
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": "6번. 76 + 42의 값은?\r\n1. 120\r\n2. 123\r\n3. 127\r\n4.118\r\n5. 115\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:38.5360329Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"76 + 42 = 118\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 157623200,
+        "load_duration": 3732200,
+        "prompt_eval_count": 125,
+        "prompt_eval_cached_count": 88,
+        "prompt_eval_duration": 14504000,
+        "eval_count": 21,
+        "eval_duration": 137008000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 5,
+      "shift": 3,
+      "key": 3,
+      "computed_value": 118,
+      "choices": [
+        123,
+        127,
+        118,
+        115,
+        120
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": "6번. 76 + 42의 값은?\r\n1. 123\r\n2. 127\r\n3.118\r\n4.115\r\n5. 120\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:38.8493738Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"76 + 42 = 118\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 160393300,
+        "load_duration": 5000500,
+        "prompt_eval_count": 124,
+        "prompt_eval_cached_count": 91,
+        "prompt_eval_duration": 14605000,
+        "eval_count": 21,
+        "eval_duration": 137372000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 5,
+      "shift": 4,
+      "key": 2,
+      "computed_value": 118,
+      "choices": [
+        127,
+        118,
+        115,
+        120,
+        123
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": "6번. 76 + 42의 값은?\r\n1. 127\r\n2.118\r\n3. 115\r\n4. 120\r\n5. 123\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:39.1584305Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"76 + 42 = 118\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 155932400,
+        "load_duration": 4161500,
+        "prompt_eval_count": 125,
+        "prompt_eval_cached_count": 91,
+        "prompt_eval_duration": 14330000,
+        "eval_count": 21,
+        "eval_duration": 135667000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 6,
+      "shift": 0,
+      "key": 2,
+      "computed_value": 107,
+      "choices": [
+        100,
+        107,
+        109,
+        112,
+        116
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": "7번. 75 + 32의 값은?\r\n1. 100\r\n2. 107\r\n3. 109\r\n4.112\r\n5.116\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:39.4507711Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"75 + 32 = 107\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 159702800,
+        "load_duration": 2999700,
+        "prompt_eval_count": 124,
+        "prompt_eval_cached_count": 72,
+        "prompt_eval_duration": 15717000,
+        "eval_count": 21,
+        "eval_duration": 136118000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 6,
+      "shift": 1,
+      "key": 1,
+      "computed_value": 107,
+      "choices": [
+        107,
+        109,
+        112,
+        116,
+        100
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": "7번. 75 + 32의 값은?\r\n1.107\r\n2. 109\r\n3.112\r\n4.116\r\n5. 100\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:39.7511396Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"75 + 32 = 107\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 156371900,
+        "load_duration": 4180500,
+        "prompt_eval_count": 123,
+        "prompt_eval_cached_count": 88,
+        "prompt_eval_duration": 13896000,
+        "eval_count": 21,
+        "eval_duration": 135819000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 6,
+      "shift": 2,
+      "key": 5,
+      "computed_value": 107,
+      "choices": [
+        109,
+        112,
+        116,
+        100,
+        107
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": "7번. 75 + 32의 값은?\r\n1. 109\r\n2.112\r\n3.116\r\n4. 100\r\n5. 107\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:40.0598351Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"75 + 32 = 107\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 156054800,
+        "load_duration": 3657800,
+        "prompt_eval_count": 124,
+        "prompt_eval_cached_count": 88,
+        "prompt_eval_duration": 14353000,
+        "eval_count": 21,
+        "eval_duration": 135899000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 6,
+      "shift": 3,
+      "key": 4,
+      "computed_value": 107,
+      "choices": [
+        112,
+        116,
+        100,
+        107,
+        109
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": "7번. 75 + 32의 값은?\r\n1.112\r\n2.116\r\n3. 100\r\n4. 107\r\n5. 109\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:40.3490118Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"75 + 32 = 107\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 155757800,
+        "load_duration": 2999400,
+        "prompt_eval_count": 124,
+        "prompt_eval_cached_count": 88,
+        "prompt_eval_duration": 13602000,
+        "eval_count": 21,
+        "eval_duration": 136774000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 6,
+      "shift": 4,
+      "key": 3,
+      "computed_value": 107,
+      "choices": [
+        116,
+        100,
+        107,
+        109,
+        112
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": "7번. 75 + 32의 값은?\r\n1.116\r\n2. 100\r\n3. 107\r\n4. 109\r\n5.112\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:40.6519163Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"75 + 32 = 107\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 156269700,
+        "load_duration": 3140800,
+        "prompt_eval_count": 124,
+        "prompt_eval_cached_count": 90,
+        "prompt_eval_duration": 13812000,
+        "eval_count": 21,
+        "eval_duration": 136843000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 7,
+      "shift": 0,
+      "key": 3,
+      "computed_value": 46,
+      "choices": [
+        39,
+        43,
+        46,
+        51,
+        55
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": "8번. 34 + 12의 값은?\r\n1. 39\r\n2. 43\r\n3. 46\r\n4. 51\r\n5. 55\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:40.9439159Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"34 + 12 equals 46.\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 152338800,
+        "load_duration": 3160000,
+        "prompt_eval_count": 121,
+        "prompt_eval_cached_count": 72,
+        "prompt_eval_duration": 15604000,
+        "eval_count": 20,
+        "eval_duration": 131175999
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 7,
+      "shift": 1,
+      "key": 2,
+      "computed_value": 46,
+      "choices": [
+        43,
+        46,
+        51,
+        55,
+        39
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": "8번. 34 + 12의 값은?\r\n1. 43\r\n2. 46\r\n3. 51\r\n4. 55\r\n5. 39\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:41.2215641Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"34 + 12 equals 46.\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 149569100,
+        "load_duration": 2998900,
+        "prompt_eval_count": 121,
+        "prompt_eval_cached_count": 89,
+        "prompt_eval_duration": 13345000,
+        "eval_count": 20,
+        "eval_duration": 130876000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 7,
+      "shift": 2,
+      "key": 1,
+      "computed_value": 46,
+      "choices": [
+        46,
+        51,
+        55,
+        39,
+        43
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": "8번. 34 + 12의 값은?\r\n1.46\r\n2. 51\r\n3. 55\r\n4. 39\r\n5. 43\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:41.4970736Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"34 + 12 equals 46.\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 150330300,
+        "load_duration": 3859300,
+        "prompt_eval_count": 120,
+        "prompt_eval_cached_count": 88,
+        "prompt_eval_duration": 14080000,
+        "eval_count": 20,
+        "eval_duration": 130680000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 7,
+      "shift": 3,
+      "key": 5,
+      "computed_value": 46,
+      "choices": [
+        51,
+        55,
+        39,
+        43,
+        46
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": "8번. 34 + 12의 값은?\r\n1.51\r\n2. 55\r\n3. 39\r\n4. 43\r\n5. 46\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:41.79838Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"34 + 12 equals 46.\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 153099800,
+        "load_duration": 4002100,
+        "prompt_eval_count": 120,
+        "prompt_eval_cached_count": 88,
+        "prompt_eval_duration": 14040000,
+        "eval_count": 20,
+        "eval_duration": 132835000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 7,
+      "shift": 4,
+      "key": 4,
+      "computed_value": 46,
+      "choices": [
+        55,
+        39,
+        43,
+        46,
+        51
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": "8번. 34 + 12의 값은?\r\n1. 55\r\n2. 39\r\n3. 43\r\n4. 46\r\n5. 51\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:42.0915664Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"34 + 12 equals 46.\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 149350000,
+        "load_duration": 3136700,
+        "prompt_eval_count": 121,
+        "prompt_eval_cached_count": 88,
+        "prompt_eval_duration": 14136000,
+        "eval_count": 20,
+        "eval_duration": 129476000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 8,
+      "shift": 0,
+      "key": 4,
+      "computed_value": 65,
+      "choices": [
+        58,
+        62,
+        67,
+        65,
+        74
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": "9번. 13 + 52의 값은?\r\n1.58\r\n2. 62\r\n3. 67\r\n4. 65\r\n5. 74\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:42.3851452Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"13 + 52 equals 65.\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 150340600,
+        "load_duration": 3730400,
+        "prompt_eval_count": 120,
+        "prompt_eval_cached_count": 72,
+        "prompt_eval_duration": 15223000,
+        "eval_count": 20,
+        "eval_duration": 129306000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 8,
+      "shift": 1,
+      "key": 3,
+      "computed_value": 65,
+      "choices": [
+        62,
+        67,
+        65,
+        74,
+        58
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": "9번. 13 + 52의 값은?\r\n1. 62\r\n2. 67\r\n3. 65\r\n4.74\r\n5. 58\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:42.6787312Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"13 + 52 equals 65.\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 149175400,
+        "load_duration": 4180500,
+        "prompt_eval_count": 120,
+        "prompt_eval_cached_count": 88,
+        "prompt_eval_duration": 12916000,
+        "eval_count": 20,
+        "eval_duration": 129940000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 8,
+      "shift": 2,
+      "key": 2,
+      "computed_value": 65,
+      "choices": [
+        67,
+        65,
+        74,
+        58,
+        62
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": "9번. 13 + 52의 값은?\r\n1. 67\r\n2. 65\r\n3. 74\r\n4. 58\r\n5. 62\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:42.9584772Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"13 + 52 equals 65.\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 150219200,
+        "load_duration": 3735100,
+        "prompt_eval_count": 121,
+        "prompt_eval_cached_count": 90,
+        "prompt_eval_duration": 13570000,
+        "eval_count": 20,
+        "eval_duration": 130283999
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 8,
+      "shift": 3,
+      "key": 1,
+      "computed_value": 65,
+      "choices": [
+        65,
+        74,
+        58,
+        62,
+        67
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": "9번. 13 + 52의 값은?\r\n1. 65\r\n2.74\r\n3. 58\r\n4. 62\r\n5. 67\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:43.2532728Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"13 + 52 equals 65.\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 148987100,
+        "load_duration": 3155400,
+        "prompt_eval_count": 120,
+        "prompt_eval_cached_count": 90,
+        "prompt_eval_duration": 13896000,
+        "eval_count": 20,
+        "eval_duration": 129491000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 8,
+      "shift": 4,
+      "key": 5,
+      "computed_value": 65,
+      "choices": [
+        74,
+        58,
+        62,
+        67,
+        65
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": "9번. 13 + 52의 값은?\r\n1.74\r\n2. 58\r\n3. 62\r\n4. 67\r\n5. 65\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:43.5495845Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"13 + 52 equals 65.\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 149281400,
+        "load_duration": 3656300,
+        "prompt_eval_count": 120,
+        "prompt_eval_cached_count": 88,
+        "prompt_eval_duration": 13894000,
+        "eval_count": 20,
+        "eval_duration": 129323000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 9,
+      "shift": 0,
+      "key": 5,
+      "computed_value": 140,
+      "choices": [
+        133,
+        137,
+        142,
+        145,
+        140
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": "10번. 72 + 68의 값은?\r\n1. 133\r\n2. 137\r\n3. 142\r\n4. 145\r\n5. 140\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:43.8451136Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"72 + 68 = 140\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 158558300,
+        "load_duration": 4196300,
+        "prompt_eval_count": 127,
+        "prompt_eval_cached_count": 72,
+        "prompt_eval_duration": 15888000,
+        "eval_count": 21,
+        "eval_duration": 135922000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 9,
+      "shift": 1,
+      "key": 4,
+      "computed_value": 140,
+      "choices": [
+        137,
+        142,
+        145,
+        140,
+        133
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": "10번. 72 + 68의 값은?\r\n1.137\r\n2. 142\r\n3. 145\r\n4. 140\r\n5. 133\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:44.1483762Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"72 + 68 = 140\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 156435000,
+        "load_duration": 3718000,
+        "prompt_eval_count": 126,
+        "prompt_eval_cached_count": 89,
+        "prompt_eval_duration": 13758000,
+        "eval_count": 21,
+        "eval_duration": 136821000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 9,
+      "shift": 2,
+      "key": 3,
+      "computed_value": 140,
+      "choices": [
+        142,
+        145,
+        140,
+        133,
+        137
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": "10번. 72 + 68의 값은?\r\n1. 142\r\n2. 145\r\n3. 140\r\n4. 133\r\n5. 137\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:44.4379115Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"72 + 68 = 140\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 157244400,
+        "load_duration": 3776200,
+        "prompt_eval_count": 127,
+        "prompt_eval_cached_count": 89,
+        "prompt_eval_duration": 14401000,
+        "eval_count": 21,
+        "eval_duration": 136902000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 9,
+      "shift": 3,
+      "key": 2,
+      "computed_value": 140,
+      "choices": [
+        145,
+        140,
+        133,
+        137,
+        142
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": "10번. 72 + 68의 값은?\r\n1. 145\r\n2. 140\r\n3. 133\r\n4.137\r\n5. 142\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:44.7318286Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"72 + 68 = 140\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 157515000,
+        "load_duration": 3145200,
+        "prompt_eval_count": 126,
+        "prompt_eval_cached_count": 92,
+        "prompt_eval_duration": 14738000,
+        "eval_count": 21,
+        "eval_duration": 137216000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 9,
+      "shift": 4,
+      "key": 1,
+      "computed_value": 140,
+      "choices": [
+        140,
+        133,
+        137,
+        142,
+        145
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": "10번. 72 + 68의 값은?\r\n1.140\r\n2. 133\r\n3. 137\r\n4. 142\r\n5. 145\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:45.0291966Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"72 + 68 = 140\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 157663200,
+        "load_duration": 3121100,
+        "prompt_eval_count": 126,
+        "prompt_eval_cached_count": 89,
+        "prompt_eval_duration": 14266000,
+        "eval_count": 21,
+        "eval_duration": 138074000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 10,
+      "shift": 0,
+      "key": 1,
+      "computed_value": 61,
+      "choices": [
+        61,
+        58,
+        63,
+        66,
+        70
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": "11번. 16 + 45의 값은?\r\n1.61\r\n2. 58\r\n3. 63\r\n4. 66\r\n5. 70\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:45.3167006Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"16 + 45 = 61\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 158002000,
+        "load_duration": 3731600,
+        "prompt_eval_count": 121,
+        "prompt_eval_cached_count": 73,
+        "prompt_eval_duration": 14782000,
+        "eval_count": 20,
+        "eval_duration": 137449000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 11,
+      "shift": 0,
+      "key": 2,
+      "computed_value": 96,
+      "choices": [
+        89,
+        96,
+        98,
+        101,
+        105
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": "12번. 70 + 26의 값은?\r\n1. 89\r\n2.96\r\n3. 98\r\n4.101\r\n5. 105\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:45.6051393Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"70 + 26 = 96\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 155362800,
+        "load_duration": 4161900,
+        "prompt_eval_count": 122,
+        "prompt_eval_cached_count": 73,
+        "prompt_eval_duration": 16008000,
+        "eval_count": 20,
+        "eval_duration": 132532000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 12,
+      "shift": 0,
+      "key": 3,
+      "computed_value": 80,
+      "choices": [
+        73,
+        77,
+        80,
+        85,
+        89
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": "13번. 14 + 66의 값은?\r\n1. 73\r\n2.77\r\n3. 80\r\n4. 85\r\n5. 89\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:45.9001855Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"14 + 66 equals 80.\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 150458200,
+        "load_duration": 3668600,
+        "prompt_eval_count": 121,
+        "prompt_eval_cached_count": 73,
+        "prompt_eval_duration": 14877000,
+        "eval_count": 20,
+        "eval_duration": 129869000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 13,
+      "shift": 0,
+      "key": 4,
+      "computed_value": 48,
+      "choices": [
+        41,
+        45,
+        50,
+        48,
+        57
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": "14번. 29 + 19의 값은?\r\n1.41\r\n2. 45\r\n3. 50\r\n4. 48\r\n5. 57\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:46.1739843Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"29 + 19 = 48\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 150918400,
+        "load_duration": 3686900,
+        "prompt_eval_count": 121,
+        "prompt_eval_cached_count": 73,
+        "prompt_eval_duration": 14842000,
+        "eval_count": 20,
+        "eval_duration": 130083000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 14,
+      "shift": 0,
+      "key": 5,
+      "computed_value": 141,
+      "choices": [
+        134,
+        138,
+        143,
+        146,
+        141
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": "15번. 67 + 74의 값은?\r\n1. 134\r\n2. 138\r\n3. 143\r\n4. 146\r\n5. 141\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:46.4812357Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"67 + 74 = 141\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 158422100,
+        "load_duration": 3662500,
+        "prompt_eval_count": 127,
+        "prompt_eval_cached_count": 73,
+        "prompt_eval_duration": 15671000,
+        "eval_count": 21,
+        "eval_duration": 136923000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 15,
+      "shift": 0,
+      "key": 1,
+      "computed_value": 71,
+      "choices": [
+        71,
+        68,
+        73,
+        76,
+        80
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": "16번. 55 + 16의 값은?\r\n1.71\r\n2. 68\r\n3. 73\r\n4.76\r\n5. 80\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:46.7655958Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"55 + 16 = 71\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 152872400,
+        "load_duration": 3630800,
+        "prompt_eval_count": 120,
+        "prompt_eval_cached_count": 73,
+        "prompt_eval_duration": 14912000,
+        "eval_count": 20,
+        "eval_duration": 129924000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 16,
+      "shift": 0,
+      "key": 2,
+      "computed_value": 73,
+      "choices": [
+        66,
+        73,
+        75,
+        78,
+        82
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": "17번. 50 + 23의 값은?\r\n1. 66\r\n2. 73\r\n3. 75\r\n4.78\r\n5. 82\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:47.077008Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"50 + 23 equals 73.\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 150201700,
+        "load_duration": 3112200,
+        "prompt_eval_count": 121,
+        "prompt_eval_cached_count": 73,
+        "prompt_eval_duration": 14496000,
+        "eval_count": 20,
+        "eval_duration": 129902999
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 17,
+      "shift": 0,
+      "key": 3,
+      "computed_value": 120,
+      "choices": [
+        113,
+        117,
+        120,
+        125,
+        129
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": "18번. 76 + 44의 Zt?\r\n1.113\r\n2.117\r\n3. 120\r\n4.125\r\n5. 129\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:47.3734728Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"76 + 44 equals 120.\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 157638300,
+        "load_duration": 4179400,
+        "prompt_eval_count": 124,
+        "prompt_eval_cached_count": 73,
+        "prompt_eval_duration": 15684000,
+        "eval_count": 21,
+        "eval_duration": 135791000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 18,
+      "shift": 0,
+      "key": 4,
+      "computed_value": 99,
+      "choices": [
+        92,
+        96,
+        101,
+        99,
+        108
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": "19번. 62 + 37의 값은?\r\n1. 92\r\n\r\n2.96\r\n\r\n3. 101\r\n\r\n4. 99\r\n\r\n5. 108\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:47.6515139Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"62 + 37 = 99\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 151981800,
+        "load_duration": 4002000,
+        "prompt_eval_count": 123,
+        "prompt_eval_cached_count": 73,
+        "prompt_eval_duration": 16513000,
+        "eval_count": 20,
+        "eval_duration": 129320000
+      }
+    },
+    {
+      "route": "ocr",
+      "i": 19,
+      "shift": 0,
+      "key": 5,
+      "computed_value": 119,
+      "choices": [
+        112,
+        116,
+        121,
+        124,
+        119
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": "20번. 76 + 43의 값은?\r\n1.112\r\n2.116\r\n3. 121\r\n4. 124\r\n5. 119\r\n",
+      "response": {
+        "model": "qwen2.5:7b",
+        "created_at": "2026-11-17T12:58:47.9561573Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"76 + 43 = 119\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 157778800,
+        "load_duration": 3680600,
+        "prompt_eval_count": 125,
+        "prompt_eval_cached_count": 72,
+        "prompt_eval_duration": 15636000,
+        "eval_count": 21,
+        "eval_duration": 136304000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 0,
+      "shift": 0,
+      "key": 1,
+      "computed_value": 45,
+      "choices": [
+        45,
+        42,
+        47,
+        50,
+        54
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:58:50.8355916Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 30 and 15 is 45.\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 2860388100,
+        "load_duration": 2218800000,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 0,
+        "prompt_eval_duration": 456999000,
+        "eval_count": 24,
+        "eval_duration": 164983000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 0,
+      "shift": 1,
+      "key": 5,
+      "computed_value": 45,
+      "choices": [
+        42,
+        47,
+        50,
+        54,
+        45
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:58:51.4033816Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 30 and 15 is 45.\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 558356000,
+        "load_duration": 3705400,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 359772000,
+        "eval_count": 24,
+        "eval_duration": 159602000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 0,
+      "shift": 2,
+      "key": 4,
+      "computed_value": 45,
+      "choices": [
+        47,
+        50,
+        54,
+        45,
+        42
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:58:51.9880532Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 30 and 15 is 45.\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 551003300,
+        "load_duration": 4208300,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 359745000,
+        "eval_count": 24,
+        "eval_duration": 159801000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 0,
+      "shift": 3,
+      "key": 3,
+      "computed_value": 45,
+      "choices": [
+        50,
+        54,
+        45,
+        42,
+        47
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:58:52.5603144Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 30 and 15 is 45.\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 549558900,
+        "load_duration": 3667500,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 360239000,
+        "eval_count": 24,
+        "eval_duration": 159904000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 0,
+      "shift": 4,
+      "key": 2,
+      "computed_value": 45,
+      "choices": [
+        54,
+        45,
+        42,
+        47,
+        50
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:58:53.1465128Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 30 and 15 is 45.\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 561922300,
+        "load_duration": 3658600,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 367723000,
+        "eval_count": 24,
+        "eval_duration": 160610000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 1,
+      "shift": 0,
+      "key": 2,
+      "computed_value": 93,
+      "choices": [
+        86,
+        93,
+        95,
+        98,
+        102
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:58:53.7993407Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 38 and 55 is calculated as 38 + 55 = 93.\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 622177900,
+        "load_duration": 3629000,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 361891000,
+        "eval_count": 34,
+        "eval_duration": 228791000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 1,
+      "shift": 1,
+      "key": 1,
+      "computed_value": 93,
+      "choices": [
+        93,
+        95,
+        98,
+        102,
+        86
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:58:54.4575789Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 38 and 55 is calculated as 38 + 55 = 93.\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 629859600,
+        "load_duration": 3149700,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 360035000,
+        "eval_count": 34,
+        "eval_duration": 227813000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 1,
+      "shift": 2,
+      "key": 5,
+      "computed_value": 93,
+      "choices": [
+        95,
+        98,
+        102,
+        86,
+        93
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:58:54.9936845Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"38 + 55 = 93\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 526122700,
+        "load_duration": 3162900,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 365893000,
+        "eval_count": 20,
+        "eval_duration": 133322000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 1,
+      "shift": 3,
+      "key": 4,
+      "computed_value": 93,
+      "choices": [
+        98,
+        102,
+        86,
+        93,
+        95
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:58:55.6470221Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 38 and 55 is calculated as 38 + 55 = 93.\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 618602300,
+        "load_duration": 3147800,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 360766000,
+        "eval_count": 34,
+        "eval_duration": 229691000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 1,
+      "shift": 4,
+      "key": 3,
+      "computed_value": 93,
+      "choices": [
+        102,
+        86,
+        93,
+        95,
+        98
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:58:56.2858575Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 38 and 55 is calculated as 38 + 55 = 93.\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 618685300,
+        "load_duration": 3134900,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 360555000,
+        "eval_count": 34,
+        "eval_duration": 228927000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 2,
+      "shift": 0,
+      "key": 3,
+      "computed_value": 151,
+      "choices": [
+        144,
+        148,
+        151,
+        156,
+        160
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:58:56.8483189Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"73 + 78 = 151\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 527798200,
+        "load_duration": 3150300,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 362302000,
+        "eval_count": 21,
+        "eval_duration": 139827000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 2,
+      "shift": 1,
+      "key": 2,
+      "computed_value": 151,
+      "choices": [
+        148,
+        151,
+        156,
+        160,
+        144
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:58:57.4920502Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 73 and 78 is calculated as 73 + 78 = 151.\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 634731300,
+        "load_duration": 4000100,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 368529000,
+        "eval_count": 35,
+        "eval_duration": 237847000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 2,
+      "shift": 2,
+      "key": 1,
+      "computed_value": 151,
+      "choices": [
+        151,
+        156,
+        160,
+        144,
+        148
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:58:58.1525467Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 73 and 78 is calculated as 73 + 78 = 151.\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 631449900,
+        "load_duration": 4163500,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 362318000,
+        "eval_count": 35,
+        "eval_duration": 234996000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 2,
+      "shift": 3,
+      "key": 5,
+      "computed_value": 151,
+      "choices": [
+        156,
+        160,
+        144,
+        148,
+        151
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:58:58.7022171Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"73 + 78 = 151\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 528208100,
+        "load_duration": 2999900,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 361449000,
+        "eval_count": 21,
+        "eval_duration": 139041000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 2,
+      "shift": 4,
+      "key": 4,
+      "computed_value": 151,
+      "choices": [
+        160,
+        144,
+        148,
+        151,
+        156
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:58:59.3724053Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 73 and 78 is calculated as 73 + 78 = 151.\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 635589800,
+        "load_duration": 4261900,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 362184000,
+        "eval_count": 35,
+        "eval_duration": 236033000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 3,
+      "shift": 0,
+      "key": 4,
+      "computed_value": 146,
+      "choices": [
+        139,
+        143,
+        148,
+        146,
+        155
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:00.0315522Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 68 and 78 is calculated as 68 + 78 = 146.\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 625588900,
+        "load_duration": 3134600,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 362275000,
+        "eval_count": 35,
+        "eval_duration": 236856000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 3,
+      "shift": 1,
+      "key": 3,
+      "computed_value": 146,
+      "choices": [
+        143,
+        148,
+        146,
+        155,
+        139
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:00.6996958Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 68 and 78 is calculated as 68 + 78 = 146.\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 637406200,
+        "load_duration": 4301900,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 362905000,
+        "eval_count": 35,
+        "eval_duration": 240622000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 3,
+      "shift": 2,
+      "key": 2,
+      "computed_value": 146,
+      "choices": [
+        148,
+        146,
+        155,
+        139,
+        143
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:01.3609576Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 68 and 78 is calculated as 68 + 78 = 146.\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 630464200,
+        "load_duration": 3714500,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 366294000,
+        "eval_count": 35,
+        "eval_duration": 236716000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 3,
+      "shift": 3,
+      "key": 1,
+      "computed_value": 146,
+      "choices": [
+        146,
+        155,
+        139,
+        143,
+        148
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:02.0036657Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 68 and 78 is calculated as 68 + 78 = 146.\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 632759800,
+        "load_duration": 3665000,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 367618000,
+        "eval_count": 35,
+        "eval_duration": 234983000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 3,
+      "shift": 4,
+      "key": 5,
+      "computed_value": 146,
+      "choices": [
+        155,
+        139,
+        143,
+        148,
+        146
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:02.6592431Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 68 and 78 is calculated as 68 + 78 = 146.\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 646128800,
+        "load_duration": 3686000,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 362759000,
+        "eval_count": 35,
+        "eval_duration": 235452000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 4,
+      "shift": 0,
+      "key": 5,
+      "computed_value": 113,
+      "choices": [
+        106,
+        110,
+        115,
+        118,
+        113
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:03.311659Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 79 and 34 is calculated as 79 + 34 = 113.\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 626091700,
+        "load_duration": 3124700,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 362850000,
+        "eval_count": 35,
+        "eval_duration": 235206000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 4,
+      "shift": 1,
+      "key": 4,
+      "computed_value": 113,
+      "choices": [
+        110,
+        115,
+        118,
+        113,
+        106
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:03.975611Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 79 and 34 is calculated as 79 + 34 = 113.\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 635105700,
+        "load_duration": 3151000,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 370289000,
+        "eval_count": 35,
+        "eval_duration": 236070000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 4,
+      "shift": 2,
+      "key": 3,
+      "computed_value": 113,
+      "choices": [
+        115,
+        118,
+        113,
+        106,
+        110
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:04.6099244Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 79 and 34 is calculated as 79 + 34 = 113.\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 625008700,
+        "load_duration": 3599000,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 361165000,
+        "eval_count": 35,
+        "eval_duration": 236319000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 4,
+      "shift": 3,
+      "key": 2,
+      "computed_value": 113,
+      "choices": [
+        118,
+        113,
+        106,
+        110,
+        115
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:05.1498747Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"79 + 34 = 113\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 529519300,
+        "load_duration": 4242600,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 362519000,
+        "eval_count": 21,
+        "eval_duration": 140701000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 4,
+      "shift": 4,
+      "key": 1,
+      "computed_value": 113,
+      "choices": [
+        113,
+        106,
+        110,
+        115,
+        118
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:05.7963752Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 79 and 34 is calculated as 79 + 34 = 113.\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 621918200,
+        "load_duration": 3617800,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 359679000,
+        "eval_count": 35,
+        "eval_duration": 236253000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 5,
+      "shift": 0,
+      "key": 1,
+      "computed_value": 118,
+      "choices": [
+        118,
+        115,
+        120,
+        123,
+        127
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:06.349992Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"76 + 42 = 118\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 520227400,
+        "load_duration": 3145600,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 355938000,
+        "eval_count": 21,
+        "eval_duration": 139352000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 5,
+      "shift": 1,
+      "key": 5,
+      "computed_value": 118,
+      "choices": [
+        115,
+        120,
+        123,
+        127,
+        118
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:06.9843312Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 76 and 42 is calculated as 76 + 42 = 118.\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 624436500,
+        "load_duration": 3152700,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 363246000,
+        "eval_count": 35,
+        "eval_duration": 236406000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 5,
+      "shift": 2,
+      "key": 4,
+      "computed_value": 118,
+      "choices": [
+        120,
+        123,
+        127,
+        118,
+        115
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:07.630211Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 76 and 42 is calculated as 76 + 42 = 118.\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 636564800,
+        "load_duration": 3712200,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 360707000,
+        "eval_count": 35,
+        "eval_duration": 235642000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 5,
+      "shift": 3,
+      "key": 3,
+      "computed_value": 118,
+      "choices": [
+        123,
+        127,
+        118,
+        115,
+        120
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:08.2699551Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 76 and 42 is calculated as 76 + 42 = 118.\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 618184300,
+        "load_duration": 3101200,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 358373000,
+        "eval_count": 35,
+        "eval_duration": 235390000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 5,
+      "shift": 4,
+      "key": 2,
+      "computed_value": 118,
+      "choices": [
+        127,
+        118,
+        115,
+        120,
+        123
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:08.9250279Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 76 and 42 is calculated as 76 + 42 = 118.\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 620397600,
+        "load_duration": 3707400,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 356772000,
+        "eval_count": 35,
+        "eval_duration": 236837000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 6,
+      "shift": 0,
+      "key": 2,
+      "computed_value": 107,
+      "choices": [
+        100,
+        107,
+        109,
+        112,
+        116
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:09.4896213Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"75 + 32 = 107\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 533365100,
+        "load_duration": 3739300,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 366842000,
+        "eval_count": 21,
+        "eval_duration": 140035000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 6,
+      "shift": 1,
+      "key": 1,
+      "computed_value": 107,
+      "choices": [
+        107,
+        109,
+        112,
+        116,
+        100
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:10.0427117Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"75 + 32 = 107\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 529473200,
+        "load_duration": 3613500,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 363636000,
+        "eval_count": 21,
+        "eval_duration": 141166000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 6,
+      "shift": 2,
+      "key": 5,
+      "computed_value": 107,
+      "choices": [
+        109,
+        112,
+        116,
+        100,
+        107
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:10.6055132Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"75 + 32 = 107\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 531147200,
+        "load_duration": 3755800,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 362422000,
+        "eval_count": 21,
+        "eval_duration": 139316000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 6,
+      "shift": 3,
+      "key": 4,
+      "computed_value": 107,
+      "choices": [
+        112,
+        116,
+        100,
+        107,
+        109
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:11.1363543Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"75 + 32 = 107\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 521435200,
+        "load_duration": 3699700,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 356549000,
+        "eval_count": 21,
+        "eval_duration": 139600000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 6,
+      "shift": 4,
+      "key": 3,
+      "computed_value": 107,
+      "choices": [
+        116,
+        100,
+        107,
+        109,
+        112
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:11.6693284Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"75 + 32 = 107\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 523594400,
+        "load_duration": 3628400,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 357979000,
+        "eval_count": 21,
+        "eval_duration": 140443000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 7,
+      "shift": 0,
+      "key": 3,
+      "computed_value": 46,
+      "choices": [
+        39,
+        43,
+        46,
+        51,
+        55
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:12.2306226Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"34 + 12 = 46\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 526721100,
+        "load_duration": 4163400,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 367954000,
+        "eval_count": 20,
+        "eval_duration": 133107000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 7,
+      "shift": 1,
+      "key": 2,
+      "computed_value": 46,
+      "choices": [
+        43,
+        46,
+        51,
+        55,
+        39
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:12.7822728Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"34 + 12 = 46\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 519879400,
+        "load_duration": 3677500,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 358409000,
+        "eval_count": 20,
+        "eval_duration": 133500000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 7,
+      "shift": 2,
+      "key": 1,
+      "computed_value": 46,
+      "choices": [
+        46,
+        51,
+        55,
+        39,
+        43
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:13.3397148Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"34 + 12 = 46\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 533176200,
+        "load_duration": 3129400,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 369388000,
+        "eval_count": 20,
+        "eval_duration": 133765999
+      }
+    },
+    {
+      "route": "vision",
+      "i": 7,
+      "shift": 3,
+      "key": 5,
+      "computed_value": 46,
+      "choices": [
+        51,
+        55,
+        39,
+        43,
+        46
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:13.981897Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 34 and 12 is calculated as 34 + 12 = 46.\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 617518700,
+        "load_duration": 3116100,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 362291000,
+        "eval_count": 34,
+        "eval_duration": 228963000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 7,
+      "shift": 4,
+      "key": 4,
+      "computed_value": 46,
+      "choices": [
+        55,
+        39,
+        43,
+        46,
+        51
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:14.6452572Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 34 and 12 is calculated as 34 + 12 = 46.\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 627891800,
+        "load_duration": 3877900,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 370305000,
+        "eval_count": 34,
+        "eval_duration": 228966000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 8,
+      "shift": 0,
+      "key": 4,
+      "computed_value": 65,
+      "choices": [
+        58,
+        62,
+        67,
+        65,
+        74
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:15.2948554Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 13 and 52 is calculated as 13 + 52 = 65.\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 639598300,
+        "load_duration": 4003000,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 362383000,
+        "eval_count": 34,
+        "eval_duration": 234377000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 8,
+      "shift": 1,
+      "key": 3,
+      "computed_value": 65,
+      "choices": [
+        62,
+        67,
+        65,
+        74,
+        58
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:15.9190714Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 13 and 52 is calculated as 13 + 52 = 65.\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 614898400,
+        "load_duration": 3750300,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 360211000,
+        "eval_count": 34,
+        "eval_duration": 228462000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 8,
+      "shift": 2,
+      "key": 2,
+      "computed_value": 65,
+      "choices": [
+        67,
+        65,
+        74,
+        58,
+        62
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:16.5700629Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 13 and 52 is calculated as 13 + 52 = 65.\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 624373200,
+        "load_duration": 3597800,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 360175000,
+        "eval_count": 34,
+        "eval_duration": 229623000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 8,
+      "shift": 3,
+      "key": 1,
+      "computed_value": 65,
+      "choices": [
+        65,
+        74,
+        58,
+        62,
+        67
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:17.2220483Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 13 and 52 is calculated as 13 + 52 = 65.\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 623800400,
+        "load_duration": 3674300,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 366628000,
+        "eval_count": 34,
+        "eval_duration": 228889000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 8,
+      "shift": 4,
+      "key": 5,
+      "computed_value": 65,
+      "choices": [
+        74,
+        58,
+        62,
+        67,
+        65
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:17.8735527Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 13 and 52 is calculated as 13 + 52 = 65.\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 623821100,
+        "load_duration": 3731900,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 361407000,
+        "eval_count": 34,
+        "eval_duration": 228277000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 9,
+      "shift": 0,
+      "key": 5,
+      "computed_value": 140,
+      "choices": [
+        133,
+        137,
+        142,
+        145,
+        140
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:18.5356114Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 72 and 68 is calculated as 72 + 68 = 140.\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 634558800,
+        "load_duration": 4172600,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 369014000,
+        "eval_count": 35,
+        "eval_duration": 235620000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 9,
+      "shift": 1,
+      "key": 4,
+      "computed_value": 140,
+      "choices": [
+        137,
+        142,
+        145,
+        140,
+        133
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:19.2058662Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 72 and 68 is calculated as 72 + 68 = 140.\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 637349800,
+        "load_duration": 3631500,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 364605000,
+        "eval_count": 35,
+        "eval_duration": 237534000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 9,
+      "shift": 2,
+      "key": 3,
+      "computed_value": 140,
+      "choices": [
+        142,
+        145,
+        140,
+        133,
+        137
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:19.8464847Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 72 and 68 is calculated as 72 + 68 = 140.\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 631178300,
+        "load_duration": 4207100,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 360739000,
+        "eval_count": 35,
+        "eval_duration": 241988000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 9,
+      "shift": 3,
+      "key": 2,
+      "computed_value": 140,
+      "choices": [
+        145,
+        140,
+        133,
+        137,
+        142
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:20.4991218Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 72 and 68 is calculated as 72 + 68 = 140.\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 626234000,
+        "load_duration": 3000900,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 360930000,
+        "eval_count": 35,
+        "eval_duration": 235825000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 9,
+      "shift": 4,
+      "key": 1,
+      "computed_value": 140,
+      "choices": [
+        140,
+        133,
+        137,
+        142,
+        145
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:21.1594264Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 72 and 68 is calculated as 72 + 68 = 140.\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 635564900,
+        "load_duration": 4289800,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 366469000,
+        "eval_count": 35,
+        "eval_duration": 241276000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 10,
+      "shift": 0,
+      "key": 1,
+      "computed_value": 61,
+      "choices": [
+        61,
+        58,
+        63,
+        66,
+        70
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:21.8129024Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 16 and 45 is calculated as 16 + 45 = 61.\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 618568600,
+        "load_duration": 3630100,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 362276000,
+        "eval_count": 34,
+        "eval_duration": 230027000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 11,
+      "shift": 0,
+      "key": 2,
+      "computed_value": 96,
+      "choices": [
+        89,
+        96,
+        98,
+        101,
+        105
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:22.4687169Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 70 and 26 is calculated as 70 + 26 = 96.\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 622131100,
+        "load_duration": 3662100,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 365290000,
+        "eval_count": 34,
+        "eval_duration": 228739000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 12,
+      "shift": 0,
+      "key": 3,
+      "computed_value": 80,
+      "choices": [
+        73,
+        77,
+        80,
+        85,
+        89
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:23.041268Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"14 + 66 = 80\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 542007700,
+        "load_duration": 3750000,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 366767000,
+        "eval_count": 20,
+        "eval_duration": 133781000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 13,
+      "shift": 0,
+      "key": 4,
+      "computed_value": 48,
+      "choices": [
+        41,
+        45,
+        50,
+        48,
+        57
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:23.6005703Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"29 + 19 = 48\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 527972400,
+        "load_duration": 3689100,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 365464000,
+        "eval_count": 20,
+        "eval_duration": 132520000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 14,
+      "shift": 0,
+      "key": 5,
+      "computed_value": 141,
+      "choices": [
+        134,
+        138,
+        143,
+        146,
+        141
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:24.2534669Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 67 and 74 is calculated as 67 + 74 = 141.\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 620414600,
+        "load_duration": 3091100,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 358327000,
+        "eval_count": 35,
+        "eval_duration": 235308000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 15,
+      "shift": 0,
+      "key": 1,
+      "computed_value": 71,
+      "choices": [
+        71,
+        68,
+        73,
+        76,
+        80
+      ],
+      "answer": 1,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:24.8054261Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"55 + 16 = 71\", \"answer\":1}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 531828000,
+        "load_duration": 3633300,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 369439000,
+        "eval_count": 20,
+        "eval_duration": 134054000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 16,
+      "shift": 0,
+      "key": 2,
+      "computed_value": 73,
+      "choices": [
+        66,
+        73,
+        75,
+        78,
+        82
+      ],
+      "answer": 2,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:25.3582194Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"50 + 23 = 73\", \"answer\":2}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 527239600,
+        "load_duration": 4148300,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 365508000,
+        "eval_count": 20,
+        "eval_duration": 133418000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 17,
+      "shift": 0,
+      "key": 3,
+      "computed_value": 120,
+      "choices": [
+        113,
+        117,
+        120,
+        125,
+        129
+      ],
+      "answer": 3,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:26.0268663Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 76 and 44 is calculated as 76 + 44 = 120.\", \"answer\":3}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 636238000,
+        "load_duration": 3002000,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 372313000,
+        "eval_count": 35,
+        "eval_duration": 237136000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 18,
+      "shift": 0,
+      "key": 4,
+      "computed_value": 99,
+      "choices": [
+        92,
+        96,
+        101,
+        99,
+        108
+      ],
+      "answer": 4,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:26.6846715Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 62 and 37 is calculated as 62 + 37 = 99.\", \"answer\":4}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 626219500,
+        "load_duration": 3656300,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 364525000,
+        "eval_count": 34,
+        "eval_duration": 228489000
+      }
+    },
+    {
+      "route": "vision",
+      "i": 19,
+      "shift": 0,
+      "key": 5,
+      "computed_value": 119,
+      "choices": [
+        112,
+        116,
+        121,
+        124,
+        119
+      ],
+      "answer": 5,
+      "status": "ok",
+      "ocr": null,
+      "response": {
+        "model": "qwen2.5vl:7b",
+        "created_at": "2026-11-17T12:59:27.3188147Z",
+        "message": {
+          "role": "assistant",
+          "content": "{\"reason\":\"The sum of 76 and 43 is calculated as 76 + 43 = 119.\", \"answer\":5}"
+        },
+        "done": true,
+        "done_reason": "stop",
+        "total_duration": 624714000,
+        "load_duration": 3646700,
+        "prompt_eval_count": 1143,
+        "prompt_eval_cached_count": 23,
+        "prompt_eval_duration": 359975000,
+        "eval_count": 35,
+        "eval_duration": 235536000
+      }
+    }
+  ],
+  "caveat": "Prompt, reasoning and output length changed together. Differences do not identify a single cause; rotation is a separate within-prompt test."
+}

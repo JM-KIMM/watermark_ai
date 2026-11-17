@@ -1,0 +1,24 @@
+{
+  "python": "3.12.10",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "packages": {
+    "PyMuPDF": "1.28.2",
+    "Pillow": "13.0.0",
+    "numpy": "2.5.4",
+    "matplotlib": "3.11.2",
+    "Markdown": "3.11.3"
+  },
+  "tesseract": "tesseract v5.5.0.20241111",
+  "traineddata": {
+    "kor": "6b85e11d9bbf07863b97b3523b1b112844c43e713df8b66418a081fd1060b3b2",
+    "eng": "7d4322bd2a7749724879683fc3912cb542f19906c83bcc1a52132556427170b2"
+  },
+  "git_base": "6148e24",
+  "tests": {
+    "run": 68,
+    "passed": 67,
+    "skipped": 1
+  },
+  "gpu": "NVIDIA GeForce RTX 5070 Ti 16GB",
+  "study_date_kst": "2026-11-17"
+}
