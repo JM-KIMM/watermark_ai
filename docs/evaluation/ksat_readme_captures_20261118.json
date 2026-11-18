@@ -1,0 +1,37 @@
+{
+  "source": "KICE 2026 CSAT mathematics, odd form, question 1 (excerpt)",
+  "upstream": "https://github.com/roboco-io/KSAT-AI-Benchmark",
+  "description": "Actual experiment PDFs rendered as short excerpts; not camera photos or generated mockups.",
+  "captures": [
+    {
+      "condition": "original",
+      "page": 1,
+      "clip_points": [
+        0,
+        270,
+        420,
+        405
+      ],
+      "dpi": 200,
+      "source_pdf_sha256": "8d2edc0dde27ef935567ce9c7cc5ef1f806d6f8a634e19cf01d20cc1536f10d4",
+      "experiment_image_sha256": "b6fc8162e4cc378aa745293e6bee0c6f43845e77aebd6664a5dea9f738fd0757",
+      "output": "docs\\images\\ksat_math_original_20261118.png",
+      "output_sha256": "5af754dd6e02bf8734bda70e6208d6105d3ef74b3f5b82f95c2eaf6167008aaa"
+    },
+    {
+      "condition": "product",
+      "page": 1,
+      "clip_points": [
+        0,
+        290,
+        440,
+        425
+      ],
+      "dpi": 200,
+      "source_pdf_sha256": "9628ed86e0e5cf5e22e18a9c6b9ed8c4e8fbb919ef16efb70060133f79b8c69d",
+      "experiment_image_sha256": "8d296ac965debce5f8ec232a797dcafcc03139eecac3a632734bcc37d9777b0b",
+      "output": "docs\\images\\ksat_math_product_20261118.png",
+      "output_sha256": "fb7e98d0169d3268a5651598911a701e13c1211f0dc877bd767deffd2c125f32"
+    }
+  ]
+}

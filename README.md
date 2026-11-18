@@ -32,6 +32,20 @@
 
 [수능 전체 결과·선택과목별 점수](docs/KSAT_RESULTS_2026-11-18.md) · [인쇄용 HTML](docs/KSAT_RESULTS_2026-11-18.html) · [사전 계획](docs/KSAT_PROTOCOL_2026-11-18.md) · [문항별 결과·검증 기록](docs/evaluation/ksat_paired_20261118.json)
 
+### 이번 실험의 실제 입력과 결과 이미지
+
+아래는 **이번 평가에 사용한 PDF의 수학 1번 부분**을 200dpi로 렌더링한 비교입니다. 새로 만든 예시나 카메라 촬영 사진이 아닙니다. 수식·보기와 문항 끝 QR, 왼쪽 테두리 문구를 확인할 수 있습니다. 이 평가의 기본 설정은 명령문형 QR이며 접속 추적 서버 화면은 아닙니다.
+
+| 원본 입력 일부 | 현재 제품 워터마크 입력 일부 |
+|---|---|
+| ![2026 수능 수학 1번 원본 입력 발췌](docs/images/ksat_math_original_20261118.png) | ![같은 수학 문항의 실제 워터마크·QR 적용 입력 발췌](docs/images/ksat_math_product_20261118.png) |
+
+출처: 한국교육과정평가원, 2026학년도 수능 수학 홀수형 1번. 공개 KSAT 자료의 짧은 발췌이며 시험지 전체는 게시하지 않았습니다. [캡처 범위·원본 해시](docs/evaluation/ksat_readme_captures_20261118.json)
+
+![이번 수능 실험의 과목별 정답률과 정답 수](docs/images/ksat_paired_20261118.png)
+
+그래프의 세로축은 정답률, 막대 위 숫자는 정답 수입니다. `original`은 원본, `control`은 배치 대조군, `product`는 현재 제품, `notice`는 별도 답안 중단 안내입니다. 아래의 가상 시험지·웹 생성기 이미지는 기존 기능 설명용이며 이번 수능 실험 캡처와 구분합니다.
+
 ## 이전 후속 실험 — 2026-11-18
 
 **답안 중단 안내는 OCR 경로에서 정답 제공을 줄였지만, 범용적인 촬영 방해 효과는 아직 검증되지 않았습니다.** Google SynthID는 생성물 출처 식별 기술이며, 시험지 입력을 방해하는 adversarial patch와 구분했습니다. [Google·관련 문헌 검토](docs/GOOGLE_WATERMARK_REVIEW_2026-11-18.md)에는 SynthID, Google Adversarial Patch, Integrity Shield, 문서 워터마크 배치 연구, AR-AWM의 적용 조건을 정리했습니다.
