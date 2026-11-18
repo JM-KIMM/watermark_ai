@@ -1,0 +1,18 @@
+{
+  "experiment": "Synthetic invisible-text channel probe, not an Integrity Shield replication",
+  "pdf_text_has_payload": {
+    "original": false,
+    "hidden": true
+  },
+  "rendered_max_pixel_difference": 0,
+  "rendered_png_sha256": {
+    "original": "890d1f4b5d2552e3f7d16757549ef969ff7bda858eb9fb1c2c308313c571df69",
+    "hidden": "890d1f4b5d2552e3f7d16757549ef969ff7bda858eb9fb1c2c308313c571df69"
+  },
+  "ocr_identical": true,
+  "ocr_has_payload": {
+    "original": false,
+    "hidden": false
+  },
+  "model_calls": 0
+}

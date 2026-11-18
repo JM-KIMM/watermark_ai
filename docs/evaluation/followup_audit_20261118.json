@@ -1,0 +1,17 @@
+{
+  "raw_reparsed": {
+    "followup_probe.py": 740,
+    "layout_pilot.py": 80,
+    "followup_real.py": 126,
+    "notice_recovery.py": 30
+  },
+  "failed_batches_or_items": {
+    "followup_probe.py": 0,
+    "layout_pilot.py": 0,
+    "followup_real.py": 0,
+    "notice_recovery.py": 0
+  },
+  "real_keys_and_answers_checked": 504,
+  "real_body_pages_identical": 21,
+  "frozen_hashes_match": true
+}
